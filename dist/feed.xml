@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0">
   <channel>
-    <title>Textos de Raúl Boullosa</title>
-    <link>https://raulboullosa.com/textos/</link>
-    <description>Ensayos, notas, reseñas y apuntes sobre economía, política, cultura y tecnología.</description>
+    <title>RB · Ensayos 2026</title>
+    <link>https://raulboullosa.com/ensayos/</link>
+    <description>Ensayos de Raúl Alberto Rivera Boullosa en orden de exposición.</description>
     <language>es-MX</language>
-    <lastBuildDate>Fri, 04 Sep 2026 12:00:00 GMT</lastBuildDate>
-    <atom:link href="https://raulboullosa.com/feed.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Este sitio comienza aquí</title>
-      <link>https://raulboullosa.com/textos/este-sitio-comienza-aqui/</link>
-      <guid isPermaLink="true">https://raulboullosa.com/textos/este-sitio-comienza-aqui/</guid>
-      <pubDate>Fri, 04 Sep 2026 12:00:00 GMT</pubDate>
-      <description>Por qué abrir un archivo público antes de tener una obra terminada, y qué clase de textos quiero conservar en él.</description>
-    </item>
+    <lastBuildDate>Mon, 14 Sep 2026 00:00:00 GMT</lastBuildDate>
+    <item><title>¿Qué significa determinar la inversión?</title><link>https://raulboullosa.com/ensayos/que-significa-determinar-la-inversion/</link><guid>https://raulboullosa.com/ensayos/que-significa-determinar-la-inversion/</guid><description>Reproducción, decisión y emergencia de una trayectoria.</description></item>
+    <item><title>Pleno empleo, reproducción y transformación estructural</title><link>https://raulboullosa.com/ensayos/pleno-empleo-reproduccion-transformacion-estructural/</link><guid>https://raulboullosa.com/ensayos/pleno-empleo-reproduccion-transformacion-estructural/</guid><description>Condiciones de reproducción, empleo y cambio de la estructura productiva.</description></item>
+    <item><title>Los balances sectoriales de Ifigenia Martínez y la reproducción del desarrollo</title><link>https://raulboullosa.com/ensayos/balances-sectoriales-ifigenia-martinez/</link><guid>https://raulboullosa.com/ensayos/balances-sectoriales-ifigenia-martinez/</guid><description>Inversión, estructura productiva y restricción externa.</description></item>
+    <item><title>La expansión financiera y la dinámica estructural</title><link>https://raulboullosa.com/ensayos/expansion-financiera-dinamica-estructural/</link><guid>https://raulboullosa.com/ensayos/expansion-financiera-dinamica-estructural/</guid><description>Finanzas, demanda y transformación de la estructura económica.</description></item>
+    <item><title>Reproducción social, secuenciación monetaria y necesidad de adelanto</title><link>https://raulboullosa.com/ensayos/reproduccion-social-secuenciacion-monetaria/</link><guid>https://raulboullosa.com/ensayos/reproduccion-social-secuenciacion-monetaria/</guid><description>Pagos, secuencias y condiciones monetarias de la reproducción.</description></item>
   </channel>
 </rss>
