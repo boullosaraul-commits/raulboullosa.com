@@ -4,7 +4,7 @@ Archivo editorial de ensayos e investigación de Raúl Alberto Rivera Boullosa.
 
 ## Arquitectura
 
-- `/ensayos/`: índice estable de **RB · Ensayos 2026 · 01–05**.
+- `/ensayos/`: índice estable de **RB · Ensayos 2026 · 01–06**.
 - `/ensayos/<slug>/`: ficha canónica de cada ensayo.
 - `/pdf/`: ediciones A5 con nombres públicos estables.
 - `/investigacion/`: programa de investigación, separado del archivo de obras.
