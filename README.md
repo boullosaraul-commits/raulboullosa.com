@@ -1,10 +1,12 @@
 # raulboullosa.com
 
-Archivo editorial de ensayos e investigación de Raúl Alberto Rivera Boullosa.
+Investigación, textos seleccionados y archivo editorial de Raúl Alberto Rivera Boullosa.
 
 ## Arquitectura
 
-- `/ensayos/`: índice estable de **RB · Ensayos 2026 · 01–06**.
+- `/`: investigación actual y un único texto seleccionado: el Ensayo 02.
+- `/ensayos/`: selección actual (02) seguida del archivo histórico **RB · Ensayos 2026 · 01–07**.
+- `/ensayos/#archivo`: acceso directo al índice histórico completo; el 02 enlaza a la misma ficha y PDF que la selección.
 - `/ensayos/<slug>/`: ficha canónica de cada ensayo.
 - `/pdf/`: ediciones A5 con nombres públicos estables.
 - `/investigacion/`: programa de investigación, separado del archivo de obras.
@@ -16,3 +18,5 @@ Los antiguos destinos `/textos/` y `/proyectos/` conservan páginas de traslado 
 ## Publicación
 
 El sitio es estático. La salida pública está completa en `dist/` y no requiere compilación.
+
+La selección editorial no altera la pertenencia a una colección. Los formatos futuros pueden incorporarse fuera de RB · Ensayos 2026, sin renumerar ni trasladar las publicaciones históricas. Las fichas y sus metadatos son HTML estático; no hay generador, componentes ni datos externos.

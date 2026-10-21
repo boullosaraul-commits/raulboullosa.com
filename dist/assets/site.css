@@ -1377,3 +1377,21 @@ select {
     color: black;
   }
 }
+
+/* Selection and historical collection share canonical records, not prominence. */
+.selected-section { padding-top: clamp(3rem, 6vw, 5rem); }
+.selected-section .section-heading { margin-bottom: 0; }
+.selected-record { padding-top: 3rem; }
+.archive-section { padding-block: clamp(4rem, 8vw, 7rem); }
+.archive-collection { margin: 0; font-size: 1.5rem; font-weight: 500; }
+.archive-intro { max-width: var(--reading); color: var(--muted); }
+.archive-list { list-style: none; margin: 2rem 0 0; padding: 0; border-top: 1px solid var(--ink); }
+.archive-row { display: grid; grid-template-columns: 3rem minmax(0, 1fr) auto; gap: 1.2rem; align-items: baseline; padding-block: 1.5rem; border-bottom: 1px solid var(--line); }
+.archive-row .record-code { padding: 0; }
+.archive-title { font-size: clamp(1.2rem, 2vw, 1.55rem); line-height: 1.3; text-decoration: none; }
+.archive-selection { display: block; margin-top: .4rem; color: var(--muted); font-size: .9rem; }
+.archive-pdf { font-family: var(--sans); font-size: .75rem; white-space: nowrap; }
+@media (max-width: 40rem) {
+  .archive-row { grid-template-columns: 2rem minmax(0, 1fr); gap: .65rem; }
+  .archive-pdf { grid-column: 2; justify-self: start; }
+}
