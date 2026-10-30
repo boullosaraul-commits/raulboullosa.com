@@ -31,12 +31,15 @@ def render(record):
                      'encodingFormat': 'application/pdf'},
     }
     authors, roles, lines = [], [], []
+    editorial = []
     for contributor in record['contributors']:
         person = DATA['people'][contributor['person']]
         entity = {'@type': 'Person', '@id': person['id'],
                   'name': person['name'], 'url': person['url']}
         if person.get('orcid'):
             entity['sameAs'] = [person['orcid']]
+        if contributor.get('correspondence_emails'):
+            entity['email'] = contributor['correspondence_emails']
         affiliation = contributor.get('affiliation') or person.get('affiliation')
         if affiliation:
             entity['affiliation'] = affiliation
@@ -54,16 +57,34 @@ def render(record):
         if contributor['corresponding']:
             lines.append('<p><strong>Autor de correspondencia:</strong> ' +
                          html.escape(person['name']) + '.</p>')
+            if person.get('orcid'):
+                lines.append('<p><a href="' + html.escape(person['orcid'], quote=True) +
+                             '" rel="me">ORCID: ' + html.escape(person['orcid'].rsplit('/', 1)[-1]) + '</a></p>')
+            if contributor.get('correspondence_emails'):
+                lines.append('<p><strong>Contacto:</strong> ' + ' · '.join(
+                    '<a href="mailto:' + html.escape(email, quote=True) + '">' +
+                    html.escape(email) + '</a>' for email in contributor['correspondence_emails']) + '</p>')
         if contributor['roles']:
-            lines.append('<p><strong>Contribuciones (CRediT):</strong> ' +
+            editorial.append('<p><strong>Contribuciones (CRediT):</strong> ' +
                          html.escape(person['name']) + ': ' +
                          html.escape('; '.join(contributor['roles'])) + '.</p>')
     result['author'] = authors
     if roles:
         result['contributor'] = roles
-    for field in ('abstract', 'keywords', 'version', 'license', 'funding'):
+    for field in ('abstract', 'keywords', 'version', 'license', 'funding', 'copyrightNotice', 'copyrightYear'):
         if record.get(field):
             result[field] = record[field]
+    if record.get('copyrightNotice'):
+        result['copyrightHolder'] = [{'@type': 'Person', '@id': a['@id'], 'name': a['name']}
+                                     for a in authors]
+    if record.get('funding_statement'):
+        editorial.append('<p><strong>Financiación:</strong> ' +
+                         html.escape(record['funding_statement']) + '</p>')
+    if record.get('copyrightNotice'):
+        editorial.append('<p>' + html.escape(record['copyrightNotice']) + '</p>')
+    if editorial:
+        lines.append('<details><summary>Contribuciones y condiciones editoriales</summary>' +
+                     ''.join(editorial) + '</details>')
     if record.get('series'):
         series = dict(record['series'])
         result['position'] = series.pop('position')

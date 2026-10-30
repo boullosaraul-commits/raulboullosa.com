@@ -4,7 +4,7 @@
 
 El registro distingue autoría (`author`), contribuciones CRediT (`roles`, siempre una lista) y correspondencia (`corresponding`). Raúl Alberto Rivera Boullosa queda designado como autor de correspondencia de estos trabajos individuales; esto no publica una dirección de correo.
 
-Los roles permanecen vacíos y con estado `pending_confirmation` hasta verificar las contribuciones de cada trabajo. No se deducen papeles CRediT de la autoría individual. Para publicarlos, completar la lista con los términos admitidos y cambiar `roles_status` a `confirmed`. El generador conserva `author` como Person y expresa contribuciones verificadas mediante `contributor` y Schema.org Role.
+Los roles sin confirmación permanecen vacíos y con estado `pending_confirmation` hasta verificar las contribuciones de cada trabajo. No se deducen papeles CRediT de la autoría individual. Para publicarlos, completar la lista con los términos admitidos y cambiar `roles_status` a `confirmed`. El generador conserva `author` como Person y expresa contribuciones verificadas mediante `contributor` y Schema.org Role.
 
 ORCID, licencia y financiación desconocidos se representan como `null` y se omiten de la salida pública. `funding: null` no significa ausencia de financiación. No reutilizar la afiliación actual del perfil como evidencia de una afiliación histórica de publicación.
 
@@ -13,3 +13,7 @@ Las fechas mantienen la precisión comprobada de las fichas existentes (mes). La
 SITEPE y Ensayo 05 se enlazan como documentos relacionados, sin afirmar identidad entre versiones ni una relación de sustitución. El PDF, su ruta y su contenido permanecen intactos.
 
 Esta es una fuente interna y una salida web Schema.org; no constituye un depósito Crossref ni un XML Schema 5.5. Un futuro exportador Crossref deberá validar tipos, roles e identificadores contra su esquema oficial. No añadir `correspondingAuthor` o `contributor_role` como si fueran propiedades Schema.org: la correspondencia se conserva en el registro y se muestra en la ficha.
+
+## Declaraciones confirmadas por el autor · 30 de octubre de 2026
+
+El ORCID confirmado es https://orcid.org/0009-0000-7097-4634. Para SITEPE v14 y Ensayo 02 v1.01, el autor confirmó Conceptualization, Methodology, Investigation, Formal analysis, Writing – original draft y Writing – review & editing; declaró ausencia de financiación y autorizó publicar ambos correos de correspondencia. Conserva todos los derechos; no se asigna una licencia abierta ni una URL de licencia inexistente. Los desarrollos de software, datos, visualización o validación adicionales del Ensayo 02 no se atribuyen a esta edición porque el autor indicó que quedan fuera de ella. La pregunta sobre otras contribuciones y asistencia de IA no recibió una declaración específica: queda pendiente y no se transforma en una afirmación de ausencia. Los roles y condiciones no se propagan a los demás ensayos.

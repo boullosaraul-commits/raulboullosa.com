@@ -5,7 +5,7 @@
       "name": "Raúl Alberto Rivera Boullosa",
       "id": "https://raulboullosa.com/sobre-mi/#raul-rivera-boullosa",
       "url": "https://raulboullosa.com/sobre-mi/",
-      "orcid": null,
+      "orcid": "https://orcid.org/0009-0000-7097-4634",
       "affiliation": null
     }
   },
@@ -79,8 +79,15 @@
         {
           "person": "raul-rivera-boullosa",
           "author": true,
-          "roles": [],
-          "roles_status": "pending_confirmation",
+          "roles": [
+            "Conceptualization",
+            "Methodology",
+            "Investigation",
+            "Formal analysis",
+            "Writing – original draft",
+            "Writing – review & editing"
+          ],
+          "roles_status": "confirmed",
           "corresponding": true,
           "affiliation": {
             "@type": "Organization",
@@ -89,7 +96,12 @@
               "@type": "CollegeOrUniversity",
               "name": "Universidad Nacional Autónoma de México"
             }
-          }
+          },
+          "correspondence_emails": [
+            "boullosaraul@gmail.com",
+            "raul42@comunidad.unam.mx"
+          ],
+          "additional_contributions_status": "not_claimed_for_current_edition"
         }
       ],
       "license": null,
@@ -108,7 +120,13 @@
         "Los artículos I–V reconstruyen sucesivamente estas mediaciones: de la estructura reproductiva a las obligaciones y su ejecución; de ésta al requerimiento bajo distintas arquitecturas de compensación; y luego a la exposición, la cobertura, la implementación y el estado financiero heredable. El artículo VI responde a un problema que reaparece a lo largo de esa construcción: cuándo la información conservada por una representación basta para determinar otro observable. El artículo VII vuelve finalmente a la reproducción y plantea el problema que queda abierto: bajo qué condiciones las diferencias producidas por la ejecución intraperiódica sobreviven a la frontera del período y modifican el estado reproductivo siguiente.",
         "El resultado es una teoría por capas de determinación condicionada: cada capa responde una pregunta precisa y el paso a la siguiente requiere información adicional; así puede establecerse qué determina la estructura reproductiva, qué depende de la secuencia de ejecución, qué cambia con las instituciones de compensación y financiación y qué permanece todavía indeterminado al cerrar el período."
       ],
-      "keywords_status": "editorial_pending_author_confirmation"
+      "keywords_status": "editorial_pending_author_confirmation",
+      "funding_status": "no_external_funding",
+      "funding_statement": "Este trabajo no recibió financiación externa.",
+      "rights_status": "all_rights_reserved",
+      "copyrightNotice": "© 2026 Raúl Alberto Rivera Boullosa. Todos los derechos reservados.",
+      "copyrightYear": 2026,
+      "other_contributions_disclosure_status": "pending_author_statement"
     },
     {
       "id": "rb-ensayos-2026-03",
@@ -331,8 +349,15 @@
         {
           "person": "raul-rivera-boullosa",
           "author": true,
-          "roles": [],
-          "roles_status": "pending_confirmation",
+          "roles": [
+            "Conceptualization",
+            "Methodology",
+            "Investigation",
+            "Formal analysis",
+            "Writing – original draft",
+            "Writing – review & editing"
+          ],
+          "roles_status": "confirmed",
           "corresponding": true,
           "affiliation": {
             "@type": "Organization",
@@ -341,7 +366,12 @@
               "@type": "CollegeOrUniversity",
               "name": "Universidad Nacional Autónoma de México"
             }
-          }
+          },
+          "correspondence_emails": [
+            "boullosaraul@gmail.com",
+            "raul42@comunidad.unam.mx"
+          ],
+          "additional_contributions_status": "not_claimed_for_current_edition"
         }
       ],
       "license": null,
@@ -367,7 +397,13 @@
         "E62",
         "J68",
         "O25"
-      ]
+      ],
+      "funding_status": "no_external_funding",
+      "funding_statement": "Este trabajo no recibió financiación externa.",
+      "rights_status": "all_rights_reserved",
+      "copyrightNotice": "© 2026 Raúl Alberto Rivera Boullosa. Todos los derechos reservados.",
+      "copyrightYear": 2026,
+      "other_contributions_disclosure_status": "pending_author_statement"
     }
   ]
 }
