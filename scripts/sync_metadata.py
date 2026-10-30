@@ -144,6 +144,8 @@ def sync(check=False):
         raise SystemExit('Stale metadata: ' + ', '.join(stale))
     from export_citations import sync as sync_citations
     sync_citations(DATA, check=check)
+    from sync_navigation import sync as sync_navigation
+    sync_navigation(check=check)
     print(f"Verified {len(DATA['publications'])} publication records; {len(stale)} updated.")
 
 
