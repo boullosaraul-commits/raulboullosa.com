@@ -82,9 +82,11 @@ def sync(check=False):
             updated, count = re.subn(r'(<main\b[^>]*>)', lambda m: m[1] + '\n' + navigation,
                                      updated, count=1)
             assert count == 1
+        updated = updated.replace('<main id="contenido">', '<main id="contenido" tabindex="-1">')
         # Consistent visible labels; the PDF link opens the definitive edition.
         updated = updated.replace('>Leer</a>', '>Ver ficha</a>').replace('>Ficha</a>', '>Ver ficha</a>')
         updated = updated.replace('>Abrir ficha →</a>', '>Ver ficha</a>')
+        updated = updated.replace('>Descargar PDF A5 ↓</a>', '>Abrir PDF A5</a>').replace('>Descargar PDF A4 ↓</a>', '>Abrir PDF A4</a>')
         updated = updated.replace('>PDF A5 ↓</a>', '>Abrir PDF A5</a>').replace('>PDF A4 ↓</a>', '>Abrir PDF A4</a>')
         updated = updated.replace('La lectura HTML se incorporará en esta misma dirección estable; la ficha y la referencia no cambiarán.',
                                   'Los datos bibliográficos de esta edición y su referencia se encuentran al final de esta ficha.')
@@ -101,7 +103,7 @@ def sync(check=False):
         # Shared return action at the bottom of every content page.
         updated = re.sub(r'\s*<!-- page-return:start -->.*?<!-- page-return:end -->\s*', '', updated, flags=re.S)
         back = ('<!-- page-return:start --><nav class="container page-return" aria-label="Continuar la navegación">' +
-                ('<a href="/ensayos/">← Volver a publicaciones</a>' if is_work else '<a href="/">← Volver a inicio</a>') +
+                ('<a href="/ensayos/">← Volver a publicaciones</a>' if is_work else ('' if active == '/' else '<a href="/">← Volver a inicio</a>')) +
                 '<a href="#contenido">Volver arriba ↑</a></nav><!-- page-return:end -->\n')
         updated = updated.replace('</main>', '\n' + back + '</main>', 1)
         if updated != original:

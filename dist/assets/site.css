@@ -1452,3 +1452,9 @@ h1, h2, h3, .equation, .citation { overflow-wrap: anywhere; }
   .archive-pdf { grid-column: 2; justify-self: start; }
 }
 
+
+/* Keep keyboard focus legible on dark panels and filled actions. */
+.section--ink :focus-visible,
+.research-section--ink :focus-visible,
+.footer :focus-visible { outline-color: var(--warm-white); }
+.action-link--red:focus-visible { outline-color: var(--ink); }
