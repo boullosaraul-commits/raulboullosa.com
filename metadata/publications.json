@@ -1,0 +1,327 @@
+{
+  "schema_version": 1,
+  "people": {
+    "raul-rivera-boullosa": {
+      "name": "Raúl Alberto Rivera Boullosa",
+      "id": "https://raulboullosa.com/sobre-mi/#raul-rivera-boullosa",
+      "url": "https://raulboullosa.com/sobre-mi/",
+      "orcid": null,
+      "affiliation": null
+    }
+  },
+  "publications": [
+    {
+      "id": "rb-ensayos-2026-01",
+      "path": "dist/ensayos/que-significa-determinar-la-inversion/index.html",
+      "publication_type": "essay",
+      "title": "¿Qué significa determinar la inversión?",
+      "description": "Ensayo de Raúl Alberto Rivera Boullosa sobre reproducción, decisión, incertidumbre y emergencia de una trayectoria de inversión.",
+      "abstract": "La pregunta «¿qué determina la inversión?» suele formularse como si designara un único problema. Este ensayo sostiene que contiene, en realidad, varias cuestiones lógicamente distintas. Una cosa es determinar qué inversión sería compatible con cierta trayectoria de reproducción; otra, qué inversión es materialmente factible desde el estado heredado de la economía; otra, qué valor adelantado ha sido realizado y vuelve a estar disponible; otra, cómo se distribuye entre ramas un volumen dado de acumulación; y otras, todavía, explicar por qué los capitalistas desean comprometer recursos, cómo deciden bajo incertidumbre, qué reglas pueden cerrar esa decisión y qué dinámica emerge cuando esas decisiones transforman las condiciones posteriores. El argumento se construye añadiendo un mecanismo a la vez. El resultado no es una función universal de inversión, sino una reformulación del problema: explicar la inversión exige distinguir generación, selección dinámica e identificación de mecanismos. Las ecuaciones de reproducción pueden entonces releerse en sentido inverso: no sólo qué inversión requiere una trayectoria, sino qué trayectoria producen las decisiones descentralizadas y bajo qué condiciones puede reproducirse.",
+      "datePublished": "2026-09",
+      "inLanguage": "es-MX",
+      "url": "https://raulboullosa.com/ensayos/que-significa-determinar-la-inversion/",
+      "pdf": "https://raulboullosa.com/pdf/rb-ensayos-2026-01.pdf",
+      "keywords": [
+        "inversión",
+        "reproducción",
+        "acumulación",
+        "incertidumbre",
+        "dinámica",
+        "coordinación"
+      ],
+      "series": {
+        "@type": "CreativeWorkSeries",
+        "name": "RB · Ensayos 2026",
+        "position": 1
+      },
+      "version": null,
+      "edition_label": "Versión de circulación, septiembre de 2026",
+      "contributors": [
+        {
+          "person": "raul-rivera-boullosa",
+          "author": true,
+          "roles": [],
+          "roles_status": "pending_confirmation",
+          "corresponding": true
+        }
+      ],
+      "license": null,
+      "funding": null,
+      "relations": []
+    },
+    {
+      "id": "rb-ensayos-2026-02",
+      "path": "dist/ensayos/reproduccion-social-secuenciacion-monetaria/index.html",
+      "publication_type": "essay",
+      "title": "Reproducción social, secuenciación monetaria y necesidad de adelanto",
+      "description": "Ensayo de Raúl Alberto Rivera Boullosa sobre obligaciones bilaterales, secuencias de pago, integración vertical y adelanto monetario.",
+      "abstract": "Este ensayo examina la necesidad de adelanto monetario requerida para ejecutar una estructura reproductiva dada cuando las obligaciones se liquidan bilateralmente, los pagos son completos y los cobros pueden reutilizarse de inmediato. Manteniendo fijas las obligaciones, se muestra mediante un ejemplo que distintas cronologías admisibles pueden exigir dotaciones monetarias iniciales diferentes. Se define la trayectoria acumulada de pagos y cobros de cada agente y, a partir de su déficit máximo, la dotación mínima necesaria para ejecutar una secuencia sin sobregiro. La integración vertical permite después atribuir productivamente los flujos a destinos finales sin confundir esa atribución con una fragmentación efectiva de las cajas; al retirar la fungibilidad entre destinos se obtiene una medida del costo monetario de la segregación. Finalmente, los déficits transitorios permiten distinguir cierre final, reflujo y necesidad de financiación. El resultado central es que la estructura restringe las obligaciones, la cronología determina su trayectoria monetaria y ésta determina el adelanto requerido bajo una convención dada de liquidación.",
+      "datePublished": "2026-10",
+      "inLanguage": "es-MX",
+      "url": "https://raulboullosa.com/ensayos/reproduccion-social-secuenciacion-monetaria/",
+      "pdf": "https://raulboullosa.com/pdf/rb-ensayos-2026-02.pdf",
+      "keywords": [
+        "reproducción social",
+        "circulación monetaria",
+        "secuenciación de pagos",
+        "adelanto monetario",
+        "integración vertical",
+        "liquidez"
+      ],
+      "series": {
+        "@type": "CreativeWorkSeries",
+        "name": "RB · Ensayos 2026",
+        "position": 2
+      },
+      "version": "1.01",
+      "edition_label": "v1.01 · edición de circulación · octubre de 2026",
+      "contributors": [
+        {
+          "person": "raul-rivera-boullosa",
+          "author": true,
+          "roles": [],
+          "roles_status": "pending_confirmation",
+          "corresponding": true
+        }
+      ],
+      "license": null,
+      "funding": null,
+      "relations": []
+    },
+    {
+      "id": "rb-ensayos-2026-03",
+      "path": "dist/ensayos/que-queda-entre-marx-y-keynes/index.html",
+      "publication_type": "essay",
+      "title": "¿Qué queda entre Marx y Keynes?",
+      "description": "Ensayo de Raúl Alberto Rivera Boullosa sobre Marx, Keynes, valor, dinero, reproducción e inversión.",
+      "abstract": "Este ensayo lleva deliberadamente al extremo varias aproximaciones entre Marx y Keynes para localizar qué diferencia analítica sobrevive. Se concede inicialmente una lectura laboral del valor en Keynes; después se distinguen producción del excedente, rendimiento de activos, expectativas, dinero e interés. Los esquemas de reproducción se ponen entonces en relación con la demanda efectiva sin atribuir causalidad a una identidad. El problema decisivo aparece al distinguir la inversión compatible con una trayectoria de la inversión efectivamente decidida. Incluso si una regla keynesiana determina la inversión corriente, esa decisión transforma las condiciones de las decisiones posteriores. El recorrido termina invirtiendo la pregunta: ya no qué inversión corresponde a una reproducción dada, sino qué trayectoria reproductiva puede emerger de decisiones descentralizadas de inversión.",
+      "datePublished": "2026-09",
+      "inLanguage": "es-MX",
+      "url": "https://raulboullosa.com/ensayos/que-queda-entre-marx-y-keynes/",
+      "pdf": "https://raulboullosa.com/pdf/rb-ensayos-2026-03.pdf",
+      "keywords": [
+        "Marx",
+        "Keynes",
+        "Kalecki",
+        "valor",
+        "reproducción",
+        "inversión",
+        "demanda efectiva"
+      ],
+      "series": {
+        "@type": "CreativeWorkSeries",
+        "name": "RB · Ensayos 2026",
+        "position": 3
+      },
+      "version": null,
+      "edition_label": "Versión de circulación, septiembre de 2026",
+      "contributors": [
+        {
+          "person": "raul-rivera-boullosa",
+          "author": true,
+          "roles": [],
+          "roles_status": "pending_confirmation",
+          "corresponding": true
+        }
+      ],
+      "license": null,
+      "funding": null,
+      "relations": []
+    },
+    {
+      "id": "rb-ensayos-2026-04",
+      "path": "dist/ensayos/expansion-financiera-dinamica-estructural/index.html",
+      "publication_type": "essay",
+      "title": "La expansión financiera y la dinámica estructural",
+      "description": "Ensayo de Raúl Alberto Rivera Boullosa sobre expansión financiera, balances, instituciones, distribución y cambio estructural.",
+      "abstract": "El ensayo examina la expansión financiera distinguiendo entre la producción corriente de servicios financieros y la transformación de las posiciones patrimoniales. A partir de una tasa de interés de corto plazo administrada, separa la capacidad institucional de fijarla de la explicación histórica de su selección y distingue la formación, persistencia y transformación de una configuración financiera. Sobre esa base, introduce la memoria patrimonial de los balances y la memoria estructural asociada a cambios persistentes en la composición productiva. El argumento sostiene que estructura productiva y estructura financiera no pueden reducirse una a otra, aunque interactúan a través del tiempo, y que esa interacción puede alcanzar también a las instituciones que inicialmente se toman como dadas. El cierre delimita una frontera analítica: explicar trayectorias dentro de un régimen no equivale a explicar la transformación del régimen mismo.",
+      "datePublished": "2026-09",
+      "inLanguage": "es-MX",
+      "url": "https://raulboullosa.com/ensayos/expansion-financiera-dinamica-estructural/",
+      "pdf": "https://raulboullosa.com/pdf/rb-ensayos-2026-04.pdf",
+      "keywords": [
+        "finanzas",
+        "cambio estructural",
+        "balances",
+        "instituciones",
+        "distribución"
+      ],
+      "series": {
+        "@type": "CreativeWorkSeries",
+        "name": "RB · Ensayos 2026",
+        "position": 4
+      },
+      "version": null,
+      "edition_label": "Versión de circulación, septiembre de 2026",
+      "contributors": [
+        {
+          "person": "raul-rivera-boullosa",
+          "author": true,
+          "roles": [],
+          "roles_status": "pending_confirmation",
+          "corresponding": true
+        }
+      ],
+      "license": null,
+      "funding": null,
+      "relations": []
+    },
+    {
+      "id": "rb-ensayos-2026-05",
+      "path": "dist/ensayos/pleno-empleo-reproduccion-transformacion-estructural/index.html",
+      "publication_type": "essay",
+      "title": "Pleno empleo, reproducción y transformación estructural",
+      "description": "Pleno empleo, reproducción y transformación estructural, de Raúl Alberto Rivera Boullosa. RB · Ensayos 2026 · 05.",
+      "abstract": null,
+      "datePublished": "2026-09",
+      "inLanguage": "es-MX",
+      "url": "https://raulboullosa.com/ensayos/pleno-empleo-reproduccion-transformacion-estructural/",
+      "pdf": "https://raulboullosa.com/pdf/rb-ensayos-2026-05.pdf",
+      "keywords": [],
+      "series": {
+        "@type": "CreativeWorkSeries",
+        "name": "RB · Ensayos 2026",
+        "position": 5
+      },
+      "version": null,
+      "edition_label": "Versión de circulación, septiembre de 2026",
+      "contributors": [
+        {
+          "person": "raul-rivera-boullosa",
+          "author": true,
+          "roles": [],
+          "roles_status": "pending_confirmation",
+          "corresponding": true
+        }
+      ],
+      "license": null,
+      "funding": null,
+      "relations": [
+        {
+          "type": "related",
+          "publication": "sitepe-2026-v14"
+        }
+      ]
+    },
+    {
+      "id": "rb-ensayos-2026-06",
+      "path": "dist/ensayos/balances-sectoriales-ifigenia-martinez/index.html",
+      "publication_type": "essay",
+      "title": "Los balances sectoriales de Ifigenia Martínez y la reproducción del desarrollo",
+      "description": "Reconstrucción causal de los argumentos de Ifigenia Martínez sobre inversión, balances sectoriales, estructura productiva y restricción externa.",
+      "abstract": "Este ensayo reconstruye los argumentos de Ifigenia Martínez sobre ahorro, inversión, política fiscal, estructura productiva y restricción externa, distinguiendo entre identidades contables y relaciones causales. A partir de la identidad de balances sectoriales, se muestra que ésta establece una condición necesaria de compatibilidad entre sectores, pero no determina las trayectorias económicas compatibles con ella. La reconstrucción distingue dos efectos de la inversión: la generación de demanda, ingreso y ahorro realizado, y la modificación de la estructura productiva posterior. Se examina cómo esta última puede condicionar los requerimientos externos y cómo el financiamiento de déficits puede modificar la posición patrimonial y los pagos posteriores. Asimismo, balances fiscales equivalentes pueden corresponder a composiciones del gasto con efectos productivos diferentes. Se concluye que trayectorias contablemente compatibles pueden dejar condiciones distintas para la acumulación futura.",
+      "datePublished": "2026-09",
+      "inLanguage": "es-MX",
+      "url": "https://raulboullosa.com/ensayos/balances-sectoriales-ifigenia-martinez/",
+      "pdf": "https://raulboullosa.com/pdf/rb-ensayos-2026-06.pdf",
+      "keywords": [
+        "México",
+        "crecimiento económico",
+        "Ifigenia Martínez",
+        "inversión",
+        "estructura productiva",
+        "restricción externa"
+      ],
+      "series": {
+        "@type": "CreativeWorkSeries",
+        "name": "RB · Ensayos 2026",
+        "position": 6
+      },
+      "version": null,
+      "edition_label": "Versión de circulación, septiembre de 2026",
+      "contributors": [
+        {
+          "person": "raul-rivera-boullosa",
+          "author": true,
+          "roles": [],
+          "roles_status": "pending_confirmation",
+          "corresponding": true
+        }
+      ],
+      "license": null,
+      "funding": null,
+      "relations": []
+    },
+    {
+      "id": "rb-ensayos-2026-07",
+      "path": "dist/ensayos/un-mecanismo-monetario-del-ciclo-economico/index.html",
+      "publication_type": "essay",
+      "title": "Un mecanismo monetario del ciclo económico",
+      "description": "Construcción de un mecanismo monetario mínimo del ciclo económico a partir de inversión, ahorro, demanda de dinero y tasa de interés.",
+      "abstract": "Consideraremos una economía en la que la inversión planeada depende del nivel de actividad y de la tasa de interés, mientras que esta última varía de acuerdo con la situación del mercado monetario. Si la inversión planeada excede al ahorro correspondiente al ingreso corriente, el producto aumenta; si queda por debajo, disminuye. La expansión eleva la demanda de dinero y, una vez sobrepasado cierto nivel de actividad, provoca un aumento de la tasa de interés. Ese aumento reduce inequívocamente la inversión por unidad de producto y termina llevando la propensión a invertir hasta la propensión al ahorro, momento en que el producto alcanza su máximo. Durante la contracción ocurre el proceso inverso. Bajo las hipótesis adoptadas, el sistema resultante es del tipo Lotka-Volterra y sus trayectorias positivas, salvo el punto estacionario, son periódicas. La construcción demuestra una propiedad del cierre adoptado; no identifica por sí sola un mecanismo causal de los ciclos observados.",
+      "datePublished": "2026-09",
+      "inLanguage": "es-MX",
+      "url": "https://raulboullosa.com/ensayos/un-mecanismo-monetario-del-ciclo-economico/",
+      "pdf": "https://raulboullosa.com/pdf/rb-ensayos-2026-07.pdf",
+      "keywords": [
+        "ciclo económico",
+        "inversión",
+        "ahorro",
+        "dinero",
+        "tasa de interés",
+        "Lotka-Volterra"
+      ],
+      "series": {
+        "@type": "CreativeWorkSeries",
+        "name": "RB · Ensayos 2026",
+        "position": 7
+      },
+      "version": null,
+      "edition_label": "Versión de circulación, septiembre de 2026",
+      "contributors": [
+        {
+          "person": "raul-rivera-boullosa",
+          "author": true,
+          "roles": [],
+          "roles_status": "pending_confirmation",
+          "corresponding": true
+        }
+      ],
+      "license": null,
+      "funding": null,
+      "relations": []
+    },
+    {
+      "id": "sitepe-2026-v14",
+      "path": "dist/publicaciones/sitepe-pleno-empleo-mexico/index.html",
+      "publication_type": "conference_paper",
+      "title": "Pleno empleo, reproducción y transformación estructural",
+      "subtitle": "Trabajo Garantizado, micronegocios y condiciones para México",
+      "description": "El artículo reconstruye el Trabajo Garantizado de Mitchell, Wray y Watts y pregunta qué debe identificarse antes de estimar su costo para México. Distingue utilización del programa, gasto presupuestario y costo económico; examina qué permiten observar ENAMIN y ENAPROCE sobre el trabajo por cuenta propia y los micronegocios, y delimita las condiciones para seleccionar instrumentos de banca de desarrollo y política industrial.",
+      "abstract": null,
+      "datePublished": "2026-10",
+      "inLanguage": "es-MX",
+      "url": "https://raulboullosa.com/publicaciones/sitepe-pleno-empleo-mexico/",
+      "pdf": "https://raulboullosa.com/pdf/sitepe-pleno-empleo-mexico.pdf",
+      "keywords": [
+        "Trabajo Garantizado",
+        "pleno empleo",
+        "micronegocios",
+        "México",
+        "banca de desarrollo",
+        "política industrial"
+      ],
+      "keywords_status": "editorial_from_published_synopsis",
+      "series": null,
+      "version": "14",
+      "edition_label": "v14 · octubre de 2026 · 15 páginas · A4",
+      "contributors": [
+        {
+          "person": "raul-rivera-boullosa",
+          "author": true,
+          "roles": [],
+          "roles_status": "pending_confirmation",
+          "corresponding": true
+        }
+      ],
+      "license": null,
+      "funding": null,
+      "relations": [
+        {
+          "type": "related",
+          "publication": "rb-ensayos-2026-05"
+        }
+      ]
+    }
+  ]
+}
