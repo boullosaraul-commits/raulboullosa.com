@@ -1425,6 +1425,13 @@ select {
 .article-byline > * { min-width: 0; }
 .research-section__grid > *, .research-copy, .research-question, .research-boundary { min-width: 0; }
 .research-copy .equation { max-width: 100%; }
+.research-table-wrap { max-width: 100%; overflow-x: auto; margin-block: 1.5rem; }
+.research-table { width: 100%; border-collapse: collapse; font-size: .98rem; line-height: 1.5; }
+.research-table caption { text-align: left; padding-block: .75rem; font-family: var(--sans); font-size: .8rem; color: var(--muted); }
+.research-table th, .research-table td { text-align: left; vertical-align: top; padding: .85rem .65rem; border-bottom: 1px solid var(--line); }
+.research-table thead th { border-top: 1px solid var(--ink); font-family: var(--sans); font-size: .8rem; }
+.research-table tbody th { font-weight: 500; min-width: 8rem; }
+.research-table td { min-width: 11rem; }
 h1, h2, h3, .equation, .citation { overflow-wrap: anywhere; }
 :where(h1, h2, h3, section, main)[id] { scroll-margin-top: 1.5rem; }
 .nav a, .footer__nav a, .article-actions a, .essay-row__actions a, .archive-pdf { min-height: 2.75rem; display: inline-flex; align-items: center; }
