@@ -37,8 +37,13 @@ def render(record):
                   'name': person['name'], 'url': person['url']}
         if person.get('orcid'):
             entity['sameAs'] = [person['orcid']]
-        if person.get('affiliation'):
-            entity['affiliation'] = person['affiliation']
+        affiliation = contributor.get('affiliation') or person.get('affiliation')
+        if affiliation:
+            entity['affiliation'] = affiliation
+            label = affiliation['name']
+            if affiliation.get('parentOrganization'):
+                label += ', ' + affiliation['parentOrganization']['name']
+            lines.append('<p class="publication-affiliation">' + html.escape(label) + '.</p>')
         if contributor['author']:
             authors.append(entity)
         assert set(contributor['roles']) <= CREDIT
@@ -65,6 +70,14 @@ def render(record):
         result['isPartOf'] = series
     if record.get('subtitle'):
         result['alternativeHeadline'] = record['subtitle']
+    if record.get('numberOfPages'):
+        result['pagination'] = str(record['numberOfPages']) + ' páginas físicas'
+    if record.get('jel'):
+        result['about'] = [
+            {'@type': 'DefinedTerm', 'termCode': code,
+             'inDefinedTermSet': {'@type': 'DefinedTermSet', 'name': 'JEL Classification'}}
+            for code in record['jel']
+        ]
     script = '<script type="application/ld+json">\n' + json.dumps(
         result, ensure_ascii=False, indent=2).replace('<', '\\u003c') + '\n  </script>'
     byline = START + '\n<div class="publication-contributors">' + ''.join(lines) + '</div>\n' + END
@@ -82,6 +95,13 @@ def sync(check=False):
             updated = re.sub(pattern, lambda _: script, original, count=1, flags=re.S)
         else:
             updated = original.replace('</head>', '  ' + script + '\n</head>')
+        if record.get('abstract_paragraphs'):
+            paragraphs = ''.join('<p>' + html.escape(p) + '</p>'
+                                 for p in record['abstract_paragraphs'])
+            updated, count = re.subn(
+                r'(<h2 id="resumen">Resumen</h2>\s*<div class="article-summary__copy">)\s*.*?(?=<p class="keywords">)',
+                lambda m: m[1] + '\n' + paragraphs, updated, count=1, flags=re.S)
+            assert count == 1, record['path']
         updated = re.sub(r'\s*' + re.escape(START) + '.*?' + re.escape(END) + r'\s*',
                          '', updated, flags=re.S)
         updated, count = re.subn(

@@ -54,8 +54,8 @@
       "path": "dist/ensayos/reproduccion-social-secuenciacion-monetaria/index.html",
       "publication_type": "essay",
       "title": "Reproducción social, secuenciación monetaria y necesidad de adelanto",
-      "description": "Ensayo de Raúl Alberto Rivera Boullosa sobre obligaciones bilaterales, secuencias de pago, integración vertical y adelanto monetario.",
-      "abstract": "Este ensayo examina la necesidad de adelanto monetario requerida para ejecutar una estructura reproductiva dada cuando las obligaciones se liquidan bilateralmente, los pagos son completos y los cobros pueden reutilizarse de inmediato. Manteniendo fijas las obligaciones, se muestra mediante un ejemplo que distintas cronologías admisibles pueden exigir dotaciones monetarias iniciales diferentes. Se define la trayectoria acumulada de pagos y cobros de cada agente y, a partir de su déficit máximo, la dotación mínima necesaria para ejecutar una secuencia sin sobregiro. La integración vertical permite después atribuir productivamente los flujos a destinos finales sin confundir esa atribución con una fragmentación efectiva de las cajas; al retirar la fungibilidad entre destinos se obtiene una medida del costo monetario de la segregación. Finalmente, los déficits transitorios permiten distinguir cierre final, reflujo y necesidad de financiación. El resultado central es que la estructura restringe las obligaciones, la cronología determina su trayectoria monetaria y ésta determina el adelanto requerido bajo una convención dada de liquidación.",
+      "description": "Los esquemas de reproducción establecen relaciones de reposición, distribución y continuidad, pero no determinan por sí mismos la secuencia monetaria mediante la cual esas relaciones se realizan. Este volumen estudia qué información adicional hace falta para pasar de una estructura reproductiva a su ejecución monetaria y qué resultados cambian cuando cambia el orden de esa ejecución.",
+      "abstract": "Los esquemas de reproducción establecen relaciones de reposición, distribución y continuidad, pero no determinan por sí mismos la secuencia monetaria mediante la cual esas relaciones se realizan. Este volumen estudia qué información adicional hace falta para pasar de una estructura reproductiva a su ejecución monetaria y qué resultados cambian cuando cambia el orden de esa ejecución.\n\nLa primera diferencia aparece entre el resultado terminal y el camino que conduce a él: una misma red de obligaciones puede terminar en los mismos saldos y recorrer, sin embargo, trayectorias distributivas distintas, cuya profundidad depende del orden de los pagos; conocerla todavía no determina la disponibilidad necesaria, pues hace falta especificar qué posiciones pueden compensarse. Una vez fijada esa arquitectura, el requerimiento resultante tampoco equivale necesariamente a una exposición efectiva, pues ésta depende de los recursos heredados con que comienza el período. Y una exposición dada puede ser cubierta mediante contratos e instrumentos distintos, capaces a su vez de dejar estados financieros terminales diferentes.\n\nLos artículos I–V reconstruyen sucesivamente estas mediaciones: de la estructura reproductiva a las obligaciones y su ejecución; de ésta al requerimiento bajo distintas arquitecturas de compensación; y luego a la exposición, la cobertura, la implementación y el estado financiero heredable. El artículo VI responde a un problema que reaparece a lo largo de esa construcción: cuándo la información conservada por una representación basta para determinar otro observable. El artículo VII vuelve finalmente a la reproducción y plantea el problema que queda abierto: bajo qué condiciones las diferencias producidas por la ejecución intraperiódica sobreviven a la frontera del período y modifican el estado reproductivo siguiente.\n\nEl resultado es una teoría por capas de determinación condicionada: cada capa responde una pregunta precisa y el paso a la siguiente requiere información adicional; así puede establecerse qué determina la estructura reproductiva, qué depende de la secuencia de ejecución, qué cambia con las instituciones de compensación y financiación y qué permanece todavía indeterminado al cerrar el período.",
       "datePublished": "2026-10",
       "inLanguage": "es-MX",
       "url": "https://raulboullosa.com/ensayos/reproduccion-social-secuenciacion-monetaria/",
@@ -81,12 +81,34 @@
           "author": true,
           "roles": [],
           "roles_status": "pending_confirmation",
-          "corresponding": true
+          "corresponding": true,
+          "affiliation": {
+            "@type": "Organization",
+            "name": "Facultad de Economía",
+            "parentOrganization": {
+              "@type": "CollegeOrUniversity",
+              "name": "Universidad Nacional Autónoma de México"
+            }
+          }
         }
       ],
       "license": null,
       "funding": null,
-      "relations": []
+      "relations": [],
+      "metadata_source": {
+        "abstract": "document",
+        "affiliation": "document",
+        "date_precision": "month"
+      },
+      "numberOfPages": 57,
+      "extent_note": "57 páginas físicas · A5",
+      "abstract_paragraphs": [
+        "Los esquemas de reproducción establecen relaciones de reposición, distribución y continuidad, pero no determinan por sí mismos la secuencia monetaria mediante la cual esas relaciones se realizan. Este volumen estudia qué información adicional hace falta para pasar de una estructura reproductiva a su ejecución monetaria y qué resultados cambian cuando cambia el orden de esa ejecución.",
+        "La primera diferencia aparece entre el resultado terminal y el camino que conduce a él: una misma red de obligaciones puede terminar en los mismos saldos y recorrer, sin embargo, trayectorias distributivas distintas, cuya profundidad depende del orden de los pagos; conocerla todavía no determina la disponibilidad necesaria, pues hace falta especificar qué posiciones pueden compensarse. Una vez fijada esa arquitectura, el requerimiento resultante tampoco equivale necesariamente a una exposición efectiva, pues ésta depende de los recursos heredados con que comienza el período. Y una exposición dada puede ser cubierta mediante contratos e instrumentos distintos, capaces a su vez de dejar estados financieros terminales diferentes.",
+        "Los artículos I–V reconstruyen sucesivamente estas mediaciones: de la estructura reproductiva a las obligaciones y su ejecución; de ésta al requerimiento bajo distintas arquitecturas de compensación; y luego a la exposición, la cobertura, la implementación y el estado financiero heredable. El artículo VI responde a un problema que reaparece a lo largo de esa construcción: cuándo la información conservada por una representación basta para determinar otro observable. El artículo VII vuelve finalmente a la reproducción y plantea el problema que queda abierto: bajo qué condiciones las diferencias producidas por la ejecución intraperiódica sobreviven a la frontera del período y modifican el estado reproductivo siguiente.",
+        "El resultado es una teoría por capas de determinación condicionada: cada capa responde una pregunta precisa y el paso a la siguiente requiere información adicional; así puede establecerse qué determina la estructura reproductiva, qué depende de la secuencia de ejecución, qué cambia con las instituciones de compensación y financiación y qué permanece todavía indeterminado al cerrar el período."
+      ],
+      "keywords_status": "editorial_pending_author_confirmation"
     },
     {
       "id": "rb-ensayos-2026-03",
@@ -288,7 +310,7 @@
       "title": "Pleno empleo, reproducción y transformación estructural",
       "subtitle": "Trabajo Garantizado, micronegocios y condiciones para México",
       "description": "El artículo reconstruye el Trabajo Garantizado de Mitchell, Wray y Watts y pregunta qué debe identificarse antes de estimar su costo para México. Distingue utilización del programa, gasto presupuestario y costo económico; examina qué permiten observar ENAMIN y ENAPROCE sobre el trabajo por cuenta propia y los micronegocios, y delimita las condiciones para seleccionar instrumentos de banca de desarrollo y política industrial.",
-      "abstract": null,
+      "abstract": "Este artículo reconstruye el Trabajo Garantizado (TG) de Mitchell, Wray y Watts como un régimen de employment buffer stock y pregunta qué debe identificarse antes de estimar su costo para México. La construcción fija el salario de una oferta abierta de empleo y deja que el tamaño del programa responda a su utilización; por ello, el gasto presupuestario depende de quién acepta la garantía, mientras el costo económico depende además de los recursos reales movilizados y de sus usos alternativos. Esta distinción adquiere una dificultad específica en una estructura laboral donde parte de la población potencialmente relevante ya aparece ocupada por cuenta propia o en micronegocios. ENAMIN y ENAPROCE permiten observar motivos y contrafactuales laborales heterogéneos, pero no la elección que ocurriría ante una oferta TG efectivamente disponible. El artículo muestra, por tanto, que la condición empresarial observada no identifica por sí sola ni la alternativa laboral del propietario ni una restricción financiera dominante. Una vez observada la decisión de permanecer en la actividad, el análisis puede distinguir restricciones de financiamiento, capital, tecnología e insumos y seleccionar instrumentos de banca de desarrollo o política industrial. El resultado es una secuencia de evaluación: identificar utilización y procedencia laboral; establecer los recursos complementarios requeridos; y sólo entonces calcular gasto, costo económico y condiciones monetarias de realización.",
       "datePublished": "2026-10",
       "inLanguage": "es-MX",
       "url": "https://raulboullosa.com/publicaciones/sitepe-pleno-empleo-mexico/",
@@ -297,11 +319,11 @@
         "Trabajo Garantizado",
         "pleno empleo",
         "micronegocios",
-        "México",
-        "banca de desarrollo",
-        "política industrial"
+        "política salarial",
+        "transformación productiva",
+        "México"
       ],
-      "keywords_status": "editorial_from_published_synopsis",
+      "keywords_status": "transcribed_from_document",
       "series": null,
       "version": "14",
       "edition_label": "v14 · octubre de 2026 · 15 páginas · A4",
@@ -311,7 +333,15 @@
           "author": true,
           "roles": [],
           "roles_status": "pending_confirmation",
-          "corresponding": true
+          "corresponding": true,
+          "affiliation": {
+            "@type": "Organization",
+            "name": "Facultad de Economía",
+            "parentOrganization": {
+              "@type": "CollegeOrUniversity",
+              "name": "Universidad Nacional Autónoma de México"
+            }
+          }
         }
       ],
       "license": null,
@@ -321,6 +351,22 @@
           "type": "related",
           "publication": "rb-ensayos-2026-05"
         }
+      ],
+      "metadata_source": {
+        "abstract": "document",
+        "affiliation": "document",
+        "date_precision": "month"
+      },
+      "numberOfPages": 15,
+      "extent_note": "15 páginas · A4",
+      "abstract_paragraphs": [
+        "Este artículo reconstruye el Trabajo Garantizado (TG) de Mitchell, Wray y Watts como un régimen de employment buffer stock y pregunta qué debe identificarse antes de estimar su costo para México. La construcción fija el salario de una oferta abierta de empleo y deja que el tamaño del programa responda a su utilización; por ello, el gasto presupuestario depende de quién acepta la garantía, mientras el costo económico depende además de los recursos reales movilizados y de sus usos alternativos. Esta distinción adquiere una dificultad específica en una estructura laboral donde parte de la población potencialmente relevante ya aparece ocupada por cuenta propia o en micronegocios. ENAMIN y ENAPROCE permiten observar motivos y contrafactuales laborales heterogéneos, pero no la elección que ocurriría ante una oferta TG efectivamente disponible. El artículo muestra, por tanto, que la condición empresarial observada no identifica por sí sola ni la alternativa laboral del propietario ni una restricción financiera dominante. Una vez observada la decisión de permanecer en la actividad, el análisis puede distinguir restricciones de financiamiento, capital, tecnología e insumos y seleccionar instrumentos de banca de desarrollo o política industrial. El resultado es una secuencia de evaluación: identificar utilización y procedencia laboral; establecer los recursos complementarios requeridos; y sólo entonces calcular gasto, costo económico y condiciones monetarias de realización."
+      ],
+      "jel": [
+        "E24",
+        "E62",
+        "J68",
+        "O25"
       ]
     }
   ]
