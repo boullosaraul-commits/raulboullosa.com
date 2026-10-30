@@ -80,6 +80,12 @@ def render(record):
     if record.get('funding_statement'):
         editorial.append('<p><strong>Financiación:</strong> ' +
                          html.escape(record['funding_statement']) + '</p>')
+    if record.get('authorship_statement'):
+        editorial.append('<p><strong>Autoría:</strong> ' +
+                         html.escape(record['authorship_statement']) + '</p>')
+    if record.get('ai_use_statement'):
+        editorial.append('<p><strong>Uso de IA:</strong> ' +
+                         html.escape(record['ai_use_statement']) + '</p>')
     if record.get('copyrightNotice'):
         editorial.append('<p>' + html.escape(record['copyrightNotice']) + '</p>')
     if editorial:
