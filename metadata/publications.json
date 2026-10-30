@@ -6,7 +6,9 @@
       "id": "https://raulboullosa.com/sobre-mi/#raul-rivera-boullosa",
       "url": "https://raulboullosa.com/sobre-mi/",
       "orcid": "https://orcid.org/0009-0000-7097-4634",
-      "affiliation": null
+      "affiliation": null,
+      "given_names": "Raúl Alberto",
+      "family_name": "Rivera Boullosa"
     }
   },
   "publications": [
@@ -137,7 +139,8 @@
         "D85",
         "E11"
       ],
-      "jel_status": "author_approved_editorial"
+      "jel_status": "author_approved_editorial",
+      "citation_exports": true
     },
     {
       "id": "rb-ensayos-2026-03",
@@ -417,7 +420,8 @@
       "other_contributions_disclosure_status": "confirmed",
       "authorship_statement": "El autor declara que no hubo contribuciones de otras personas.",
       "ai_use_statement": "Se utilizó inteligencia artificial de manera incidental.",
-      "metadata_status": "closed"
+      "metadata_status": "closed",
+      "citation_exports": true
     }
   ]
 }

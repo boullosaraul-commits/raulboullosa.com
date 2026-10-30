@@ -1,0 +1,29 @@
+[
+  {
+    "id": "rb-ensayos-2026-02",
+    "type": "report",
+    "title": "Reproducción social, secuenciación monetaria y necesidad de adelanto",
+    "author": [
+      {
+        "family": "Rivera Boullosa",
+        "given": "Raúl Alberto"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026,
+          10
+        ]
+      ]
+    },
+    "URL": "https://raulboullosa.com/ensayos/reproduccion-social-secuenciacion-monetaria/",
+    "language": "es-MX",
+    "note": "RB · Ensayos 2026, 02. Versión 1.01",
+    "collection-title": "RB · Ensayos 2026",
+    "number": "02",
+    "abstract": "Los esquemas de reproducción establecen relaciones de reposición, distribución y continuidad, pero no determinan por sí mismos la secuencia monetaria mediante la cual esas relaciones se realizan. Este volumen estudia qué información adicional hace falta para pasar de una estructura reproductiva a su ejecución monetaria y qué resultados cambian cuando cambia el orden de esa ejecución. La primera diferencia aparece entre el resultado terminal y el camino que conduce a él: una misma red de obligaciones puede terminar en los mismos saldos y recorrer, sin embargo, trayectorias distributivas distintas, cuya profundidad depende del orden de los pagos; conocerla todavía no determina la disponibilidad necesaria, pues hace falta especificar qué posiciones pueden compensarse. Una vez fijada esa arquitectura, el requerimiento resultante tampoco equivale necesariamente a una exposición efectiva, pues ésta depende de los recursos heredados con que comienza el período. Y una exposición dada puede ser cubierta mediante contratos e instrumentos distintos, capaces a su vez de dejar estados financieros terminales diferentes. Los artículos I–V reconstruyen sucesivamente estas mediaciones: de la estructura reproductiva a las obligaciones y su ejecución; de ésta al requerimiento bajo distintas arquitecturas de compensación; y luego a la exposición, la cobertura, la implementación y el estado financiero heredable. El artículo VI responde a un problema que reaparece a lo largo de esa construcción: cuándo la información conservada por una representación basta para determinar otro observable. El artículo VII vuelve finalmente a la reproducción y plantea el problema que queda abierto: bajo qué condiciones las diferencias producidas por la ejecución intraperiódica sobreviven a la frontera del período y modifican el estado reproductivo siguiente. El resultado es una teoría por capas de determinación condicionada: cada capa responde una pregunta precisa y el paso a la siguiente requiere información adicional; así puede establecerse qué determina la estructura reproductiva, qué depende de la secuencia de ejecución, qué cambia con las instituciones de compensación y financiación y qué permanece todavía indeterminado al cerrar el período.",
+    "keyword": "reproducción social; secuenciación de pagos; requerimientos de liquidez; arquitecturas de compensación; exposición monetaria; financiación; herencia monetario-financiera; suficiencia informacional",
+    "number-of-pages": "57"
+  }
+]

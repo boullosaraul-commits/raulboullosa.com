@@ -142,6 +142,8 @@ def sync(check=False):
                 path.write_text(updated)
     if check and stale:
         raise SystemExit('Stale metadata: ' + ', '.join(stale))
+    from export_citations import sync as sync_citations
+    sync_citations(DATA, check=check)
     print(f"Verified {len(DATA['publications'])} publication records; {len(stale)} updated.")
 
 
