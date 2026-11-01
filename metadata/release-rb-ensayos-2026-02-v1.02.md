@@ -28,3 +28,14 @@ La web actualiza la versión, fecha, extensión, resumen documental (terminolog�
 - `RB_ENSAYOS_2026_02_v1_02_release_candidate.pdf`: `f2f75e9817189ac566a955dd1ca8b301dafc35a78cac49ad2b347e198d5a3c2a`
 - `RB_ENSAYOS_2026_02_v1_02_release_candidate.tex`: `40c33ddc910f5f6e27981e395b26c720c19af86658ac1ae58aaba4a5632970ae`
 - PDF publicado: `b2634d6a036a69bcbcfca8a344d17f9669afc6cc6c100c3fbd5fc147c168cbd9`
+
+## Actualización de los archivos finales — 1 de noviembre de 2026
+
+Se sustituyen el PDF público y la fuente TeX por los archivos finales `RB_ENSAYOS_2026_02_v1_02.pdf` y `RB_ENSAYOS_2026_02_v1_02.tex`, sin compilación, reconstrucción ni modificación de su contenido. Continúa siendo **v1.02 · edición revisada**, con la misma ficha y URL pública. El artículo VII amplía la articulación entre reproducción, realización, financiación, liquidación, secuenciación y traverse. La extensión actual es de 68 páginas físicas A5. La fecha de publicación se conserva; esta fecha registra únicamente la sustitución de archivos. El apartado anterior documenta la preparación inicial y no describe los archivos que lo sustituyen.
+
+Huellas SHA-256 actuales:
+
+- `RB_ENSAYOS_2026_02_v1_02.pdf`: `c3eebcccb9d8aa0f7781d6fb380ebc1a52e4e8e828eb3ff6269ff3dadc68fb49`
+- `RB_ENSAYOS_2026_02_v1_02.tex`: `ddff69cf1c77b71cc825a39975e68ee9869374b2acc020a00cd9051f20559f44`
+
+Verificación local: 68 páginas legibles; datos editoriales v1.02; artículo VII desde la página 53 y bibliografía desde la 63; 46 marcadores y 100 enlaces, sin destinos fuera del documento. Incidencia del PDF autoritativo conservada sin intervención: varios marcadores de subsecciones de II–VII conducen a páginas de artículos anteriores (por ejemplo, «De la secuenciación al traverse» conduce a la 17 en lugar de la 57). Los marcadores de artículos y Bibliografía conducen a sus páginas. El índice impreso se conserva como fue entregado. No se declara validación satisfactoria de todos los enlaces internos.

@@ -108,7 +108,7 @@ Raúl Alberto Rivera Boullosa\par
 \textit{Reproducción social, secuenciación monetaria y necesidad de adelanto}.\par
 RB · Ensayos 2026 · 02.\par
 Facultad de Economía, Universidad Nacional Autónoma de México.\par
-Ciudad de México, 31 de octubre de 2026.\par
+Ciudad de México, octubre de 2026.\par
 v1.02 · edición revisada.\par
 }
 \clearpage
@@ -2824,83 +2824,238 @@ estado; por ello, en la construcción abierta,
 
 en general.
 
-\subsection{Antecedentes y articulación propia}\label{antecedentes-y-articulaciuxf3n-propia}
+\subsection{Antecedentes y diferenciación del problema}\label{antecedentes-y-diferenciacion-del-problema}
 
-Marx proporciona el problema de la reproducción social y la circulación
-del capital, además de categorías temporales de adelanto, retorno,
-liberación y atadura (Marx, 1976 {[}1885{]}, 1976 {[}1894{]}). Lowe
-formula el \emph{traverse} y el problema del capital circulante durante
-una transición (Lowe, 1976, caps. 12 y 17). Pasinetti desarrolla una
-teoría de cambio estructural en la que los estados heredados y la
-transformación interperiódica son centrales (Pasinetti, 1981). Las
-reconstrucciones temporales de Marx ayudan, por otra vía, a preservar la
-determinación secuencial frente a lecturas simultáneas (Freeman, 1995;
-Tombazos, 2014).\footnote{Estas líneas aportan antecedentes convergentes para problemas
-  distintos. Lowe aporta el traverse y el capital circulante; Pasinetti,
-  la transformación estructural interperiódica; Marx, la reproducción y
-  circulación del capital; las reconstrucciones temporales, la prioridad
-  de la determinación secuencial. En este volumen, la secuenciación de pagos \(k\), la implementación
-  monetaria intraperiódica y los operadores \(B_t(k)\), \(\mathcal T_e\)
-  y \(\Phi\) se integran en la construcción formal propuesta.}
+La pregunta abierta puede situarse con mayor precisión si se distinguen
+problemas que la literatura sobre reproducción fue separando progresivamente.
+Los esquemas de reproducción permiten establecer relaciones de reposición y
+continuidad; no determinan, por ese solo hecho, una dinámica particular.
+Tugan-Baranovsky utilizó esos esquemas para examinar proporcionalidad y crisis;
+Luxemburg desplazó la discusión hacia las condiciones de realización; Bauer
+construyó trayectorias multiperiódicas de reproducción ampliada y Grossmann
+preguntó por su sostenibilidad bajo reglas determinadas de acumulación. Feldman
+convirtió posteriormente la reproducción sectorial en un problema explícito de
+crecimiento y asignación de la inversión. En estos desarrollos se separan así
+preguntas distintas: qué configuración es reproductivamente compatible, cómo
+puede realizarse, qué reglas generan una trayectoria y si esa trayectoria puede
+sostenerse (Luxemburg, 1913; Grossmann, 1929; Gehrke, 2018).
 
-Estas líneas delimitan los problemas que debe reunir el sistema
+Otra línea convirtió esas relaciones en sistemas multisectoriales susceptibles
+de determinación matemática. Leontief hizo explícita la interdependencia
+productiva mediante coeficientes técnicos; von Neumann incorporó la expansión y
+su sistema dual de precios; Seton formuló matricialmente relaciones entre
+valores y precios; Morishima y Seton hicieron de la agregación en departamentos
+una propiedad que debía establecerse, en lugar de tomarla como dada. Okishio
+incorporó además el cambio técnico bajo criterios de selección capitalista.
+Morishima pudo así reconstruir los esquemas marxianos dentro de una teoría
+multisectorial de valor y crecimiento y preguntar por acumulación y estabilidad
+(Morishima y Seton, 1961; Morishima, 1973). La reproducción deja aquí de
+proporcionar únicamente condiciones de compatibilidad: una vez añadidas reglas
+de comportamiento y transición, puede generar una trayectoria determinada.
+
+Kalecki llega al mismo objeto desde otra dirección. Su teoría de la inversión,
+los beneficios y la demanda efectiva le permite reinterpretar las ecuaciones de
+reproducción como relaciones entre departamentos verticalmente integrados y
+componentes de la demanda (Kalecki, 1968). El desplazamiento es relevante aquí
+porque separa nuevamente dos preguntas: una estructura puede satisfacer
+relaciones reproductivas sin que éstas determinen por sí mismas el gasto
+mediante el cual se realiza el producto. La realización requiere un cierre
+adicional.
+
+El problema monetario introduce todavía otra mediación. En Marx, la
+reproducción del capital social ya contiene circulación monetaria, rotación,
+crédito y funciones del dinero; la cuestión no consiste, por ello, en añadir
+dinero a una construcción originalmente no monetaria. De Brunhoff reconstruye
+la articulación entre dinero, medio de pago, crédito y capital; en particular,
+la separación entre entrega y pago permite que una transacción constituya una
+obligación cuyo vencimiento y liquidación ocurran posteriormente (de Brunhoff,
+1976 {[}1967{]}). Foley recoge directamente esa reconstrucción y plantea su
+formalización. Sus trabajos de 1982 realizan dos operaciones diferentes: uno
+construye una relación operacional entre magnitudes monetarias y trabajo social;
+el otro formula un modelo temporal del circuito en el que producción, venta,
+realización y reinversión pueden quedar separadas por duraciones y rezagos
+(Foley, 1982a, 1982b). Bajo crecimiento positivo y rezagos positivos de
+recompromiso del valor realizado, el segundo modelo requiere expansión del
+crédito para permitir la venta de mercancías. El punto no es simplemente que el
+dinero importe, sino que stocks, flujos y tiempos de circulación entran en una
+representación cuantitativa del movimiento del capital.
+
+Estas líneas permiten ordenar una secuencia de problemas sin convertirla en una
+genealogía causal única:
 
 \[
-(B_t(k),\mathcal T_e,\Phi):
+\text{reproducción}
+\longrightarrow
+\text{realización}
+\longrightarrow
+\text{financiación}
+\longrightarrow
+\text{liquidación}
+\longrightarrow
+\text{secuenciación}.
 \]
 
-reproducción y circulación, traverse y capital circulante, cambio
-estructural y determinación secuencial. La construcción deberá articular
-las dos escalas temporales, mantener la compatibilidad con I--VI y definir
-y probar sus operadores en el nuevo espacio de estado.
+Las flechas indican requerimientos adicionales de información, no una cadena de
+influencias ni una causalidad automática. Una condición reproductiva no
+determina su mecanismo de realización; la realización no determina cómo se
+financian los desfases entre pagos y cobros; disponer de financiación no
+determina la arquitectura mediante la cual se liquidan las obligaciones; y
+fijar obligaciones y arquitectura tampoco determina necesariamente el orden
+concreto de ejecución.
 
-\subsection{Conjetura de dependencia de trayectoria y consistencia}\label{conjetura-de-dependencia-de-trayectoria-y-consistencia}
+El objeto construido en I--V ocupa precisamente los últimos pasos de esta
+resolución. Una estructura reproductiva \(R\) no contiene por sí sola una red
+bilateral de obligaciones. La mediación institucional \(I_\chi\) permite
+constituir \(E\); las restricciones pertinentes delimitan después
+\(\Pi_{\mathrm{adm}}\). Mantener \(E\) fijo y variar
+\(\pi\in\Pi_{\mathrm{adm}}\) permite aislar una pregunta distinta: qué
+diferencias aparecen exclusivamente porque las mismas obligaciones se ejecutan
+en órdenes diferentes.
 
-La cuestión fuerte puede formularse con precisión: \textbf{¿bajo
-qué condiciones una diferencia de ejecución dentro del periodo \(t\)
-sobrevive a la frontera como una diferencia reproductiva en \(t+1\)?}
+Los resultados de I--V no requieren atribuir a esa secuencia un mecanismo
+causal adicional. Para una ejecución dada, la trayectoria acumulada determina
+una necesidad distributiva; una arquitectura de consolidación convierte esa
+información en un requerimiento localizado; los recursos heredados permiten
+distinguir el requerimiento de la exposición efectiva; y el régimen contractual
+y la implementación financiera determinan qué coberturas son admisibles y qué
+posiciones persisten al cierre. En cada paso se conserva el objeto anterior y se
+incorpora la información necesaria para responder una pregunta que permanecía
+indeterminada.
 
-El caso que interesa exige una estructura inicial y dos ejecuciones
-admisibles \(\pi_t\ne\pi_t'\) cuya diferencia sobreviva a la frontera:
+La secuenciación ocupa, por tanto, un lugar más estrecho que una teoría general
+del dinero o del crédito. Que una obligación pueda financiarse no determina
+cuándo será liquidada; que todas las obligaciones terminen pagándose tampoco
+determina las posiciones transitorias recorridas durante su ejecución. Dos
+órdenes pueden conservar la misma red \(E\) y el mismo resultado terminal y
+producir, sin embargo, trayectorias acumuladas y requerimientos de disponibilidad
+distintos. El resultado establecido hasta aquí pertenece a esa construcción:
+dadas las obligaciones, la arquitectura y las demás condiciones fijadas,
+modificar la ejecución puede modificar los observables que dependen de sus
+prefijos.
+
+Esta delimitación separa también el problema presente de la literatura de
+sistemas de pagos. El efecto de la reutilización de entradas, la compensación,
+el neteo o el orden de liquidación sobre las necesidades de liquidez constituye
+un problema conocido una vez dada una red de pagos. Aquí la pregunta adicional
+aparece aguas arriba y aguas abajo de ese resultado. Aguas arriba, interesa cómo
+una estructura reproductiva llega a constituirse como una red bilateral de
+obligaciones. Aguas abajo, interesa determinar si las diferencias producidas
+durante su ejecución desaparecen al cerrar el período o sobreviven como
+diferencias relevantes para la reproducción posterior.
+
+Lowe y Pasinetti delimitan dos antecedentes adicionales para este último paso.
+Lowe formula el \emph{traverse} y el problema del capital circulante durante una
+transición; Pasinetti desarrolla una teoría de cambio estructural en la que los
+estados heredados y la transformación interperiódica son centrales (Lowe, 1976,
+caps. 12 y 17; Pasinetti, 1981). Las reconstrucciones temporales de Marx ayudan,
+por otra vía, a preservar la determinación secuencial frente a lecturas
+simultáneas (Freeman, 1995; Tombazos, 2014). Estas líneas aportan antecedentes
+convergentes para problemas distintos; no identifican todavía la transición
+\((B_t(k),\mathcal T_e,\Phi)\), que debe construirse y probarse en el nuevo
+espacio de estado.
+
+\subsection{De la secuenciación al traverse}\label{de-la-secuenciacion-al-traverse}
+
+La cuestión fuerte puede formularse ahora con precisión: \textbf{¿bajo qué
+instituciones una diferencia de ejecución dentro del período \(t\) sobrevive a
+la frontera como una diferencia reproductiva en \(t+1\)?} Los resultados
+anteriores permiten determinar cómo diferencias de secuencia pueden producir
+diferencias de necesidad, exposición, financiación y estado
+monetario-financiero terminal. No permiten concluir todavía que dos ejecuciones
+distintas produzcan dos trayectorias reproductivas distintas. Para obtener ese
+resultado hace falta especificar qué componentes del estado terminal atraviesan
+la frontera y cómo intervienen en la transición real-material.
+
+La distinción entre las escalas \(k\) y \(t\) adquiere aquí su contenido
+económico. El índice \(k\) ordena eventos dentro de un período y permite
+reconstruir la trayectoria de ejecución; el índice \(t\) ordena estados
+reproductivos sucesivos. Que una diferencia exista para algún \(k<Q_t\) no
+implica que sobreviva cuando comienza \(t+1\). Incluso una diferencia presente
+al cierre monetario puede resultar irrelevante para la reproducción posterior
+si la regla de frontera la elimina, la compensa o la proyecta sobre estados
+reales equivalentes.
+
+Por ello, el estado candidato
 
 \[
-B_{t+1}(0;\pi_t)
+B_t(k)=\bigl(B_t^R(k),B_t^M(k)\bigr)
+\]
+
+no constituye todavía una teoría cerrada de la dinámica conjunta. Su función es
+localizar el objeto que falta. \(B_t^M(k)\) debe conservar las posiciones
+monetario-financieras pertinentes; \(B_t^R(k)\) deberá representar las
+dimensiones materiales que la transición reproductiva necesite distinguir. La
+forma concreta de estas últimas ---stocks físicos, producción en proceso,
+capacidad, inventarios o composición sectorial--- no puede decidirse antes de
+especificar qué transición se pretende determinar.
+
+La frontera conjunta
+
+\[
+B_t(Q_t)\xrightarrow{\;\Phi\;}B_{t+1}(0)
+\]
+
+es entonces el lugar en que puede aparecer o desaparecer la dependencia de
+trayectoria. Si dos ejecuciones \(\pi_t\) y \(\pi_t'\) parten de la misma
+estructura reproductiva y satisfacen las mismas restricciones, todavía debe
+preguntarse si
+
+\[
+\Phi\!\left(B_t^{\pi_t}(Q_t)\right)
+=
+\Phi\!\left(B_t^{\pi_t'}(Q_t)\right)
+\]
+
+o si, bajo determinadas instituciones,
+
+\[
+\Phi\!\left(B_t^{\pi_t}(Q_t)\right)
 \ne
-B_{t+1}(0;\pi_t').
+\Phi\!\left(B_t^{\pi_t'}(Q_t)\right).
 \]
 
-Queda por caracterizar cuándo esta desigualdad se conserva o desaparece en
-la frontera y qué resolución de la ejecución basta para decidirlo. T2-M
-exhibe una forma de memoria monetaria bajo las reglas de rollover
-especificadas; determinar si esa diferencia alcanza al estado
-real-monetario conjunto pertenece al problema todavía abierto.
+Sólo el segundo caso permite afirmar que una diferencia producida por la
+ejecución atravesó la frontera del período. Aun entonces debe distinguirse qué
+componente explica la diferencia: una posición financiera heredada, una
+restricción de financiación, un inventario no realizado, producción
+interrumpida, capacidad modificada u otra variable incorporada explícitamente a
+\(B^R\).
 
-Una frontera conjunta también puede borrar las diferencias intraperiódicas
-y hacer converger ejecuciones distintas al mismo estado futuro; por ello, el
-resultado buscado debe establecer qué componentes de la ejecución sobreviven,
-bajo qué instituciones y para qué variables futuras.
+T2-M exhibe una forma de memoria monetaria bajo las reglas de \emph{rollover}
+especificadas. Ese resultado no demuestra que la memoria alcance al estado
+real-material. Una frontera conjunta puede borrar diferencias intraperiódicas y
+hacer converger ejecuciones distintas al mismo estado futuro. La hipótesis que
+VII deja abierta es más precisa: existen instituciones y reglas de transición
+bajo las cuales algunas diferencias generadas por la ejecución intraperiódica
+permanecen informacional y económicamente relevantes después de atravesar la
+frontera.
 
 La cadena
 
 \[
 R_t
-\to
-E_t
-\to
-\Pi_{\mathrm{adm}}(E_t,C_t)
-\to
-\pi_t
-\to
-B_t(Q_t)
-\to
-R_{t+1}
+\to E_t
+\to \Pi_{\mathrm{adm}}(E_t,C_t)
+\to \pi_t
+\to B_t(Q_t)
+\xrightarrow{\Phi} B_{t+1}(0)
 \]
 
 organiza las condiciones que una construcción dinámica deberá satisfacer.
 \(E_t\) requiere una mediación institucional; la admisibilidad debe fijarse
-antes de los resultados monetarios; \(B_t\) y sus transiciones, a su vez,
-deben construirse explícitamente. Una construcción conjunta deberá recuperar como proyecciones los resultados
-cerrados de I--V cuando sus objetos de entrada permanezcan fijos.
+antes de los resultados monetarios; \(B_t\), \(\mathcal T_e\) y \(\Phi\) deben
+construirse explícitamente. La construcción conjunta deberá recuperar como
+proyecciones los resultados cerrados de I--V cuando sus objetos de entrada
+permanezcan fijos.
+
+El problema del \emph{traverse} puede plantearse así como una cuestión de
+persistencia. Una modificación de la ejecución altera primero una trayectoria
+dentro del período. La arquitectura institucional determina si esa modificación
+altera el requerimiento o la exposición; la financiación determina qué estado
+financiero resulta; la regla de frontera determina qué componentes son
+heredados; finalmente, la transición real-material determina si la diferencia
+heredada modifica las condiciones de reproducción. No existe una inferencia
+directa desde el primer término hasta el último.
 
 \subsection{Pregunta informacional del estado futuro}\label{pregunta-informacional-del-estado-futuro}
 
@@ -3057,6 +3212,17 @@ persistencia es el siguiente problema del programa.
   Galbiati, Marco, y Kimmo Soramäki. ``Liquidity-saving mechanisms and
   bank behaviour.'' Bank of England Working Paper No.~400, 2010.
 \item
+  de Brunhoff, Suzanne. Marx on Money. Trad. Maurice J. Goldbloom; prefacio
+  de Duncan K. Foley. New York: Urizen Books, 1976 {[}1967{]}.
+\item
+  Foley, Duncan K. ``The Value of Money, the Value of Labor Power and the
+  Marxian Transformation Problem.'' Review of Radical Political Economics
+  14(2) (1982a): 37--47. \url{https://doi.org/10.1177/048661348201400204}.
+\item
+  Foley, Duncan K. ``Realization and Accumulation in a Marxian Model of the
+  Circuit of Capital.'' Journal of Economic Theory 28(2) (1982b): 300--319.
+  \url{https://doi.org/10.1016/0022-0531(82)90063-1}.
+\item
   Gehrke, Christian. ``Marx's Reproduction Schemes and Multi-Sector
   Growth Models.'' European Journal of the History of Economic Thought
   25(5) (2018): 859--892. \url{https://doi.org/10.1080/09672567.2018.1475500}.
@@ -3094,6 +3260,10 @@ persistencia es el siguiente problema del programa.
   Banking 35(4) (2003): 591--608.
   \url{https://doi.org/10.1353/mcb.2003.0030}.
 \item
+  Kalecki, Michał. ``The Marxian Equations of Reproduction and Modern
+  Economics.'' Social Science Information 7(6) (1968): 73--79.
+  \url{https://doi.org/10.1177/053901846800700609}.
+\item
   Kellerer, Hans, Vladimir Kotov, Franz Rendl y Gerhard J. Woeginger.
   ``The Stock Size Problem.'' Operations Research 46(3-supplement-3)
   (1998): S1--S12. \url{https://doi.org/10.1287/opre.46.3.S1}.
@@ -3112,6 +3282,9 @@ persistencia es el siguiente problema del programa.
   Leontief, Wassily, y András Bródy. ``Money-flow Computations.''
   Economic Systems Research 5(3) (1993): 225--233.
   \url{https://doi.org/10.1080/09535319300000019}.
+\item
+  Luxemburg, Rosa. The Accumulation of Capital. London: Routledge, 2003
+  {[}1913{]}.
 \item
   Lowe, Adolph. ``A Bird's-Eye View of an Expanding Traverse.'' Cap. 12
   de The Path of Economic Growth, 109--114. Cambridge: Cambridge
@@ -3153,6 +3326,13 @@ persistencia es el siguiente problema del programa.
   Skavysh. ``Improving the Efficiency of Payments Systems Using Quantum
   Computing.'' Management Science 70(10) (2024): 7325--7341; versión de
   trabajo: Bank of Canada Staff Working Paper 2022-53, 2022.
+\item
+  Morishima, Michio, y Francis Seton. ``Aggregation in Leontief Matrices and
+  the Labour Theory of Value.'' Econometrica 29(2) (1961): 203--220.
+  \url{https://doi.org/10.2307/1909289}.
+\item
+  Morishima, Michio. Marx's Economics: A Dual Theory of Value and Growth.
+  Cambridge: Cambridge University Press, 1973.
 \item
   Minsky, Hyman P. ``The Financial Instability Hypothesis.'' Levy
   Economics Institute Working Paper No.~74, 1992.
@@ -3227,7 +3407,7 @@ persistencia es el siguiente problema del programa.
 \begin{center}
 {\small\scshape RB · Ensayos 2026 · 02\par}
 \vspace{4mm}
-{\footnotesize v1.02 · edición revisada · 31 de octubre de 2026\par}
+{\footnotesize v1.01 · edición de circulación · octubre de 2026\par}
 {\footnotesize Compuesto en formato A5 con EB Garamond y Latin Modern Math.\par}
 {\footnotesize Ciudad de México.\par}
 \end{center}
