@@ -1,0 +1,3237 @@
+\documentclass[10pt,a5paper,twoside]{article}
+\usepackage[a5paper,inner=18mm,outer=15mm,top=18mm,bottom=20mm,headsep=5mm,footskip=9mm]{geometry}
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX}
+\setmainfont[Path=/usr/share/fonts/truetype/ebgaramond/,UprightFont=EBGaramond12-Regular.ttf,BoldFont=EBGaramond12-Bold.ttf,ItalicFont=EBGaramond12-Italic.ttf]{EB Garamond}
+\setsansfont{Liberation Sans}
+\usepackage{mathtools}
+\usepackage{unicode-math}
+\setmathfont[Path=/usr/share/texmf/fonts/opentype/public/lm-math/]{latinmodern-math.otf}
+\usepackage{microtype}
+\usepackage{booktabs,array,tabularx,longtable}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{xurl}
+\usepackage{bookmark}
+\usepackage{ragged2e}
+\usepackage{xcolor}
+\usepackage{needspace}
+\usepackage{etoolbox}
+\definecolor{RBgray}{gray}{0.32}
+\hypersetup{colorlinks=true,linkcolor=black,urlcolor=RBgray,citecolor=black,pdftitle={Reproducción social, secuenciación monetaria y necesidad de adelanto — v1.02},pdfauthor={Raúl Alberto Rivera Boullosa},pdflang={es}}
+\setlength{\parindent}{1.15em}
+\setlength{\parskip}{0pt}
+\linespread{1.035}
+\emergencystretch=2.5em
+\raggedbottom
+\clubpenalty=10000\widowpenalty=10000\displaywidowpenalty=10000
+\setcounter{secnumdepth}{2}
+\renewcommand{\thesection}{\Roman{section}}
+\renewcommand{\thesubsection}{\alph{subsection}}
+\titleformat{\section}{\normalfont\Large}{\thesection.}{.55em}{}
+\titleformat{name=\section,numberless}{\normalfont\Large}{}{0pt}{}
+\titleformat{\subsection}{\normalfont\large\itshape}{\thesubsection.}{.5em}{}
+\titleformat{name=\subsection,numberless}{\normalfont\large\itshape}{}{0pt}{}
+\titleformat{\subsubsection}{\normalfont\normalsize\itshape}{}{0pt}{}
+\titlespacing*{\section}{0pt}{2.2ex plus .4ex}{1.1ex}
+\titlespacing*{\subsection}{0pt}{1.7ex plus .3ex}{.7ex}
+\titlespacing*{\subsubsection}{0pt}{1.3ex plus .2ex}{.5ex}
+\pretocmd{\section}{\Needspace{6\baselineskip}}{}{}
+\pretocmd{\subsection}{\Needspace{4\baselineskip}}{}{}
+\usepackage{emptypage}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[LE]{\footnotesize\itshape RB · Ensayos 2026 · 02}
+\fancyhead[RO]{\footnotesize\itshape\nouppercase{\rightmark}}
+\fancyfoot[LE,RO]{\footnotesize\thepage}
+\renewcommand{\headrulewidth}{.3pt}
+\renewcommand{\footrulewidth}{0pt}
+\makeatletter
+\renewcommand\footnotesize{\@setfontsize\footnotesize{8pt}{9.4pt}}
+\makeatother
+\newenvironment{refblock}{%
+  \begingroup\fontsize{8.8pt}{10.4pt}\selectfont\RaggedRight\setlength{\emergencystretch}{1em}
+  \setlist[itemize]{label={},leftmargin=1.2em,labelsep=0pt,itemindent=-1.2em,itemsep=.25ex,topsep=.35ex,parsep=0pt,partopsep=0pt}%
+}{\endgroup}
+\urlstyle{same}
+\setcounter{tocdepth}{2}
+\addto\captionsspanish{\renewcommand{\contentsname}{Contenido}}
+\usepackage{tocloft}
+\setlength{\cftbeforesecskip}{.45ex}
+\setlength{\cftbeforesubsecskip}{0pt}
+\renewcommand{\cftsecfont}{\normalfont}
+\renewcommand{\cftsecpagefont}{\normalfont}
+\renewcommand{\cftsubsecfont}{\small\itshape}
+\renewcommand{\cftsubsecpagefont}{\small}
+\setlength{\cftsubsecindent}{1.4em}
+\setlength{\cftsubsecnumwidth}{2.2em}
+\newcommand{\RBblankpage}{\clearpage\thispagestyle{empty}\null\clearpage}
+\newcommand{\RBfronttitle}[1]{\phantomsection\addcontentsline{toc}{section}{#1}}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\author{}\date{}
+\begin{document}
+
+% --- Preliminares del cuaderno ---
+\begin{titlepage}\thispagestyle{empty}
+\vspace*{18mm}
+{\centering
+{\small\scshape RB · Ensayos 2026 · 02\par}
+\vspace{16mm}
+{\fontsize{21}{23}\selectfont Reproducción social, secuenciación\\[2mm] monetaria\\[2mm] y necesidad de adelanto\par}
+\vspace{11mm}
+{\large Raúl Alberto Rivera Boullosa\par}
+\vfill
+{\small Facultad de Economía\\Universidad Nacional Autónoma de México\par}
+\vspace{10mm}
+{\small\scshape Ciudad de México · 2026\par}}
+\end{titlepage}
+
+\thispagestyle{empty}\null\clearpage
+
+% Portadilla
+\thispagestyle{empty}
+\vspace*{42mm}
+\begin{center}
+{\small\scshape RB · Ensayos 2026 · 02\par}
+\vspace{9mm}
+{\Large Reproducción social, secuenciación monetaria\\y necesidad de adelanto\par}
+\end{center}
+\clearpage
+
+% Verso de portadilla / datos editoriales
+\thispagestyle{empty}
+\vspace*{\fill}
+{\footnotesize\RaggedRight
+Raúl Alberto Rivera Boullosa\par
+\textit{Reproducción social, secuenciación monetaria y necesidad de adelanto}.\par
+RB · Ensayos 2026 · 02.\par
+Facultad de Economía, Universidad Nacional Autónoma de México.\par
+Ciudad de México, 31 de octubre de 2026.\par
+v1.02 · edición revisada.\par
+}
+\clearpage
+
+% Portada interior
+\thispagestyle{empty}
+\vspace*{25mm}
+\begin{center}
+{\small\scshape RB · Ensayos 2026 · 02\par}
+\vspace{13mm}
+{\fontsize{19}{21}\selectfont Reproducción social, secuenciación monetaria\\[1mm] y necesidad de adelanto\par}
+\vspace{10mm}
+{\large Raúl Alberto Rivera Boullosa\par}
+\vfill
+{\small Facultad de Economía · UNAM\par}
+{\small Ciudad de México · 2026\par}
+\end{center}
+\clearpage
+
+\tableofcontents
+\thispagestyle{empty}
+\clearpage
+
+\section*{Resumen general}\label{resumen-general}\markright{Resumen general}\RBfronttitle{Resumen general}
+
+Los esquemas de reproducción establecen relaciones de reposición,
+distribución y continuidad, pero no determinan por sí mismos la secuencia
+monetaria mediante la cual esas relaciones se realizan. Este volumen estudia
+qué información adicional hace falta para pasar de una estructura
+reproductiva a su ejecución monetaria y qué resultados cambian cuando cambia
+el orden de esa ejecución.
+
+La primera diferencia aparece entre el resultado terminal y el camino que
+conduce a él: una misma red de obligaciones puede terminar en los mismos
+saldos y recorrer, sin embargo, trayectorias distributivas distintas, cuya
+profundidad depende del orden de los pagos; conocerla todavía no determina la
+disponibilidad necesaria, pues hace falta especificar qué posiciones pueden
+consolidarse. Una vez fijada esa
+arquitectura, el requerimiento resultante tampoco equivale necesariamente a
+una exposición efectiva, pues ésta depende de los recursos heredados con que
+comienza el período. Y una exposición dada puede ser cubierta mediante
+contratos e instrumentos distintos, capaces a su vez de dejar estados
+financieros terminales diferentes.
+
+Los artículos I--V reconstruyen sucesivamente estas mediaciones: de la
+estructura reproductiva a las obligaciones y su ejecución; de ésta al
+requerimiento bajo distintas arquitecturas de consolidación; y luego a la
+exposición, la cobertura, la implementación y el estado financiero heredable.
+El artículo VI responde a un problema que reaparece a lo largo de esa
+construcción: cuándo la información conservada por una representación basta
+para determinar otro observable. El artículo VII vuelve finalmente a la
+reproducción y plantea el problema que queda abierto: bajo qué condiciones las
+diferencias producidas por la ejecución intraperiódica sobreviven a la
+frontera del período y modifican el estado reproductivo siguiente.
+
+El resultado es una teoría por capas de determinación condicionada: cada capa
+responde una pregunta precisa y el paso a la siguiente requiere información
+adicional; así puede establecerse qué determina la estructura reproductiva,
+qué depende de la secuencia de ejecución, qué cambia con las instituciones de
+consolidación y financiación y qué permanece todavía indeterminado al cerrar
+el período.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\cleardoublepage\section*{Introducción general}\label{introducciuxf3n-general}\markright{Introducción general}\RBfronttitle{Introducción general}\thispagestyle{plain}
+
+Los esquemas de reproducción describen relaciones de reposición,
+distribución y continuidad. Pueden establecer qué magnitudes deben volver a
+producirse, qué sectores entregan y reciben productos, qué ingresos se
+distribuyen y qué relaciones agregadas son compatibles con la continuidad del
+sistema (Marx, 1976 {[}1885{]}; Trigg, 2006; Gehrke, 2018). Para ejecutar
+monetariamente esas relaciones hace falta, sin embargo, información
+adicional. El problema económico que organiza el volumen puede formularse así: ¿cómo
+puede realizarse monetariamente una reproducción social cuando los pagos y cobros que
+la realizan no ocurren simultáneamente y los medios de pago no están necesariamente
+donde y cuando se necesitan? Las capas que siguen separan, sucesivamente, el problema
+de constituir las obligaciones, el desfase entre pagos y cobros, la localización de la
+disponibilidad, la exposición que queda descubierta, su financiación y la herencia que
+esa ejecución deja al periodo siguiente.
+
+La primera cuestión es determinar las obligaciones que corresponden a la
+estructura reproductiva: una relación de reposición entre sectores no
+establece por sí sola quién paga a quién ni bajo qué relación institucional
+se constituye ese pago. La distinción tiene antecedentes en el tratamiento
+del dinero como medio de pago de Marx (1975 {[}1867{]}) y en la literatura
+posterior sobre circulación monetaria (Campbell, 1998). Trigg (2021)
+constituye un antecedente particularmente próximo al articular reproducción,
+contratos de crédito y crisis de pagos bajo circulación simple.
+
+Supongamos ahora que las obligaciones ya han sido determinadas: todavía queda
+por conocer cómo se ejecutan, pues el conjunto de pagos que debe realizarse no
+fija el orden en que éstos tendrán lugar. La diferencia es irrelevante para algunas
+preguntas terminales, pero resulta decisiva cuando interesa conocer las
+posiciones que atraviesan los agentes antes del cierre. Dos ejecuciones pueden
+contener exactamente las mismas obligaciones y terminar con los mismos
+saldos, pero alcanzar déficits transitorios diferentes.
+
+La literatura sobre sistemas de pagos ha mostrado, en contextos
+institucionales distintos del presente modelo, que el orden, la
+sincronización, la reutilización de entradas y el neteo pueden modificar la
+liquidez intradía requerida (CPSS, 1997; McAndrews y Rajan, 2000; Bech y
+Garratt, 2003; Galbiati y Soramäki, 2010). Rotemberg (2011) formula el
+problema de los activos líquidos necesarios para liquidar obligaciones
+interconectadas; Hayakawa et al. (2019) lo convierte en un problema explícito
+de liquidación secuencial de una red dirigida, y trabajos recientes optimizan
+el orden de pagos en sistemas de gran valor (McMahon et al., 2024; Astuti et
+al., 2026).\footnote{El antecedente formal más próximo para el funcional bajo segregación es
+Hayakawa et al. (2019; versión de conferencia 2017). Su \emph{Settlement Fund
+Circulation Problem} asigna a cada vértice el fondo que debe introducirse a lo
+largo de una secuencia de arcos para que cada obligación pueda liquidarse. Bajo
+las convenciones de este volumen, comparar ambas definiciones da
+\(p_\pi(a)=[-\min_k c_a^\pi(k)]_+=D_a^\pi\), y por tanto el fondo total de
+una secuencia coincide con \(M_0(\pi;\mathcal P_{\rm sep})\). Esta
+equivalencia es una identificación entre las dos construcciones, no una
+reivindicación atribuida literalmente a esos autores. McMahon et al. (2024) y
+Astuti et al. (2026) constituyen antecedentes recientes para la optimización
+computacional del reordenamiento.} El problema puede plantearse aquí dentro de
+una estructura reproductiva: una vez fijadas las obligaciones, ¿qué cambia
+cuando cambia solamente su ejecución?
+
+Sea una red cerrada de cinco agentes y doce obligaciones, con volumen nominal
+\(T=42\), balanceada agente por agente. Consideremos dos ejecuciones del mismo
+conjunto de obligaciones. Las necesidades distributivas máximas que producen
+son
+
+\[
+D^\alpha=(4,4,4,0,6),
+\qquad
+D^\beta=(4,0,2,0,6).
+\]
+
+El estado terminal es el mismo; las trayectorias que conducen a él no lo son.
+
+Este resultado plantea inmediatamente una segunda cuestión. Sumar los
+déficits máximos individuales supone que cada posición debe sostenerse
+separadamente. Si algunas pueden consolidarse, la disponibilidad requerida
+cambia. Bajo segregación completa, las dos ejecuciones anteriores requieren
+18 y 12 unidades de disponibilidad inicial. Bajo \emph{pooling} completo de
+la red cerrada, ambas requieren internamente cero. La secuencia no basta, por
+tanto, para determinar el requerimiento sin especificar también la
+arquitectura de consolidación.
+
+Fijemos ahora esa arquitectura: el requerimiento así obtenido parte de un
+saldo inicial de referencia; si los agentes comienzan el período con recursos
+heredados, sólo la parte no cubierta por esos recursos constituye exposición
+efectiva. Una misma necesidad calculada puede producir así exposiciones
+distintas según el estado inicial.
+
+La exposición tampoco determina por sí sola cómo será financiada. Una
+trayectoria dada puede admitir varias coberturas; una misma cobertura puede
+realizarse mediante contratos, instrumentos y contrapartidas diferentes; y
+esas implementaciones pueden dejar al cierre depósitos, préstamos,
+vencimientos y otras posiciones financieras distintas. Para conocer qué
+sobrevive al período hace falta, finalmente, una regla que transforme el
+estado terminal en estado heredado.
+
+La construcción seguida en los artículos I--V puede resumirse como
+
+\[
+\begin{aligned}
+(R,I_\chi)
+&\mapsto E
+\mapsto \Pi_{\mathrm{adm}}(E,C)
+\ni \pi \\
+&\mapsto c^\pi
+\mapsto D^\pi
+\mapsto M_0(\pi;\mathcal P) \\
+&\mapsto U
+\mapsto \mathcal Y(U,\mathcal K) \\
+&\mapsto Z_t^M(Q_t)
+\mapsto h_{t+1}.
+\end{aligned}
+\]
+
+Cada paso responde a una pregunta que el objeto anterior no resuelve por sí
+solo; las flechas no tienen, por ello, un único estatuto: algunas son
+definiciones; otras evalúan mapas ya fijados; otras dependen de parámetros
+institucionales; otras expresan solamente compatibilidad. La secuencia
+representa relaciones de determinación condicionada, no una cadena causal
+automática.
+
+Esta construcción produce además un problema común: si dos ejecuciones
+distintas pueden tener el mismo \(D\) y distinto \(M_0\), o una misma
+exposición admitir coberturas diferentes, ¿qué información debe conservar una
+descripción para determinar el observable que interesa? El artículo VI
+responde esta pregunta en términos de fibras y factorización. Su función no es
+añadir otra etapa a la cadena anterior, sino establecer un criterio general de
+suficiencia informacional para las distintas etapas de la construcción.
+
+Queda entonces una última cuestión: el estado \(h_{t+1}\) conserva las
+posiciones monetario-financieras que sobreviven a la ejecución, pero una
+dinámica reproductiva completa exige además determinar cuándo esas diferencias
+modifican stocks físicos, producción en curso, capacidad o composición
+productiva. El artículo VII delimita este paso como un problema abierto. La
+teoría cerrada del volumen llega hasta la herencia monetario-financiera
+condicionada; la transmisión de la ejecución intraperiódica al estado
+reproductivo siguiente constituye el programa que queda por desarrollar.
+
+La función de los ejemplos seguirá el estatuto de cada resultado: las
+proposiciones generales se demuestran y los ejemplos las exhiben; las
+no-identificaciones se establecen mediante pares pertenecientes al mismo
+dominio que conservan un valor aguas arriba y producen resultados distintos
+aguas abajo. Allí donde la dinámica permanece abierta, los ejemplos sirven
+para precisar qué deberá explicar una construcción posterior.
+
+\cleardoublepage
+\setcounter{subsection}{0}
+\vspace*{6mm}\section*{I}\label{i.-reproducciuxf3n-obligaciones-y-secuenciaciuxf3n-monetaria}
+\thispagestyle{plain}\markright{I · Reproducción, obligaciones y secuenciación monetaria}
+\phantomsection\addcontentsline{toc}{section}{I · Reproducción, obligaciones y secuenciación monetaria}
+{\large\itshape Reproducción, obligaciones y secuenciación monetaria\par}\medskip
+
+\subsection*{Estructura, ejecución y necesidad distributiva}\label{estructura-ejecuciuxf3n-y-necesidad-distributiva}
+
+\subsection{Obligaciones y ejecución}\label{obligaciones-y-ejecuciuxf3n}
+
+Una descripción reproductiva puede fijar qué debe producirse, reponerse
+y distribuirse sin fijar la secuencia monetaria mediante la cual esas
+relaciones se realizan. Incluso después de constituir las obligaciones
+bilaterales queda por determinar el orden en que se efectuarán.
+
+El primer problema es distinguir lo que la reproducción exige de la forma monetaria
+concreta en que esas exigencias se vuelven pagos. Llamaremos estructura reproductiva a
+la información que fija qué debe producirse, reponerse o distribuirse en el dominio
+considerado; todavía no contiene, por ese solo hecho, una lista de deudores y acreedores.
+
+Sea \(\mathcal A=\{1,\ldots,N\}\) el conjunto finito de agentes y sea
+\(R\) una descripción de la estructura reproductiva pertinente. La
+construcción admite distintas representaciones de \(R\), que pueden
+contener cantidades, stocks o relaciones materiales. Constituir
+una red bilateral de pagos requiere, además, convenciones que traduzcan
+esa información reproductiva en obligaciones monetarias.
+
+La pregunta siguiente es qué relaciones sociales e institucionales convierten una
+entrega o reposición necesaria para la reproducción en una obligación monetaria de
+alguien frente a alguien. Para separar esa mediación de la estructura productiva, 
+Sea \(\Gamma_\chi(R)\) el conjunto de configuraciones institucionales
+compatibles con \(R\). Para cada \(I_\chi\in\Gamma_\chi(R)\), una regla
+
+\[
+\chi(R,I_\chi)=E
+\]
+
+produce un conjunto finito de obligaciones monetarias. \(R\) identifica
+unívocamente \(E\) mediante esta mediación si y sólo si
+\(\chi(R,\cdot)\) es constante sobre \(\Gamma_\chi(R)\). La compatibilidad con una estructura no selecciona una configuración
+institucional. La multiplicidad de configuraciones sólo produce redes
+distintas si \(\chi(R,\cdot)\) toma valores distintos sobre ellas.
+
+El paso \(R\to E\) no consiste en una mera traducción de una
+representación productiva a una monetaria. Leontief y Bródy (1993) construyen una extensión de las
+relaciones insumo-producto mediante stocks y flujos monetarios; Trigg (2021),
+por otra vía, vincula demandas monetarias entre productores con una matriz
+formal de contratos de crédito. Estos antecedentes permiten precisar la frontera que interesa aquí. Una
+representación monetaria de la interdependencia productiva no constituye
+todavía una arquitectura de obligaciones ejecutables: una relación de
+reposición, una celda insumo-producto o una atribución por integración
+vertical no determina por sí misma quién debe pagar a quién. La constitución de \(E\) requiere información institucional adicional
+contenida en \(I_\chi\): por ejemplo, unidades económicas, propiedad,
+contratos y exigibilidad; por ello, una misma estructura reproductiva puede
+admitir distintas constituciones de obligaciones.\footnote{Debe distinguirse la
+  granularidad contractual de la granularidad de liquidación. Una obligación única de cuantía \(w\) puede liquidarse mediante varias
+  transferencias sin convertirse por ello en varias obligaciones: en el
+  primer caso cambia el procedimiento de ejecución sin cambiar \(E\); en
+  el segundo cambia el propio conjunto de obligaciones.}
+
+Cada obligación \(e\in E\) tiene pagador \(u_e\in\mathcal A\), receptor
+\(v_e\in\mathcal A\) y magnitud \(w_e>0\). Cuando la obligación se liquida, cambia de inmediato la posición monetaria del
+pagador y del receptor. Representamos ese cambio, distinto de la obligación todavía no
+ejecutada, mediante su vector de transferencia.
+
+Formalmente,
+
+\[
+g_e=w_e(\mathbf e_{v_e}-\mathbf e_{u_e})\in\mathbb R^N.
+\]
+
+Para una transferencia interna,
+
+\[
+\mathbf1^\top g_e=0.
+\]
+
+La igualdad expresa conservación de la transferencia dentro del conjunto
+de agentes. La posición de cada agente durante la ejecución exige seguir la
+trayectoria acumulada de las transferencias.
+
+Constituido \(E\), queda por determinar el orden de ejecución. El problema económico
+es ahora qué impide que esas obligaciones se liquiden en cualquier orden imaginable:
+pueden existir precedencias productivas, contractuales, legales o documentales, además
+de otras restricciones de factibilidad. Sea \(\Omega(E)\) el
+universo de órdenes completos de las obligaciones distinguibles.
+Escribimos
+
+\[
+C=(\prec,\mathcal F_{\mathrm{adm}}),
+\]
+
+donde \(\prec\) recoge precedencias justificadas y
+\(\mathcal F_{\mathrm{adm}}\subseteq\Omega(E)\) restricciones
+adicionales de factibilidad. El dominio admisible es
+
+\[
+\Pi_{\mathrm{adm}}(E,C)
+=
+\operatorname{Lin}(E,\prec)\cap\mathcal F_{\mathrm{adm}}.
+\]
+
+Las restricciones pueden proceder de condiciones físicas, contractuales,
+legales o documentales. Se fijan antes de evaluar el resultado monetario:
+la admisibilidad pertenece a la definición del dominio de ejecución.
+
+Esta prioridad lógica es compatible con reconstrucciones temporales que
+insisten en no sustituir la sucesión por una valoración simultánea
+(Freeman, 1995; Kliman y McGlone, 1999; Tombazos, 2014); el dominio
+\(\Pi_{\mathrm{adm}}\), en cambio, es una construcción propia del
+programa.\footnote{Freeman, Kliman--McGlone y Tombazos sirven aquí como
+  antecedentes de una lectura temporal y no simultánea. La regla de
+  admisibilidad, el índice intraperiódico, la trayectoria \(c^\pi\) y el
+  funcional \(D^\pi\) pertenecen a la construcción del programa.}
+
+\subsection{De la ejecución a la trayectoria}\label{de-la-ejecuciuxf3n-a-la-trayectoria}
+
+Para
+
+\[
+\pi=(\pi_1,\ldots,\pi_Q)\in\Pi_{\mathrm{adm}}(E,C),
+\]
+
+necesitamos registrar dónde queda monetariamente cada agente después de cada pago.
+Para ello definimos la trayectoria acumulada
+
+\[
+c^\pi(k)
+=
+\sum_{j=1}^k g_{\pi_j},
+\qquad
+c^\pi(0)=0,
+\qquad
+k=0,\ldots,Q.
+\]
+
+El componente \(c^\pi_a(k)\) registra cobros menos pagos acumulados del
+agente \(a\) respecto de su posición inicial. En una red interna,
+
+\[
+\mathbf1^\top c^\pi(k)=0
+\qquad
+\forall k.
+\]
+
+Aunque exista conservación agregada, pueden aparecer déficits individuales
+cuando un agente paga antes de cobrar y otro acumula simultáneamente la
+posición positiva correspondiente.
+
+La trayectoria permite plantear una pregunta operacional: ¿qué dotación inicial
+mínima permitiría al agente \(a\) recorrer esta secuencia sin que su posición acumulada
+quedara por debajo de cero? La magnitud que responde esa pregunta es la siguiente.
+
+La necesidad distributiva máxima del agente \(a\) es
+
+\[
+D^\pi_a
+=
+\left[-\min_{0\le k\le Q}c^\pi_a(k)\right]_+.
+\]
+
+El funcional pertenece a una familia conocida de problemas de extremos de
+sumas acumuladas y, en liquidación de pagos, coincide bajo segregación con el
+fondo requerido por una secuencia en Hayakawa et al. (2019). También es afín a
+medidas de máxima utilización o máximo débito neto acumulado empleadas en la
+literatura de liquidez intradía (BCBS, 2013; Alexandrova Kabadjova et al.,
+2023; McMahon et al., 2024).\footnote{La genealogía matemática es anterior a la literatura de pagos. Abdel-Wahab y
+Kameda (1978) minimizan el máximo coste acumulado de una secuencia con costes
+positivos y negativos; Monma y Sidney (1979) sistematizan el método de
+intercambio de pares adyacentes para problemas de secuenciación, incluyendo el
+de máximo coste acumulado; Kellerer et al. (1998) estudian el \emph{Stock Size
+Problem}, donde actividades consumen o suministran un recurso y se minimiza el
+máximo stock requerido. Para una trayectoria escalar balanceada, la inversión
+temporal y el cambio de signo transforman un máximo déficit de prefijo en un
+máximo stock. Por ello, ni el extremo de prefijos, ni el intercambio adyacente,
+ni la dependencia general del requerimiento respecto del orden constituyen por
+sí solos la contribución específica de este volumen.}
+
+Este antecedente respalda la interpretación económica del funcional
+individual y permite distinguir tres operaciones. Reordenar pagos modifica \(\pi\) manteniendo fija la
+red; compensar créditos y deudas reduce obligaciones opuestas bajo reglas
+de liquidación, como en el sistema de crédito de Trigg (2021); consolidar
+posiciones modifica la arquitectura \(\mathcal P\) bajo una ejecución ya
+fijada. Secuencia, compensación y consolidación pueden interactuar, pero son
+transformaciones distintas del problema.
+
+Equivalentemente,
+
+\[
+D^\pi_a
+=
+\min\left\{
+d_a\ge0:
+d_a+c^\pi_a(k)\ge0\ \forall k
+\right\}.
+\]
+
+\Needspace{4\baselineskip}\textbf{Demostración.} Sea \(m_a=\min_k c^\pi_a(k)\). Si \(m_a\ge0\),
+\(d_a=0\) satisface todas las desigualdades y es mínimo. Si \(m_a<0\),
+todo \(d_a<-m_a\) deja negativa la trayectoria en un prefijo que alcanza
+\(m_a\), mientras \(d_a=-m_a\) hace no negativa toda la trayectoria. Por
+tanto el mínimo es \([ -m_a ]_+\).
+
+Así, \(D^\pi_a\) es la traslación vertical contable mínima que sostiene
+la trayectoria individual. Su realización mediante dinero, crédito o
+financiación exige una mediación posterior.
+
+\subsection{Piso terminal y exceso transitorio}\label{piso-terminal-y-exceso-transitorio}
+
+Toda ejecución completa contiene exactamente una vez cada obligación de
+\(E\), de modo que
+
+\[
+c^\pi(Q)
+=
+\sum_{e\in E}g_e
+=
+\Delta(E)
+\]
+
+para cualquier \(\pi\in\Pi_{\mathrm{adm}}(E,C)\). La posición terminal
+es invariante al orden.
+
+Conviene separar dos fuentes económicamente distintas de esa necesidad: la parte que
+subsiste por la posición terminal y la parte adicional que aparece sólo porque hay que
+atravesar una secuencia antes de llegar al cierre.
+Definimos el piso terminal
+
+\[
+B_a(E)
+=
+[-\Delta_a(E)]_+.
+\]
+
+Como el instante terminal pertenece al conjunto de prefijos sobre el
+cual se toma el mínimo,
+
+\[
+D^\pi_a\ge B_a(E).
+\]
+
+\Needspace{4\baselineskip}\textbf{Demostración.} Para cada \(a\),
+
+\[
+\min_k c^\pi_a(k)
+\le
+c^\pi_a(Q)
+=
+\Delta_a(E).
+\]
+
+Aplicar \(x\mapsto[-x]_+\) produce la desigualdad.
+
+Definimos entonces el exceso transitorio
+
+\[
+\Xi^\pi:=D^\pi-B(E)\ge0.
+\]
+
+Por construcción,
+
+\[
+D^\pi=B(E)+\Xi^\pi.
+\]
+
+La igualdad es una identidad una vez definido \(\Xi^\pi\); el resultado
+sustantivo es que \(B(E)\) constituye un piso independiente del orden. Para dos ejecuciones del mismo \(E\),
+
+\[
+D^\pi-D^{\pi'}
+=
+\Xi^\pi-\Xi^{\pi'}.
+\]
+
+Si la red está balanceada agente por agente,
+
+\[
+\Delta(E)=0,
+\]
+
+entonces
+
+\[
+B(E)=0,
+\qquad
+D^\pi=\Xi^\pi.
+\]
+
+En ese caso toda necesidad distributiva dentro del horizonte considerado
+es transitoria respecto de la posición terminal.
+
+\subsection{Relevancia secuencial y testigo de cinco agentes}\label{relevancia-secuencial-y-testigo-de-cinco-agentes}
+
+La multiplicidad de órdenes sólo es relevante para \(D\) si produce
+necesidades distributivas distintas. Definamos
+
+\[
+\mathcal D(E,C)
+=
+\{D^\pi:\pi\in\Pi_{\mathrm{adm}}(E,C)\},
+\]
+
+\[
+\mathcal X(E,C)
+=
+\{\Xi^\pi:\pi\in\Pi_{\mathrm{adm}}(E,C)\}.
+\]
+
+Como \(B(E)\) es común,
+
+\[
+\mathcal D(E,C)
+=
+B(E)+\mathcal X(E,C).
+\]
+
+La secuencia es relevante respecto de \(D\) cuando
+\(|\mathcal D(E,C)|>1\). Varias cronologías pueden pertenecer a una misma
+clase monetaria; la relevancia aparece cuando existe más de una.
+
+Considérese ahora el benchmark de cinco agentes
+
+\[
+\mathcal A=(U,F,G,H_w,H_p).
+\]
+
+\(U\) produce medios de producción utilizados por \(F\) y \(G\); \(F\) y
+\(G\) producen bienes consumidos por los hogares. El conjunto \(E\)
+contiene doce obligaciones de salarios, consumo, reposición y
+distribución del excedente. Para que el testigo sea reproducible, las
+fijamos explícitamente:
+
+\[
+\begin{array}{lll}
+s_U:U\to H_w,\;4, & s_F:F\to H_w,\;4, & s_G:G\to H_w,\;4,\\
+c_{wF}:H_w\to F,\;6, & c_{wG}:H_w\to G,\;6, & \\[-1mm]
+c_{pF}:H_p\to F,\;4, & c_{pG}:H_p\to G,\;2, & \\[-1mm]
+r_F:F\to U,\;4, & r_G:G\to U,\;2, & \\[-1mm]
+x_U:U\to H_p,\;2, & x_F:F\to H_p,\;2, & x_G:G\to H_p,\;2.
+\end{array}
+\]
+
+Su volumen nominal es
+
+\[
+T=\sum_{e\in E}w_e=42.
+\]
+
+La red está balanceada agente por agente:
+
+\[
+\Delta(E)=0,
+\qquad
+B(E)=0.
+\]
+
+Para el testigo fijamos explícitamente el dominio de referencia
+
+\[
+C_{\mathrm{ref}}
+=
+(\varnothing,\Omega(E)),
+\]
+
+con las doce obligaciones distinguibles e indivisibles. Este dominio cumple una
+función de laboratorio: no afirma que toda permutación sea contractual, jurídica o
+productivamente disponible en una economía concreta. Restricciones institucionales
+adicionales pueden excluir algunas comparaciones mediante \(C\). Bajo el dominio de
+referencia, las dos ejecuciones que siguen pertenecen al mismo conjunto admisible.
+
+La primera es
+
+\[
+\alpha
+=
+(s_U,s_F,s_G,c_{wF},c_{wG},c_{pF},c_{pG},r_F,r_G,x_U,x_F,x_G),
+\]
+
+y la segunda
+
+\[
+\beta
+=
+(c_{pF},c_{pG},s_U,s_F,s_G,c_{wF},c_{wG},r_F,r_G,x_U,x_F,x_G).
+\]
+
+Los mínimos de sus trayectorias son
+
+\[
+\min_k c^\alpha(k)
+=
+(-4,-4,-4,0,-6),
+\]
+
+\[
+\min_k c^\beta(k)
+=
+(-4,0,-2,0,-6).
+\]
+
+Por tanto,
+
+\[
+D^\alpha=(4,4,4,0,6),
+\qquad
+D^\beta=(4,0,2,0,6).
+\]
+
+Como \(B(E)=0\),
+
+\[
+\Xi^\alpha=D^\alpha,
+\qquad
+\Xi^\beta=D^\beta.
+\]
+
+La diferencia es
+
+\[
+D^\alpha-D^\beta
+=
+(0,4,2,0,0).
+\]
+
+En \(\beta\), \(F\) recibe cuatro unidades y \(G\) dos antes de pagar
+salarios; eso elimina la posición negativa de \(F\) y reduce la de
+\(G\). Ninguna obligación cambia y el estado terminal continúa siendo
+cero.
+
+El testigo establece, por tanto, un sistema \((E,C)\) con dos ejecuciones
+admisibles del mismo \(E\), igual posición terminal y distinto \(D^\pi\).
+Las obligaciones completas y el cierre no determinan unívocamente la
+necesidad distributiva máxima.
+
+La diferencia entre ambas ejecuciones puede localizarse sin introducir
+nuevas obligaciones. Una cadena concreta de diez transposiciones adyacentes
+lleva de \(\alpha\) a \(\beta\): primero \(c_{pF}\) cruza sucesivamente
+\(c_{wG},c_{wF},s_G,s_F,s_U\); después \(c_{pG}\) cruza
+\(c_{wG},c_{wF},s_G,s_F,s_U\). Ocho de esos intercambios dejan \(D\)
+inalterado. Sólo dos modifican un mínimo relevante: cuando \(c_{pF}\) cruza
+\(s_F\), la necesidad de \(F\) cae de \(4\) a \(0\); cuando \(c_{pG}\)
+cruza \(s_G\), la de \(G\) cae de \(4\) a \(2\). Bajo segregación completa,
+la trayectoria del requerimiento es por tanto
+
+\[
+18\longrightarrow14\longrightarrow12,
+\]
+
+con ocho intercambios monetariamente neutrales entre esos cambios. El
+resultado \(18-12=6\) puede descomponerse así en dos variaciones locales,
+\(4+2\), sin atribuir efecto monetario a los intercambios que no alteran
+los mínimos pertinentes.
+
+\subsection{De la trayectoria individual a la arquitectura}\label{de-la-trayectoria-individual-a-la-arquitectura}
+
+Hasta aquí, \(D^\pi\) conserva la profundidad máxima de cada trayectoria
+individual. Para convertir esas posiciones en un requerimiento de
+disponibilidad hace falta saber cuáles pueden consolidarse y si sus mínimos
+coinciden. Éste es el problema de la arquitectura de acceso.
+
+
+\cleardoublepage
+\setcounter{subsection}{0}
+\vspace*{6mm}\section*{II}\label{ii.-arquitecturas-de-compensaciuxf3n-y-requerimientos-de-liquidez}
+\thispagestyle{plain}\markright{II · Arquitecturas de consolidación}
+\phantomsection\addcontentsline{toc}{section}{II · Arquitecturas de consolidación y requerimientos de liquidez}
+{\large\itshape Arquitecturas de consolidación y requerimientos de liquidez\par}\vspace{1.2ex}
+
+\subsection*{Segregación, pooling y requerimiento localizado}\label{segregaciuxf3n-pooling-y-requerimiento-localizado}
+
+\subsection{De agentes a cajas monetarias}\label{de-agentes-a-cajas-monetarias}
+
+Dos agentes pueden atravesar posiciones de \(-2\) y \(+2\) en el mismo
+prefijo. Si sus saldos permanecen segregados, la posición negativa requiere
+cobertura propia; si pertenecen a una misma caja perfectamente consolidada,
+ambas posiciones se consolidan en una posición neta de bloque. El requerimiento depende, por tanto, de la
+arquitectura que agrupa esas trayectorias. La relevancia de sincronización, \emph{gross/net
+settlement}, reutilización de pagos entrantes y mecanismos de ahorro de
+liquidez está ampliamente documentada en sistemas de pagos (CPSS, 1997;
+McAndrews y Rajan, 2000; Bech y Garratt, 2003; Kahn, McAndrews y
+Roberds, 2003; Becher, Galbiati y Tudela, 2008; Galbiati y Soramäki,
+2010; Hayakawa, 2018; McMahon et al., 2024).\footnote{Estas referencias documentan mecanismos de timing, reutilización,
+\emph{gross/net settlement}, neteo y ahorro de liquidez. Hayakawa (2018), en
+particular, descompone el efecto de una CCP sobre necesidades de liquidez en
+efectos de enrutamiento central y neteo central; ese operador modifica la red
+de obligaciones y no debe identificarse con la consolidación de posiciones
+manteniendo fijo \(E\). Existe, sin embargo, un referente institucional cercano
+para la semántica de acceso conjunto a saldos: TARGET2 permitió grupos de
+\emph{aggregated liquidity}, en los que una orden podía liquidarse por encima
+de la liquidez de una cuenta individual siempre que no excediera la liquidez
+agregada de las cuentas del grupo (ECB, 2012). Las cuentas seguían siendo
+jurídicamente distintas. La partición \(\mathcal P\) abstrae sólo este aspecto
+de consolidación y no reproduce las reglas operativas de TARGET2.}
+
+La pregunta deja entonces de ser cuánto necesita cada agente aisladamente y pasa a ser
+qué posiciones pueden utilizarse conjuntamente para efectuar pagos. Representamos esas
+fronteras de acceso monetario mediante una partición de los agentes.
+
+Sea
+
+\[
+\mathcal P=\{P_1,\ldots,P_r\}\in\operatorname{Part}(\mathcal A)
+\]
+
+una partición de los agentes. Dentro de un bloque \(P\), las posiciones pueden consolidarse plenamente
+durante la ejecución; entre bloques no existe esa capacidad. Por construcción,
+``consolidarse plenamente'' significa únicamente que, para evaluar la factibilidad
+monetaria de la ejecución, las posiciones positivas de los miembros del bloque pueden
+cubrir sin fricción las posiciones negativas de otros miembros del mismo bloque. La
+partición no establece por sí sola propiedad común, identidad jurídica, transferencia
+de derechos, crédito intragrupo ni autoridad sobre los saldos. Cualquiera de esas
+interpretaciones requiere reglas institucionales adicionales. \(\mathcal P\) representa,
+por tanto, una frontera operativa de acceso y consolidación, no una identidad social de
+los agentes que contiene.
+
+Para cada bloque,
+
+\[
+c^\pi_P(k)
+=
+\sum_{a\in P}c^\pi_a(k),
+\]
+
+\[
+d^\pi_P
+=
+\left[
+-\min_{0\le k\le Q}c^\pi_P(k)
+\right]_+.
+\]
+
+Podemos preguntar ahora qué saldos iniciales del medio de liquidación de referencia
+tendrían que estar colocados en esas cajas para procesar toda la secuencia sin
+financiación adicional. El requerimiento localizado de la arquitectura es
+
+\[
+M_0(\pi;\mathcal P)
+=
+\sum_{P\in\mathcal P}d^\pi_P.
+\]
+
+\(M_0\) es la suma mínima de desplazamientos iniciales no negativos
+necesaria para que las trayectorias consolidadas de todas las cajas no
+crucen por debajo de cero. Es, por tanto, un requerimiento de referencia
+condicionado por la cronología y la arquitectura elegidas; no es por sí mismo
+un agregado monetario observado, un volumen efectivo de crédito ni un coste
+financiero. El origen, la disponibilidad efectiva y el precio de esos saldos
+quedan fuera de \(M_0\) y se incorporan, cuando corresponde, en las capas
+siguientes.
+
+\subsection{Casos extremos y pérdida de sincronización}\label{casos-extremos-y-puxe9rdida-de-sincronizaciuxf3n}
+
+Bajo segregación completa,
+
+\[
+\mathcal P_{\mathrm{sep}}
+=
+\{\{a\}:a\in\mathcal A\},
+\]
+
+cada caja contiene un solo agente y
+
+\[
+M_0(\pi;\mathcal P_{\mathrm{sep}})
+=
+\sum_aD^\pi_a
+=
+\|D^\pi\|_1.
+\]
+
+\Needspace{4\baselineskip}\textbf{Demostración.} Para cada singleton \(\{a\}\),
+\(c^\pi_{\{a\}}=c^\pi_a\), por lo que \(d^\pi_{\{a\}}=D^\pi_a\). Sumando
+se obtiene el resultado.
+
+Bajo pooling completo,
+
+\[
+\mathcal P_{\mathrm{pool}}=\{\mathcal A\}.
+\]
+
+Si todas las operaciones son transferencias internas,
+
+\[
+\sum_a c^\pi_a(k)=0
+\qquad
+\forall k,
+\]
+
+de modo que
+
+\[
+M_0(\pi;\mathcal P_{\mathrm{pool}})=0.
+\]
+
+El requerimiento localizado interno es, por tanto, nulo cuando el conjunto
+cerrado se trata como una sola caja. Este cero es un resultado de consolidación
+interna: no afirma que la economía pueda liquidar obligaciones sin medios de pago,
+ni que una infraestructura externa de liquidación carezca de requerimientos. Esos
+medios, las obligaciones frente al exterior del bloque consolidado y las reglas de
+acceso a la infraestructura quedan fuera de este caso extremo. Determinar los medios
+monetarios y financieros efectivos de realización requiere información adicional.
+
+Fuera de los extremos, \(D^\pi\) no contiene suficiente información para
+calcular \(M_0\). Considérense las obligaciones unitarias
+
+\[
+e_1:A\to C,\qquad
+e_2:A\to C,\qquad
+e_3:C\to B,
+\]
+
+y el dominio de referencia que admite
+
+\[
+\alpha=(e_1,e_2,e_3),
+\qquad
+\beta=(e_1,e_3,e_2).
+\]
+
+En ambos casos,
+
+\[
+D^\alpha=D^\beta=(2,0,0).
+\]
+
+Para
+
+\[
+\mathcal P=\{\{A,B\},\{C\}\},
+\]
+
+las trayectorias consolidadas producen
+
+\[
+M_0(\alpha;\mathcal P)=2,
+\qquad
+M_0(\beta;\mathcal P)=1.
+\]
+
+Por tanto, en general no existe una función \(f_{\mathcal P}\) tal que
+
+\[
+M_0(\pi;\mathcal P)
+=
+f_{\mathcal P}(D^\pi)
+\]
+
+para toda ejecución admisible. La no-existencia es general, no una
+negación para cada arquitectura: bajo segregación sí existe el caso especial
+\(f(D)=\|D\|_1\).
+
+\subsection{Orden de arquitecturas y ganancia de pooling}\label{orden-de-arquitecturas-y-ganancia-de-pooling}
+
+Escribimos
+
+\[
+\mathcal P\preceq\mathcal P'
+\]
+
+si cada bloque de \(\mathcal P\) está contenido en algún bloque de
+\(\mathcal P'\). Así, \(\mathcal P'\) permite débilmente más
+consolidación.
+
+Para bloques disjuntos \(P,Q\),
+
+\[
+d^\pi_{P\cup Q}
+\le
+d^\pi_P+d^\pi_Q.
+\]
+
+\Needspace{4\baselineskip}\textbf{Demostración.} Para todo \(k\),
+
+\[
+c^\pi_P(k)\ge\min_jc^\pi_P(j),
+\qquad
+c^\pi_Q(k)\ge\min_jc^\pi_Q(j).
+\]
+
+Por tanto,
+
+\[
+\min_k(c^\pi_P(k)+c^\pi_Q(k))
+\ge
+\min_kc^\pi_P(k)+\min_kc^\pi_Q(k).
+\]
+
+Como todas las trayectorias parten de cero, cambiar de signo produce la
+desigualdad de requerimientos.
+
+Toda coarsificación finita puede construirse mediante fusiones binarias.
+De aquí,
+
+\[
+\mathcal P\preceq\mathcal P'
+\Longrightarrow
+M_0(\pi;\mathcal P')
+\le
+M_0(\pi;\mathcal P).
+\]
+
+En una red cerrada,
+
+\[
+0
+=
+M_0(\pi;\mathcal P_{\mathrm{pool}})
+\le
+M_0(\pi;\mathcal P)
+\le
+M_0(\pi;\mathcal P_{\mathrm{sep}})
+=
+\|D^\pi\|_1.
+\]
+
+Queda por determinar cuándo la reducción del requerimiento localizado es estricta. Definamos
+
+\[
+K^\pi_P
+=
+\arg\min_k c^\pi_P(k)
+\]
+
+y la holgura respecto del mínimo
+
+\[
+r^\pi_P(k)
+=
+c^\pi_P(k)-\min_jc^\pi_P(j)\ge0.
+\]
+
+La ganancia de fusionar \(P,Q\),
+
+\[
+\gamma^\pi(P,Q)
+=
+d^\pi_P+d^\pi_Q-d^\pi_{P\cup Q},
+\]
+
+mide exclusivamente la reducción de \(M_0\) producida por esa consolidación.
+El término ``ganancia'' no introduce aquí una medida de bienestar, beneficio ni
+ahorro de coste financiero. Además, satisface
+
+\[
+\gamma^\pi(P,Q)
+=
+\min_k\{r^\pi_P(k)+r^\pi_Q(k)\}.
+\]
+
+De modo que
+
+\[
+\gamma^\pi(P,Q)=0
+\iff
+K^\pi_P\cap K^\pi_Q\neq\varnothing,
+\]
+
+y
+
+\[
+\gamma^\pi(P,Q)>0
+\iff
+K^\pi_P\cap K^\pi_Q=\varnothing.
+\]
+
+La consolidación aprovecha así la holgura temporal relativa entre bloques:
+la ganancia es estricta cuando sus mínimos no coinciden.
+
+\subsection{Variaciones locales de secuencia y arquitectura}\label{variaciones-locales-secuencia-arquitectura}
+
+\paragraph{Frontera bibliográfica.}
+La operación de comparar secuencias mediante intercambios adyacentes tiene una
+tradición propia en investigación de operaciones (Abdel-Wahab y Kameda, 1978;
+Monma y Sidney, 1979; Monma, 1980), y el problema escalar de recursos acumulados
+reaparece en Kellerer et al. (1998). En redes de obligaciones, Rotemberg (2011)
+ya identifica consecuencias del orden de pago; Hayakawa et al. (2019) formulan
+la liquidación secuencial como un problema de fondos de liquidación y obtienen
+resultados locales para clases particulares de redes; Hayakawa (2020) estudia
+cómo la topología condiciona la liquidez necesaria. McMahon et al. (2024) y
+Astuti et al. (2026) llevan la optimización por reordenamiento a sistemas de
+pagos de gran valor. En consecuencia, el objeto que sigue no se presenta como
+una teoría nueva de que ``el orden importa'' ni como una introducción del
+intercambio adyacente. La pregunta más estrecha es otra: dado el funcional de
+requerimiento y una arquitectura arbitraria de consolidación, ¿cuál es la
+variación exacta inducida por una transposición admisible y cómo cambia ese
+margen cuando cambia la arquitectura? La revisión de los antecedentes citados
+no proporciona, en esos términos, la fórmula general por bloque ni la identidad
+mixta secuencia--arquitectura derivadas abajo; esta delimitación describe el
+alcance de la revisión bibliográfica, no una prueba de prioridad universal.
+
+La comparación entre cronologías puede reducirse primero a la modificación
+mínima de un orden. Consideremos dos ejecuciones admisibles que sólo difieren
+por una transposición adyacente,
+
+\[
+\pi=\omega ef\eta,
+\qquad
+\pi'=\omega fe\eta,
+\]
+
+y sea \(z\) el vector de saldos acumulados después de ejecutar \(\omega\).
+Las dos trayectorias coinciden antes del par y vuelven a coincidir una vez
+ejecutadas ambas obligaciones, pues
+
+\[
+z+g_e+g_f=z+g_f+g_e.
+\]
+
+Por tanto, difieren en un único estado intermedio:
+
+\[
+\pi:\quad z\longrightarrow z+g_e\longrightarrow z+g_e+g_f,
+\]
+
+\[
+\pi':\quad z\longrightarrow z+g_f\longrightarrow z+g_f+g_e.
+\]
+
+Como las trayectorias sólo difieren en ese estado, la variación del
+requerimiento puede calcularse sin reconstruirlas por completo. Fijemos una
+arquitectura \(\mathcal P\). La proyección de una transferencia sobre sus
+cajas es
+
+\[
+h_e^{\mathcal P}
+:=
+\left(\sum_{a\in P}g_{e,a}\right)_{P\in\mathcal P},
+\qquad
+h_{e,P}:=\sum_{a\in P}g_{e,a}.
+\]
+
+Si los extremos de \(e\) pertenecen al mismo bloque, entonces
+\(h_{e,P}=0\) para todo \(P\): la transferencia es interna a esa
+arquitectura. Para una transferencia entre bloques, las únicas componentes
+no nulas son las cajas del pagador y del receptor.
+
+Sea \(i=|\omega|+1\) la posición ocupada por la primera obligación del par.
+Para cada bloque \(P\in\mathcal P\), sea \(z_P=c_P^\pi(i-1)\) su saldo
+antes del par. Como el único estado distinto aparece en \(k=i\), definimos
+
+\[
+R_P
+:=
+\min_{\substack{0\le k\le Q\\ k\ne i}}c_P^\pi(k)
+=
+\min_{\substack{0\le k\le Q\\ k\ne i}}c_P^{\pi'}(k),
+\qquad
+\bar m_P=[-R_P]^+.
+\]
+
+Entonces
+
+\[
+d_P^\pi
+=
+\max\{\bar m_P,-z_P-h_{e,P}\},
+\]
+
+\[
+d_P^{\pi'}
+=
+\max\{\bar m_P,-z_P-h_{f,P}\}.
+\]
+
+En consecuencia, si
+
+\[
+\delta_{ef}^{\pi}(\mathcal P)
+:=
+M_0(\pi';\mathcal P)-M_0(\pi;\mathcal P),
+\]
+
+se obtiene la identidad local
+
+\[
+\boxed{
+\delta_{ef}^{\pi}(\mathcal P)
+=
+\sum_{P\in\mathcal P}
+\left[
+\max\{\bar m_P,-z_P-h_{f,P}\}
+-
+\max\{\bar m_P,-z_P-h_{e,P}\}
+\right].
+}
+\]
+
+\(\delta_{ef}^{\pi}(\mathcal P)\) compara localmente dos órdenes admisibles
+manteniendo fijos \(E\) y \(\mathcal P\). Si es negativo, el segundo orden
+requiere menos saldo inicial de referencia según \(M_0\). Nada se sigue todavía
+sobre la capacidad de los agentes para escogerlo, los costes o conflictos de
+modificar la cronología, ni el coste financiero efectivamente observado. Para
+responder esas preguntas hacen falta reglas adicionales sobre formación de la
+cronología, derechos de ejecución y financiación.
+
+La fórmula separa una modificación del estado intermedio de su efecto
+sobre el mínimo relevante. Definiendo
+
+\[
+x_P=-z_P-h_{e,P},
+\qquad
+y_P=-z_P-h_{f,P},
+\]
+
+la contribución \(\Delta_P=d_P^{\pi'}-d_P^\pi\) satisface
+
+\[
+\Delta_P>0
+\iff
+y_P>\max\{\bar m_P,x_P\},
+\]
+
+\[
+\Delta_P<0
+\iff
+x_P>\max\{\bar m_P,y_P\},
+\]
+
+y
+
+\[
+\Delta_P=0
+\iff
+x_P=y_P
+\quad\text{o}\quad
+\max\{x_P,y_P\}\le\bar m_P.
+\]
+
+La neutralidad tiene así dos fuentes distintas: el intercambio puede no
+modificar el estado monetario intermedio del bloque, o puede modificarlo
+sin alcanzar un déficit más profundo que el mínimo ya fijado en otra
+parte de la trayectoria. En particular,
+
+\[
+h_{e,P}=h_{f,P}
+\Longrightarrow
+\Delta_P=0,
+\]
+
+de modo que
+
+\[
+\operatorname{supp}(d^{\pi'}-d^\pi)
+\subseteq
+\operatorname{supp}(h_f^{\mathcal P}-h_e^{\mathcal P}).
+\]
+
+La sensibilidad local depende, por tanto, de la secuencia y de la
+arquitectura de consolidación. Esta última determina qué transferencias
+alteran la posición neta entre cajas y cuáles quedan internalizadas en un
+mismo bloque.
+
+Esta dependencia puede relacionarse exactamente con la ganancia de
+consolidación obtenida arriba. Sea \(\mathcal P'\) la arquitectura resultante de
+fusionar dos bloques \(P,Q\in\mathcal P\), y escribamos
+
+\[
+\gamma^\rho(\mathcal P\to\mathcal P')
+:=
+M_0(\rho;\mathcal P)-M_0(\rho;\mathcal P')\ge0.
+\]
+
+Como los bloques no fusionados aportan lo mismo en ambas arquitecturas,
+
+\[
+\gamma^\rho(\mathcal P\to\mathcal P')
+=
+d_P^\rho+d_Q^\rho-d_{P\cup Q}^\rho
+=
+\gamma^\rho(P,Q).
+\]
+
+Así, esta notación no introduce una segunda medida de ganancia: expresa
+la misma variación arquitectónica en términos del funcional total.
+
+Para \(\pi'=\tau_i\pi\), la definición implica
+
+\[
+M_0(\rho;\mathcal P')
+=
+M_0(\rho;\mathcal P)-\gamma^\rho
+\]
+
+para \(\rho\in\{\pi,\pi'\}\). Restando las dos igualdades se obtiene
+
+\[
+\boxed{
+\delta_i^\pi(\mathcal P')-\delta_i^\pi(\mathcal P)
+=
+\gamma^\pi-\gamma^{\tau_i\pi}.
+}
+\]
+
+La identidad relaciona dos diferencias finitas del mismo funcional; no
+añade una hipótesis causal. Una consolidación deja inalterado el efecto local
+de un intercambio sobre \(M_0\) si y sólo si ese intercambio deja inalterada
+la reducción de \(M_0\) producida por la consolidación. Sin embargo, la
+antitonicidad del nivel,
+
+\[
+\mathcal P\preceq\mathcal P'
+\Longrightarrow
+M_0(\rho;\mathcal P')\le M_0(\rho;\mathcal P),
+\]
+
+no implica antitonicidad de la sensibilidad \(|\delta_i^\pi|\). Un
+contraejemplo balanceado requiere sólo tres agentes y cuatro obligaciones
+unitarias. Sean
+
+\[
+a:A\to B,\qquad b:A\to C,\qquad
+c:C\to A,\qquad d:B\to A,
+\]
+
+con
+
+\[
+\pi=(a,b,c,d),
+\qquad
+\pi'=(a,c,b,d).
+\]
+
+Bajo segregación completa,
+
+\[
+M_0(\pi;\mathcal P_{\mathrm{sep}})=2,
+\qquad
+M_0(\pi';\mathcal P_{\mathrm{sep}})=2,
+\]
+
+por lo que la diferencia local bajo segregación es cero. Si se consolidan
+\(B\) y \(C\),
+
+\[
+\mathcal P'=\{\{A\},\{B,C\}\},
+\]
+
+se obtiene
+
+\[
+M_0(\pi;\mathcal P')=2,
+\qquad
+M_0(\pi';\mathcal P')=1,
+\]
+
+y la diferencia local pasa a \(-1\). La consolidación puede, pues,
+crear sensibilidad secuencial donde antes no la había.
+
+También puede eliminarla. Para el ciclo unitario
+
+\[
+a:A\to B,\qquad b:B\to C,\qquad c:C\to A,
+\]
+
+comparemos \(\pi=(a,b,c)\) con \(\pi'=(b,a,c)\). Bajo segregación,
+
+\[
+M_0(\pi;\mathcal P_{\mathrm{sep}})=1,
+\qquad
+M_0(\pi';\mathcal P_{\mathrm{sep}})=2,
+\]
+
+mientras que bajo \(\{\{A,B\},\{C\}\}\) ambas ejecuciones requieren
+una unidad. Así, \(\delta\) pasa de \(+1\) a \(0\). La preservación se
+produce exactamente cuando \(\gamma^\pi=\gamma^{\tau_i\pi}\), como
+se sigue de la identidad anterior.
+
+La ausencia de monotonicidad alcanza también al signo. Considérese el
+sistema balanceado de cuatro agentes con obligaciones
+
+\[
+\begin{array}{llll}
+e_1:A\to D,\;1, & e_2:C\to A,\;1, & e_3:D\to B,\;1, & e_4:A\to B,\;2,\\
+e_5:B\to C,\;1, & e_6:C\to A,\;2, & e_7:B\to C,\;2. &
+\end{array}
+\]
+
+Sean
+
+\[
+\pi=(e_1,e_2,e_3,e_4,e_5,e_6,e_7),
+\qquad
+\pi'=(e_1,e_2,e_3,e_4,e_5,e_7,e_6),
+\]
+
+y las arquitecturas
+
+\[
+\mathcal P=\{\{A\},\{B,D\},\{C\}\},
+\qquad
+\mathcal P'=\{\{A,B,D\},\{C\}\}.
+\]
+
+La segunda se obtiene de la primera mediante una sola fusión. Sin embargo,
+
+\[
+M_0(\pi;\mathcal P)=4,
+\qquad
+M_0(\pi';\mathcal P)=3,
+\]
+
+mientras
+
+\[
+M_0(\pi;\mathcal P')=2,
+\qquad
+M_0(\pi';\mathcal P')=3.
+\]
+
+El mismo intercambio pasa así de \(\delta=-1\) a \(\delta=+1\): una
+fusión puede hacer que un reordenamiento reduzca \(M_0\) bajo una arquitectura
+y lo aumente bajo otra. No hay contradicción con la antitonicidad de \(M_0\),
+pues la consolidación reduce débilmente el requerimiento de cada ejecución
+considerada por separado; lo que se invierte es su comparación. El efecto
+monetario de una precedencia es, en este sentido, relativo a la organización
+del acceso a los saldos. La partición, por sí sola, no permite ordenar
+socialmente las arquitecturas ni inferir cambios en propiedad, poder de
+decisión o incidencia de los costes.
+
+Secuencia y arquitectura constituyen, por tanto, dos márgenes distintos de variación de
+
+\[
+M_0:\Pi_{\mathrm{adm}}\times\operatorname{Part}(\mathcal A)
+\longrightarrow\mathbb R_+.
+\]
+
+\subsection{Arquitecturas nulas y descomposición de bloque}\label{arquitecturas-nulas-y-descomposiciuxf3n-de-bloque}
+
+Para cualquier trayectoria y partición,
+
+\[
+M_0(\pi;\mathcal P)=0
+\iff
+c^\pi_P(k)\ge0
+\quad
+\forall P,k.
+\]
+
+Bajo cierre interno, la suma de las trayectorias de los bloques es cero
+en cada prefijo. Por tanto,
+
+\[
+M_0(\pi;\mathcal P)=0
+\iff
+c^\pi_P(k)=0
+\quad
+\forall P,k.
+\]
+
+Cuando cada paso liquida una sola obligación bilateral positiva, sea
+\(G(E)\) el grafo no dirigido de obligaciones y \(\mathcal C(E)\) su
+partición en componentes conexas. Entonces
+
+\[
+M_0(\pi;\mathcal P)=0
+\iff
+\mathcal C(E)\preceq\mathcal P.
+\]
+
+\Needspace{4\baselineskip}\textbf{Demostración.} Si cada componente de \(G(E)\) queda contenida en
+un bloque, toda transferencia es intrabloque y no altera la trayectoria
+consolidada. Recíprocamente, si el requerimiento es cero, las
+trayectorias de bloque permanecen en cero tras cada paso; una obligación
+que cruzara bloques alteraría simultáneamente la posición de dos cajas y
+produciría una contradicción.
+
+La separación entre terminal y transitorio también puede hacerse por
+bloque. Sea
+
+\[
+\Delta_P(E)=\sum_{a\in P}\Delta_a(E),
+\qquad
+B_P(E)=[-\Delta_P(E)]_+,
+\]
+
+\[
+\Xi^\pi_P=d^\pi_P-B_P(E)\ge0.
+\]
+
+Sumando,
+
+\[
+B(E;\mathcal P)
+=
+\sum_{P\in\mathcal P}B_P(E),
+\]
+
+\[
+\Xi(\pi;\mathcal P)
+=
+\sum_{P\in\mathcal P}\Xi^\pi_P,
+\]
+
+y por identidad,
+
+\[
+M_0(\pi;\mathcal P)
+=
+B(E;\mathcal P)+\Xi(\pi;\mathcal P).
+\]
+
+El piso \(B(E;\mathcal P)\) es antítono bajo consolidación, pero \(\Xi\)
+no lo es en general. Una fusión puede eliminar piso terminal y
+sustituirlo por una excursión transitoria. La monotonía pertenece, por tanto, al requerimiento total y no a cada
+componente por separado.
+
+\subsection{El benchmark y la entrada al estado heredado}\label{el-benchmark-y-la-entrada-al-estado-heredado}
+
+Para las ejecuciones del artículo I,
+
+\[
+D^\alpha=(4,4,4,0,6),
+\qquad
+D^\beta=(4,0,2,0,6).
+\]
+
+Bajo segregación,
+
+\[
+M_0(\alpha;\mathcal P_{\mathrm{sep}})=18,
+\qquad
+M_0(\beta;\mathcal P_{\mathrm{sep}})=12.
+\]
+
+Bajo pooling completo,
+
+\[
+M_0(\alpha;\mathcal P_{\mathrm{pool}})
+=
+M_0(\beta;\mathcal P_{\mathrm{pool}})
+=
+0.
+\]
+
+Para una arquitectura \(\mathcal P\) dada, \(M_0(\pi;\mathcal P)\) está
+determinado por los mínimos alcanzados por las trayectorias agregadas de
+sus bloques. El orden importa cuando modifica esos mínimos; un cambio de
+calendario que conserve las mismas trayectorias no los modifica.
+
+Conviene entonces separar dos variaciones:
+
+\[
+\pi\mapsto M_0(\pi;\mathcal P)
+\]
+
+cambia la ejecución con arquitectura fija, mientras
+
+\[
+\mathcal P\mapsto M_0(\pi;\mathcal P)
+\]
+
+cambia la arquitectura con ejecución fija. La primera recoge el efecto de la secuencia bajo una arquitectura dada;
+la segunda, el efecto de la consolidación sobre una ejecución dada.
+
+\(M_0\) parte todavía de una posición inicial de referencia. Para conocer
+la parte efectivamente descubierta hay que incorporar los recursos con
+que cada caja llega al periodo.
+
+
+\cleardoublepage
+\setcounter{subsection}{0}
+\vspace*{6mm}\section*{III}\label{iii.-exposiciuxf3n-monetaria-y-necesidad-de-cobertura}
+\thispagestyle{plain}\markright{III · Exposición monetaria}
+\phantomsection\addcontentsline{toc}{section}{III · Exposición monetaria y necesidad de cobertura}
+{\large\itshape Exposición monetaria y necesidad de cobertura\par}\vspace{1.2ex}
+
+\subsection*{Estado heredado, profundidad y duración}\label{estado-heredado-profundidad-y-duraciuxf3n}
+
+\subsection{Estado heredado y exposición residual}\label{estado-heredado-y-exposiciuxf3n-residual}
+
+Dos cajas que recorren la misma trayectoria pueden enfrentar exposiciones
+diferentes si comienzan con recursos monetarios distintos. Para determinar
+esa diferencia hay que separar el estado heredado de la parte que la
+institución reconoce como disponibilidad operativa.
+El problema no es sólo cuánto patrimonio o riqueza existe al inicio, sino qué parte de
+esa posición puede utilizarse efectivamente para pagar ahora. El estado heredado reúne
+las posiciones que llegan del periodo anterior; una regla institucional selecciona de ellas
+la disponibilidad operativa reconocida.
+
+Sea
+
+\[
+h_t\in\mathcal H
+\]
+
+el estado heredado. Para una arquitectura \(\mathcal P_t\) y una
+institución dada, escribimos
+
+\[
+\mu_{I,t}:\mathcal H\to\mathbb R_+^{|\mathcal P_t|},
+\qquad
+m_t^0=\mu_{I,t}(h_t).
+\]
+
+El subíndice recuerda que la proyección puede cambiar con la institución o
+la arquitectura; así, balances distintos pueden proyectarse sobre la misma
+disponibilidad y un mismo balance puede valorarse de forma distinta bajo
+instituciones diferentes. No existe una identidad \(h_t=m_t^0\):
+\(m_t^0=\mu_{I,t}(h_t)\) es una proyección institucional del estado heredado.
+
+La exposición residual de la caja \(P\) es
+
+\[
+U_{P,t}(k\mid h_t)
+=
+\left[
+-\left(m^0_{P,t}+c^\pi_{P,t}(k)\right)
+\right]_+.
+\]
+
+\(U\) mide el faltante en el prefijo \(k\) antes de movilizar cobertura
+adicional. Es una exposición contrafactual previa a la cobertura. La deuda
+observada y el crédito efectivamente concedido se determinan en la capa de
+financiación.
+
+La distinción entre posiciones de balance, compromisos financieros y
+recursos efectivamente utilizables es consistente con enfoques de
+balance y consistencia stock-flujo (Minsky, 1986, 1992; Godley y Lavoie,
+2007). Passarella (2023) construye un modelo que articula teoría del circuito
+monetario, insumo-producto y consistencia stock-flujo; en él, la financiación
+inicial y final se relaciona con préstamos y stocks financieros que se
+actualizan entre periodos. Ese antecedente sitúa la combinación de
+requerimiento corriente y posición heredada; la proyección institucional y
+los funcionales de exposición se definen aquí.\footnote{Minsky y Godley--Lavoie aportan el contexto de
+  compromisos financieros, balances e inventarios heredados. La proyección \(\mu\), la exposición \(U\), su pico \(N\) y la
+  exposición-tiempo \(\Theta\) son objetos del presente programa; su
+  definición corresponde a esta construcción.}
+
+\subsection{Profundidad y duración}\label{profundidad-y-duraciuxf3n}
+
+Una exposición puede ser intensa y breve o menos intensa y persistente. Para no
+confundir ambas dimensiones necesitamos medir por separado profundidad y duración.
+El máximo de exposición es
+
+\[
+N_{P,t}
+=
+\max_{0\le k\le Q_t}U_{P,t}(k).
+\]
+
+Para medir persistencia temporal se distinguen tiempos físicos
+
+\[
+s_{t,0}<\cdots<s_{t,Q_t},
+\qquad
+\Delta s_{t,k}>0,
+\]
+
+y adoptamos la convención de que \(U_{P,t}(k)\) rige durante el
+intervalo posterior al prefijo \(k\). Entonces
+
+\[
+\Theta_{P,t}
+=
+\sum_{k=0}^{Q_t-1}
+U_{P,t}(k)\Delta s_{t,k}.
+\]
+
+El pico mide profundidad; la exposición-tiempo incorpora además su
+duración.
+
+Para el testigo fijamos un dominio \(C_{\mathrm{ref}}\) que admita las
+dos ejecuciones consideradas. Con intervalos unitarios y \(m_P^0=0\),
+pueden obtenerse
+
+\[
+U^\alpha_P=(0,2,2,0),
+\qquad
+U^\beta_P=(0,2,0,0).
+\]
+
+En ambos casos,
+
+\[
+N_P=2,
+\]
+
+pero
+
+\[
+\Theta^\alpha_P=4,
+\qquad
+\Theta^\beta_P=2.
+\]
+
+La duración puede cambiar aun cuando se conserve el orden relativo de las
+operaciones que afectan directamente a \(P\): una operación global
+intercalada puede retrasar el cobro que cierra la exposición local.
+
+\subsection{Puente con el requerimiento localizado}\label{puente-con-el-requerimiento-localizado}
+
+El requerimiento de bloque del artículo II es
+
+\[
+d^\pi_{P,t}
+=
+\left[
+-\min_k c^\pi_{P,t}(k)
+\right]_+.
+\]
+
+Como \(c^\pi_{P,t}(0)=0\), el mínimo es no positivo. Por tanto,
+
+\[
+N_{P,t}
+=
+[d^\pi_{P,t}-m^0_{P,t}]_+.
+\]
+
+\Needspace{4\baselineskip}\textbf{Demostración.} Sea \(m_P=\min_k c^\pi_{P,t}(k)\le0\). Entonces
+
+\[
+N_P
+=
+\max_k[-(m^0_P+c^\pi_P(k))]_+
+=
+[-m^0_P-m_P]_+.
+\]
+
+Como \(d^\pi_P=-m_P\), se obtiene el resultado.
+
+En consecuencia,
+
+\[
+m^0_{P,t}\ge d^\pi_{P,t}
+\iff
+N_{P,t}=0
+\iff
+U_{P,t}(k)=0\quad\forall k.
+\]
+
+La relación separa el requerimiento desde saldo inicial de referencia
+\(d^\pi_P\), la disponibilidad efectiva \(m^0_P\) y la parte máxima que
+permanece descubierta \(N_P\).
+
+La trayectoria \(U\) conserva en qué prefijos aparece cada insuficiencia y su
+magnitud; \(N\) y \(\Theta\) sólo resumen aspectos de ella. El mismo \(N\) o
+la misma \(\Theta\) pueden, por tanto, corresponder a perfiles diferentes.
+
+\subsection{De la exposición a la cobertura}\label{de-la-exposiciuxf3n-a-la-cobertura}
+
+Dado \(h_t\), la proyección institucional, la arquitectura y la trayectoria,
+quedan determinados \(U_t\), \(N_t\) y \(\Theta_t\). Falta todavía determinar
+cómo se cubre esa exposición: cuánto falta y durante cuánto tiempo no
+establece quién proporciona la capacidad de pago ni bajo qué contrato.
+
+
+\cleardoublepage
+\setcounter{subsection}{0}
+\vspace*{6mm}\section*{IV}\label{iv.-contratos-e-implementaciuxf3n-de-la-financiaciuxf3n}
+\thispagestyle{plain}\markright{IV · Contratos e implementación}
+\phantomsection\addcontentsline{toc}{section}{IV · Contratos e implementación de la financiación}
+{\large\itshape Contratos e implementación de la financiación\par}\vspace{1.2ex}
+
+\subsection*{Cobertura, instrumentos y tie-up/release}\label{cobertura-instrumentos-y-tie-uprelease}
+
+\subsection{Cobertura y posición operacional}\label{cobertura-y-posiciuxf3n-operacional}
+
+Una misma exposición puede sostenerse mediante coberturas distintas. El problema
+económico es cómo se proporciona la capacidad de pago que falta para que la ejecución
+pueda continuar. Sea \(x_{P,t}(k)\ge0\) la capacidad de pago adicional efectivamente
+movilizada y \(\bar L_{P,t}(k)\) la capacidad máxima accesible. La posición
+operacional es
+
+\[
+b_{P,t}(k)
+=
+m^0_{P,t}
++
+c^\pi_{P,t}(k)
++
+x_{P,t}(k).
+\]
+
+Bajo \(x\ge0\),
+
+\[
+b_{P,t}(k)\ge0
+\iff
+x_{P,t}(k)\ge U_{P,t}(k).
+\]
+
+\Needspace{4\baselineskip}\textbf{Demostración.} Si \(m^0_P+c^\pi_P(k)\ge0\), entonces
+\(U_P(k)=0\) y toda \(x_P(k)\ge0\) mantiene no negativa la posición. Si
+la suma es negativa, \(U_P(k)=-(m^0_P+c^\pi_P(k))\), de modo que
+\(b_P(k)\ge0\) equivale exactamente a \(x_P(k)\ge U_P(k)\).
+
+La literatura sobre circuito monetario, crédito y balances permite separar
+la necesidad de pago de su financiación y sus contrapartidas (Campbell, 2002;
+Graziani, 2003; Godley y Lavoie, 2007). Trigg (2021) recorre institucionalmente el paso desde contratos privados de
+deuda y su clearing hasta un sistema bancario; Passarella (2023), por su
+parte, distingue financiación inicial y financiación final, conectadas con
+préstamos y depósitos dentro de un marco stock-flow consistent. Ambos antecedentes sitúan mediaciones financieras concretas entre la
+necesidad corriente y las posiciones de balance. Aquí distinguimos la
+cobertura, entendida como servicio de liquidez, de la estructura financiera
+que la implementa.\footnote{El apoyo bibliográfico
+  delimita el problema institucional de financiación, crédito y
+  contrapartidas. Los operadores \(\mathcal X(\mathcal K)\),
+  \(\mathcal Y(U,\mathcal K)\), \(V\), \(\Psi\) y
+  \(\Lambda_{\mathcal I}\) pertenecen a la construcción formal del
+  programa.}
+
+Con límites de capacidad,
+
+\[
+U_t(k)\preceq x_t(k)\preceq\bar L_t(k).
+\]
+
+La cobertura-tiempo es
+
+\[
+\mathcal T_x(x)
+=
+\sum_{P\in\mathcal P_t}
+\sum_{k=0}^{Q_t-1}
+x_P(k)\Delta s_{t,k}.
+\]
+
+Toda cobertura operacionalmente factible satisface
+
+\[
+\max_k x_P(k)\ge N_P,
+\]
+
+y
+
+\[
+\mathcal T_x(x)\ge\Theta.
+\]
+
+Estas desigualdades fijan cotas para cualquier trayectoria que cubra la
+exposición. Para pasar de ellas al crédito observado y al coste financiero
+hay que especificar la cobertura, el contrato y sus precios.
+
+\subsection{Benchmark justo-a-tiempo y régimen contractual}\label{benchmark-justo-a-tiempo-y-ruxe9gimen-contractual}
+
+La trayectoria
+
+\[
+x^{JIT}(k)=U(k)
+\]
+
+es el elemento mínimo del dominio puramente operacional bajo el orden
+componente a componente. Si existe además un límite de capacidad,
+\(x^{JIT}\) pertenece al dominio sólo cuando
+
+\[
+\bar L(k)\succeq U(k)
+\qquad
+\forall k.
+\]
+
+Y si se introduce un régimen contractual \(\mathcal K\), JIT es
+admisible únicamente cuando
+
+\[
+U\in\mathcal X(\mathcal K).
+\]
+
+JIT es, por tanto, el benchmark operacional. Su admisibilidad como
+contrato efectivo depende del régimen \(\mathcal K\).
+
+No toda trayectoria de financiación técnicamente imaginable puede contratarse o
+mantenerse bajo cualquier institución. Para distinguir la necesidad operacional de las
+restricciones contractuales, Sea \(\mathfrak K_t\) el universo de regímenes contractuales bien
+tipados y
+
+\[
+\mathcal X(\mathcal K)
+\]
+
+el conjunto de coberturas compatibles con \(\mathcal K\). La
+factibilidad efectiva es
+
+\[
+\mathcal Y(U,\mathcal K)
+=
+\{x\in\mathcal X(\mathcal K):x(k)\succeq U(k)\ \forall k\}.
+\]
+
+Definimos
+
+\[
+V(U,\mathcal K)
+=
+\inf_{x\in\mathcal Y(U,\mathcal K)}
+\mathcal T_x(x),
+\]
+
+con \(V=+\infty\) cuando el conjunto es vacío. Cuando \(V<\infty\),
+
+\[
+\Psi(U,\mathcal K)
+=
+V(U,\mathcal K)-\Theta(U)\ge0.
+\]
+
+No se supone que el ínfimo se alcance salvo que el régimen lo garantice.
+
+Un ejemplo de vencimiento hace visible la diferencia. Sea
+
+\[
+U=(0,2,1,0)
+\]
+
+con intervalos unitarios. El benchmark JIT tiene \(\mathcal T_x=3\).
+Considérese un régimen \(\mathcal K_B\) que, cuando moviliza un bloque
+de dos unidades en \(k=1\), obliga a mantenerlo íntegro hasta \(k=3\) y
+permite liberarlo en ese momento. La cobertura mínima permitida es
+
+\[
+x_B=(0,2,2,0),
+\]
+
+por lo que
+
+\[
+V(U,\mathcal K_B)=4,
+\qquad
+\Psi(U,\mathcal K_B)=1.
+\]
+
+La exposición fija un piso operacional, pero el régimen contractual
+determina qué coberturas de ese piso son admisibles.
+
+Si
+
+\[
+\mathcal X(\mathcal K_1)\supseteq\mathcal X(\mathcal K_2),
+\]
+
+entonces
+
+\[
+\mathcal Y(U,\mathcal K_1)\supseteq\mathcal Y(U,\mathcal K_2)
+\]
+
+y
+
+\[
+V(U,\mathcal K_1)
+\le
+V(U,\mathcal K_2).
+\]
+
+Para valores finitos,
+
+\[
+\Psi(U,\mathcal K_1)
+\le
+\Psi(U,\mathcal K_2).
+\]
+
+Una capacidad constante \(\bar L_P\) es suficiente, en ausencia de otras
+restricciones contractuales, exactamente cuando
+
+\[
+\bar L_P\ge N_P.
+\]
+
+\subsection{Instrumentos y contrapartidas}\label{instrumentos-y-contrapartidas}
+
+Cubrir una exposición no determina todavía qué relación financiera presta ese servicio.
+La misma capacidad de pago puede provenir de una transferencia de saldos existentes, de
+crédito comercial, de un préstamo bancario o de creación de depósitos, y cada forma deja
+contrapartidas distintas. Por ello conviene separar el servicio de liquidez de su
+implementación financiera.
+
+Fijada una cobertura \(x\), queda por determinar qué instrumento o
+cartera la implementa. La cobertura describe el servicio de liquidez; la
+implementación especifica las posiciones financieras que lo proporcionan. Sea
+
+\[
+f_t(k)
+=
+(f_{1,t}(k),\ldots,f_{J,t}(k))
+\]
+
+un vector de posiciones financieras y
+
+\[
+x_t(k)
+=
+\Lambda_{\mathcal I}(f_t(k))
+\]
+
+la regla institucional de implementación.
+
+Si existen \(f^{(1)}\ne f^{(2)}\) en el mismo dominio institucional
+tales que
+
+\[
+\Lambda_{\mathrm{impl}}(f^{(1)})
+=
+\Lambda_{\mathrm{impl}}(f^{(2)})
+=
+x,
+\]
+
+la misma cobertura admite más de una cartera implementadora.
+
+La multiplicidad tiene contenido monetario. Si un financiador transfiere
+liquidez preexistente por una cantidad \(q\), la posición monetaria
+conjunta de financiador y financiado no aumenta:
+
+\[
+\Delta(m_F+m_D)=0.
+\]
+
+Si una institución origina un préstamo creando simultáneamente un
+depósito aceptado como medio de pago (Graziani, 2003; Lavoie, 2014;
+Wray, 2015; Mitchell, Wray y Watts, 2019), una medida monetaria que
+incluya ese depósito puede registrar
+
+\[
+\Delta M(d)=q.
+\]
+
+Ambos mecanismos pueden proporcionar al financiado la misma capacidad de
+pago \(q\) y el mismo pasivo principal. La cobertura observada requiere, por tanto, información adicional sobre el
+mecanismo de creación o transferencia monetaria.
+
+El crédito comercial requiere otra delimitación. Si el vendedor pospone la
+liquidación de una obligación originalmente pagadera en un prefijo dado,
+puede cambiar \(E\), \(C\) o la cronología efectiva. El diferimiento cuenta
+como cobertura de una ejecución comercial fija sólo mientras conserve esos
+tres objetos; si altera alguno, pertenece a una construcción distinta.
+
+\subsection{Tie-up, release y estado terminal}\label{tie-up-release-y-estado-terminal}
+
+La terminología de \emph{release} y \emph{tie-up} reúne antecedentes de
+tradiciones distintas: Marx analiza liberación y vinculación de capital;
+Maldonado-Filho desarrolla esas categorías en una lectura temporal; Lowe
+estudia la movilización de capital circulante durante el \emph{traverse} (Marx, 1976 {[}1894{]}, cap. 6, sec.~II;
+Maldonado-Filho, 1995; Lowe, 1976, cap. 17).\footnote{Las tres líneas
+  cumplen funciones distintas: Marx define liberación y vinculación de
+  capital; Maldonado-Filho desarrolla esas categorías en una
+  reconstrucción temporal; Lowe analiza working capital dentro del
+  traverse. Aquí se usan como antecedentes diferenciados, sin postular una
+  genealogía Lowe \(\to\) Freeman. Los operadores \(\tau\) y \(\rho\)
+  son definiciones del programa para incrementos y liberaciones de
+  cobertura; la relación precisa con las categorías de Marx constituye
+  una cuestión interpretativa separada.}
+
+Para una cobertura dada, definimos
+
+\[
+\tau_P(k)
+=
+[x_P(k)-x_P(k-1)]_+,
+\]
+
+\[
+\rho_P(k)
+=
+[x_P(k-1)-x_P(k)]_+.
+\]
+
+Entonces
+
+\[
+x_P(k)-x_P(k-1)
+=
+\tau_P(k)-\rho_P(k).
+\]
+
+La igualdad es una identidad incremental: \emph{tie-up} y \emph{release}
+resumen los incrementos y liberaciones de una trayectoria de cobertura ya
+dada. Bajo JIT siguen exactamente los cambios de \(U\); bajo restricciones
+contractuales, una caída de la exposición puede no traducirse en liberación
+inmediata.
+
+Minimizar la necesidad de liquidez o su cobertura no basta para ordenar
+institucionalmente las implementaciones. Éstas pueden diferir en robustez
+frente a retrasos, impagos, concentración de dependencias o perturbaciones,
+aun cuando una requiera menos liquidez.
+Evaluar esas propiedades exige objetos adicionales a \(M_0\), \(N\),
+\(\Theta\) y \(V\).
+
+La cobertura describe cómo se sostuvo la ejecución presente. Para conocer
+qué queda al final hay que registrar además las posiciones persistentes
+producidas por su implementación. Dos implementaciones que prestan el mismo
+servicio durante el periodo pueden dejar depósitos, préstamos, vencimientos
+y contrapartidas diferentes. El artículo V estudia qué parte de esas
+diferencias sobrevive al cierre.
+
+
+\cleardoublepage
+\setcounter{subsection}{0}
+\vspace*{6mm}\section*{V}\label{v.-estados-financieros-frontera-y-reproducciuxf3n-interperiuxf3dica}
+\thispagestyle{plain}\markright{V · Estados financieros y frontera}
+\phantomsection\addcontentsline{toc}{section}{V · Estados financieros, frontera y reproducción interperiódica}
+{\large\itshape Estados financieros, frontera y reproducción interperiódica\par}\vspace{1.2ex}
+
+\subsection*{Persistencia, herencia y memoria monetaria}\label{persistencia-herencia-y-memoria-monetaria}
+
+\subsection{Cobertura presente y estado terminal}\label{cobertura-presente-y-estado-terminal}
+
+La cobertura explica cómo pudo continuar la ejecución; no dice todavía qué balance
+monetario-financiero fue dejando esa historia. Necesitamos, por tanto, registrar depósitos,
+préstamos y otras posiciones persistentes generadas durante la implementación.
+
+Sea
+
+\[
+Z_t^M(k)\in\mathcal Z^M
+\]
+
+el estado monetario-financiero relevante en el prefijo \(k\). Su contenido depende de la institución: puede incluir caja, depósitos,
+préstamos, reservas, vencimientos y posiciones frente a terceros.
+
+Una trayectoria de cobertura no basta para describir el balance que deja la
+ejecución. Dos historias financieras pueden producir el mismo \(x_t(k)\) y
+acumular componentes distintos de \(Z_t^M(k)\).
+
+En particular,
+
+\[
+x\nRightarrow Z_t^M(Q_t)
+\]
+
+en general. La cobertura identifica el servicio de liquidez prestado durante la ejecución,
+pero no el estado terminal: dentro de un mismo dominio institucional, una misma
+cobertura puede admitir implementaciones que dejan balances diferentes.
+
+Esta apertura del estado a posiciones de balance y compromisos persistentes
+tiene antecedentes en Minsky (1986, 1992), Godley y Lavoie (2007) y en la
+articulación circuito--insumo-producto--stock-flujo de Passarella (2023),
+quien construye una dinámica con dinero crediticio endógeno y hace explícita
+la actualización interperiódica de stocks mediante flujos corrientes. Estos antecedentes
+fundamentan el paso flujo--stock--periodo siguiente, sin definir el estado
+\(Z_t^M\), la regla \(\Phi_M\) ni las preguntas de identificación
+utilizadas aquí.
+
+El contraste entre transferencia de fondos preexistentes y crédito
+creador de depósito proporciona un testigo cuando ambas implementaciones
+pertenecen a la misma fibra de cobertura y se mantienen fijas las demás
+condiciones pertinentes.
+
+\subsection{Regla de frontera y no-propagación}\label{regla-de-frontera-y-no-propagaciuxf3n}
+
+El paso del estado terminal al punto de partida del periodo siguiente
+requiere especificar qué parte sobrevive. Sea
+
+\[
+\Phi_M:\mathcal Z^M\times\mathcal J\to\mathcal H
+\]
+
+una regla institucional de frontera; entonces
+
+\[
+h_{t+1}
+=
+\Phi_M(Z_t^M(Q_t),J_t).
+\]
+
+\(J_t\) reúne información institucional no contenida necesariamente en
+el vector terminal: vencimientos, reglas de liquidación, rollover y
+otras condiciones.
+
+El mismo estado terminal puede producir herencias distintas si cambia la
+regla o el parámetro institucional. Por ejemplo, para el estado
+
+\[
+Z=(4,2),
+\]
+
+una regla revolvente puede producir
+
+\[
+\Phi_M^{\mathrm{roll}}(Z)=(4,2),
+\]
+
+mientras una regla que obliga a liquidar las dos unidades de deuda con
+caja puede producir
+
+\[
+\Phi_M^{\mathrm{liq}}(Z)=(2,0).
+\]
+
+La diferencia procede aquí de la regla institucional: fijada \(\Phi_M\),
+cada argumento tiene una imagen unívoca.
+
+Una regla de frontera también puede borrar diferencias entre estados terminales.
+Por ello,
+
+\[
+x\nRightarrow Z_t^M(Q_t)
+\]
+
+no implica automáticamente
+
+\[
+x\nRightarrow h_{t+1}.
+\]
+
+La no-identificación se propaga sólo cuando la transformación posterior conserva
+las diferencias relevantes.
+
+\subsection{T2-M: cierre comercial y memoria financiera}\label{t2-m-cierre-comercial-y-memoria-financiera}
+
+El benchmark de cinco agentes está balanceado agente por agente. Para
+toda ejecución completa de la misma red,
+
+\[
+c^\pi(T)=0.
+\]
+
+Si \(S_t^{\mathrm{com}}\) representa la dotación comercial heredada,
+entonces
+
+\[
+S_T^{\mathrm{com}}
+=
+S_0^{\mathrm{com}}.
+\]
+
+El cierre comercial deja abierta la posición financiera.
+
+Considérese un benchmark en el que un financiador externo cubre
+exactamente el déficit incremental, no hay amortización intraperiódica
+de la dotación financiada y la frontera preserva bajo rollover esa
+dotación comercial no negativa.\footnote{El cálculo numérico T2-M se
+  restringe al par de ejecuciones de referencia \(\alpha,\beta\) y a las
+  reglas de financiación y frontera especificadas.} La necesidad
+incremental es
+
+\[
+D^{\mathrm{inc}}
+(S_t^{\mathrm{com}},\pi)
+=
+[D^\pi-S_t^{\mathrm{com}}]_+.
+\]
+
+Bajo una frontera de liquidación financiera, el saldo comercial
+reconstituido permanece y el pasivo se extingue:
+
+\[
+\Phi_M^{\mathrm{liq}}
+:
+(S_T^{\mathrm{com}},L_T)
+\mapsto
+(S_T^{\mathrm{com}},0).
+\]
+
+Bajo la regla revolvente del benchmark, la dotación financiada se
+conserva y la actualización puede escribirse
+
+\[
+S_{t+1}^{\mathrm{com}}
+=
+\max(S_t^{\mathrm{com}},D^\pi)
+\]
+
+componente a componente, bajo las hipótesis indicadas.
+
+Con
+
+\[
+D^\alpha=(4,4,4,0,6),
+\qquad
+D^\beta=(4,0,2,0,6),
+\]
+
+una historia que ya dejó \(S_t^{\mathrm{com}}=D^\beta\) no requiere
+financiación incremental para repetir \(\beta\), mientras el paso a
+\(\alpha\) exige
+
+\[
+D^{\mathrm{inc}}(D^\beta,\alpha)
+=
+(0,4,2,0,0).
+\]
+
+En T2-M, la memoria monetaria depende del par formado por un estado alcanzable
+y una regla institucional concreta.
+
+\subsection{Traverse financiero y límite del cierre}\label{traverse-financiero-y-luxedmite-del-cierre}
+
+I--V cierran así una dinámica monetario-financiera condicionada: ejecución,
+requerimiento, exposición, cobertura e implementación conducen a un estado
+terminal, y la regla de frontera determina su herencia.
+
+Ese cierre todavía no determina la transición material de la economía. Stocks
+físicos, producción en proceso, capacidad productiva y composición sectorial
+pueden cambiar entre periodos sin estar contenidos en \(h_{t+1}\). El problema de articular reproducción material,
+circulación, capital circulante y cambio estructural remite a líneas
+distintas en Marx, Lowe y Pasinetti (Marx, 1976 {[}1885{]}; Marx, 1976
+{[}1894{]}; Lowe, 1976, caps. 12 y 17; Pasinetti, 1981).\footnote{Estas
+  fuentes motivan dimensiones distintas del problema: reproducción y
+  circulación en Marx, traverse y capital circulante en Lowe, cambio
+  estructural interperiódico en Pasinetti. Ninguna proporciona la regla
+  \(\Phi_M\) ni la transición intraperiódica del programa.}
+
+La cadena I--V deja además un problema común. En varios pasos, dos objetos
+indistinguibles para una descripción producen valores distintos del observable
+siguiente. Antes de ampliar el estado hacia una dinámica conjunta conviene
+preguntar qué información debe conservar una descripción para determinar cada
+observable ya obtenido.
+
+
+\cleardoublepage
+\setcounter{subsection}{0}
+\vspace*{6mm}\section*{VI}\label{vi.-resoluciuxf3n-informacional-de-sistemas-secuenciales}
+\thispagestyle{plain}\markright{VI · Resolución informacional}
+\phantomsection\addcontentsline{toc}{section}{VI · Resolución informacional de sistemas secuenciales}
+{\large\itshape Resolución informacional de sistemas secuenciales\par}\vspace{1.2ex}
+
+\subsection*{Fibras, cocientes y geometría de la ejecución}\label{fibras-cocientes-y-geometruxeda-de-la-ejecuciuxf3n}
+
+\subsection{Del caso económico a la fibra}\label{del-caso-econuxf3mico-a-la-fibra}
+
+El problema económico de este artículo puede formularse antes de introducir su
+instrumental matemático: si observamos o conservamos cierta información sobre una
+ejecución, ¿basta para conocer el resultado que nos interesa, o esa descripción ha
+identificado casos que económicamente deben distinguirse? Las fibras y la factorización
+se introducen para responder exactamente esa pregunta de suficiencia informacional.
+
+Los artículos anteriores han encontrado repetidamente el mismo problema:
+una descripción suficiente para una pregunta puede dejar de serlo para la
+siguiente.
+
+\begin{itemize}
+\tightlist
+\item
+  dos trayectorias pueden compartir \(D\) y producir diferente \(M_0\)
+  bajo una arquitectura;
+\item
+  una misma exposición puede admitir varias coberturas;
+\item
+  una misma cobertura puede admitir varias implementaciones;
+\item
+  una misma cobertura puede conducir a estados terminales distintos.
+\end{itemize}
+
+La cuestión que dejan planteada los resultados de I--V puede formularse ahora de manera general: dado un observable objetivo, ¿qué distinciones entre ejecuciones o mediadores deben conservarse para reconstruirlo?
+
+Sea
+
+\[
+F:\Pi_{\mathrm{adm}}\to Y.
+\]
+
+Definimos
+
+\[
+\pi\sim_F\pi'
+\iff
+F(\pi)=F(\pi').
+\]
+
+Las fibras de \(F\) agrupan ejecuciones indistinguibles para esa
+pregunta. El cociente
+
+\[
+\Pi_{\mathrm{adm}}/\sim_F
+\]
+
+conserva exactamente las distinciones visibles para \(F\).
+
+Los antecedentes movilizados en I--V operan también a resoluciones
+distintas: Leontief--Bródy complementa la estructura productiva con stocks
+y flujos monetarios; Trigg explicita contratos, compensación y mediaciones
+bancarias; Rotemberg y Hayakawa sitúan la liquidación secuencial dentro de
+redes de obligaciones, mientras Hayakawa et al. y McMahon et al. convierten el
+orden de pagos en objeto explícito de optimización; Passarella articula la
+secuencia monetaria intraperiódica con stocks y dinámica interperiódica.
+Aquí estos antecedentes se ordenan según la resolución informacional que
+exige cada problema. El criterio de fibras formaliza esa comparación dentro
+del presente programa.
+
+\subsection{Teorema de factorización y criterio de identificación}\label{teorema-de-factorizaciuxf3n-y-criterio-de-identificaciuxf3n}
+
+La pregunta anterior tiene una respuesta exacta. Una descripción determina
+otra si ésta es constante sobre cada clase que la primera no distingue. En
+lenguaje matemático, una función constante sobre clases de equivalencia
+factoriza a través del cociente correspondiente (Leinster, 2014).\footnote{La propiedad universal del
+  cociente en conjuntos proporciona el soporte matemático de la
+  factorización. La lectura económica en términos de suficiencia de una
+  representación para un observable es propia del programa y el resultado
+  se formula aquí en términos deterministas.}
+
+Sea
+
+\[
+F:\Pi_{\mathrm{adm}}\to Y,
+\qquad
+G:\Pi_{\mathrm{adm}}\to Z.
+\]
+
+Son equivalentes:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \(\sim_F\subseteq\sim_G\);
+\item
+  \(G\) es constante sobre cada fibra de \(F\);
+\item
+  existe una única función
+\end{enumerate}
+
+\[
+\bar g:\operatorname{im}F\to\operatorname{im}G
+\]
+
+tal que
+
+\[
+G=\bar g\circ F.
+\]
+
+\Needspace{4\baselineskip}\textbf{Demostración.} La inclusión de relaciones de equivalencia
+significa exactamente que \(F(\pi)=F(\pi')\) implica \(G(\pi)=G(\pi')\),
+que es la constancia de \(G\) en las fibras de \(F\). Bajo esa
+condición, definimos
+
+\[
+\bar g(F(\pi))=G(\pi).
+\]
+
+La constancia en fibras hace que la definición sea independiente del
+representante. Por construcción, \(G=\bar g\circ F\). La unicidad sobre
+\(\operatorname{im}F\) es forzosa. La recíproca se obtiene aplicando
+\(\bar g\) a dos valores iguales de \(F\).
+
+Escribiremos
+
+\[
+F\succeq_{\mathrm{info}}G
+\]
+
+cuando \(G\) factoriza a través de \(F\). En términos económicos, \(F\)
+conserva entonces todas las distinciones que \(G\) necesita: nunca reúne
+dos casos que \(G\) deba separar. El orden resultante es determinista y
+se define por refinamiento de fibras; la comparación conceptual con los
+órdenes de \emph{informativeness} de Blackwell (1951) sitúa esta relación
+de suficiencia.
+
+El cociente canónico
+
+\[
+q_F:
+\Pi_{\mathrm{adm}}
+\to
+\Pi_{\mathrm{adm}}/\sim_F
+\]
+
+es, salvo renombramiento de clases, el descriptor exacto menos
+informativo que todavía determina \(F\).
+
+El mismo criterio se aplica a mediadores institucionales. Si
+\(\Gamma(X)\) es la fibra de mediadores compatibles con un objeto \(X\)
+y
+
+\[
+F_X:\Gamma(X)\to Y
+\]
+
+es el resultado inducido manteniendo fijas las demás condiciones
+pertinentes, entonces \(X\) identifica unívocamente \(Y\) a través de
+esa mediación si y sólo si \(F_X\) es constante sobre \(\Gamma(X)\). Un
+par de mediadores compatibles con resultados distintos basta para
+demostrar no-identificación. Seleccionar el mediador e identificar el mecanismo que lo genera exige una
+especificación institucional adicional.
+
+\subsection{Testigos, recuperación de suficiencia y jerarquías}\label{testigos-recuperaciuxf3n-de-suficiencia-y-jerarquuxedas}
+
+El criterio devuelve inmediatamente los resultados anteriores. Si
+
+\[
+F(\pi)=F(\pi'),
+\qquad
+G(\pi)\ne G(\pi'),
+\]
+
+entonces \(F\not\succeq_{\mathrm{info}}G\). Los testigos de I--V son
+precisamente pares de este tipo.
+
+La suficiencia se evalúa en cada transformación y dominio. Una
+transformación posterior puede borrar diferencias que \(F\) no distinguía,
+y la suficiencia puede recuperarse al restringir el dominio o fijar una
+institución. Bajo segregación,
+
+\[
+M_0(\pi;\mathcal P_{\mathrm{sep}})
+=
+\|D^\pi\|_1,
+\]
+
+de modo que \(D^\pi\) es suficiente para ese requerimiento. Si un
+régimen contractual fija una regla de selección
+
+\[
+x=\sigma_{\mathcal K}(U),
+\]
+
+entonces \(U\) basta para \(x\) en ese dominio. Fijados el dominio institucional y el mapa que lleva cada implementación a
+su cobertura, la cobertura identifica unívocamente la implementación
+exactamente cuando ese mapa es inyectivo.
+
+Bajo parámetros institucionales fijos pueden establecerse jerarquías
+como
+
+\[
+c^\pi\succeq_{\mathrm{info}}D^\pi.
+\]
+
+Cambiar \(\mathcal P\), \(h\), \(\mathcal K\) o \(\Phi_M\) cambia
+la pregunta y puede cambiar las fibras. La clasificación informacional de
+los observables queda así indexada por el dominio y las condiciones
+institucionales fijadas.
+
+\subsection{\texorpdfstring{Estados parciales, órdenes completos y laboratorio \(2\times2\)}{Estados parciales, órdenes completos y laboratorio 2\textbackslash times2}}\label{estados-parciales-uxf3rdenes-completos-y-laboratorio-2times2}
+
+Cuando \(n\) operaciones distinguibles pueden estar ejecutadas o
+pendientes, los estados parciales forman
+
+\[
+\mathcal U_n=\{0,1\}^n.
+\]
+
+Dos estados son adyacentes cuando difieren en una coordenada, dando el
+hipercubo \(Q_n\). Una permutación completa corresponde a un camino
+monotónico maximal de \(0^n\) a \(1^n\).
+
+Las ejecuciones completas forman otro objeto:
+
+\[
+G_n
+=
+\operatorname{Cay}
+(S_n,\{s_1,\ldots,s_{n-1}\}),
+\]
+
+donde \(s_i\) intercambia posiciones consecutivas. Los vértices de
+\(Q_n\) son estados parciales; los vértices de \(G_n\) son órdenes
+completos.
+
+En el laboratorio de cuatro agentes \((C,V,K,W)\), con operaciones
+
+\[
+a:K\to C(4),\quad
+b:C\to W(3),\quad
+c:K\to V(2),\quad
+d:V\to W(5),
+\]
+
+se obtiene, para toda \(\pi\in S_4\),
+
+\[
+D^\pi
+=
+\left(
+3\mathbf1_{\{b\prec_\pi a\}},
+\,
+3+2\mathbf1_{\{d\prec_\pi c\}},
+\,
+6,
+\,
+0
+\right).
+\]
+
+Por tanto,
+
+\[
+q_D(\pi)
+=
+\left(
+\mathbf1_{\{b\prec_\pi a\}},
+\mathbf1_{\{d\prec_\pi c\}}
+\right)
+\]
+
+clasifica exactamente las cuatro clases de \(D\). Cada clase contiene
+seis ejecuciones.
+
+Para este observable y este dominio bastan, por tanto, dos comparaciones
+ordinales. Cambiar el observable o el dominio puede cambiar la reducción
+suficiente.
+
+\subsection{Sensibilidad local, geometría y factibilidad}\label{sensibilidad-local-geometruxeda-y-factibilidad}
+
+Sea \(H\) un grafo de comparaciones entre operaciones. Cada orden total
+orienta sus aristas; la imagen del mapa de orientación es el conjunto
+\(AO(H)\) de orientaciones acíclicas. Para bosques, toda orientación es
+acíclica y la estructura de orientaciones es hipercúbica. Cuando existen
+ciclos, aparecen restricciones de realizabilidad. La teoría de
+orientaciones acíclicas y la geometría de permutoedros y zonotopos
+proporcionan el lenguaje matemático de esta representación (Stanley,
+1973; Postnikov, 2009; Ziegler, 1995).\footnote{Stanley, Postnikov y
+  Ziegler suministran resultados y lenguaje matemático sobre
+  orientaciones acíclicas, permutoedros y zonotopos. No se les atribuye
+  el significado económico de los observables ni la selección de un
+  dominio admisible.} En VI, este lenguaje representa el observable sobre un dominio admisible ya
+fijado.
+
+Para un dominio admisible \(A=\Pi_{\mathrm{adm}}\), definimos el grafo
+de sensibilidad \(H_F^A\) por testigos locales: \(\{e,f\}\) es una
+arista cuando existe un contexto admisible en el que intercambiar
+consecutivamente \(e\) y \(f\) cambia \(F\).
+
+En el dominio completo \(S_n\), y también en dominios definidos sólo por
+precedencias bajo las condiciones correspondientes, la orientación de
+\(H_F^A\) puede ser suficiente para \(F\). La razón es que dos
+extensiones lineales de un mismo poset pueden conectarse mediante
+intercambios adyacentes de elementos incomparables; si esos intercambios
+son \(F\)-invariantes, \(F\) permanece constante a lo largo del camino.
+
+Con restricciones adicionales de factibilidad, la conclusión debe
+formularse por fibra. Sea
+
+\[
+G_{\mathrm{adm}}
+=
+G_n[A]
+\]
+
+y
+
+\[
+A_\alpha
+=
+\{\pi\in A:q_{H_F^A}(\pi)=\alpha\}.
+\]
+
+Si \(F\) es invariante en cada arista de \(G_{\mathrm{adm}}[A_\alpha]\),
+entonces \(F\) es constante en cada componente conexa de esa fibra. Si
+la fibra inducida es conexa, \(F\) es constante en toda la fibra. La
+conectividad es suficiente, no necesaria: una fibra desconectada puede
+ser globalmente constante por razones adicionales.
+
+El contraejemplo mínimo
+
+\[
+A=\{abc,cba\}
+\]
+
+muestra el problema. Las dos ejecuciones no están conectadas por
+intercambios adyacentes admisibles, de modo que la sensibilidad local
+puede ser vacía aun cuando \(F\) tome valores distintos. Cuando la fibra
+se fragmenta, puede enriquecerse el descriptor:
+
+\[
+\widehat q_F(\pi)
+=
+\bigl(
+q_{H_F^A}(\pi),
+\operatorname{comp}(\pi)
+\bigr).
+\]
+
+La información faltante puede provenir de la factibilidad, sin implicar una
+interacción económica de orden superior.
+
+La definición anterior registra si un intercambio puede cambiar un
+observable. Para el observable \(M_0(\cdot;\mathcal P)\), el artículo II
+permite además cuantificar esa arista: a cada transposición admisible
+\(\pi\to\tau_i\pi\) puede asociarse
+
+\[
+\delta_i^\pi(\mathcal P)
+=
+M_0(\tau_i\pi;\mathcal P)-M_0(\pi;\mathcal P).
+\]
+
+El grafo de sensibilidad distingue entonces aristas activas y neutrales,
+mientras la variación local conserva signo y magnitud. Como
+\(\delta_i^\pi\) depende de \(\mathcal P\), una misma comparación puede
+ser visible bajo una arquitectura y neutral bajo otra. La geometría de
+las ejecuciones y el orden de arquitecturas no son, por tanto, dos
+reducciones independientes del problema: son dos direcciones de
+variación del mismo funcional.
+
+\subsection{Uso operativo y suficiencia prospectiva}\label{uso-operativo-y-suficiencia-prospectiva}
+
+Una vez obtenido un descriptor suficiente, las clases relevantes pueden
+cubrirse o enumerarse sin recorrer cada ejecución por separado. Las construcciones combinatorias de cobertura cumplen esa función sobre un
+dominio ya definido.\footnote{Deben distinguirse dos problemas combinatorios
+  que a veces se confunden. Una superpermutación contiene cada
+  permutación como subcadena contigua (Johnston, 2013; Houston, 2014),
+  mientras una \emph{shortest common supersequence} exige aparición como
+  subsecuencia y admite borrado de símbolos intermedios (Räihä y
+  Ukkonen, 1981). Ningún resultado económico de VI depende de que una
+  construcción de cobertura sea mínima; su función, cuando se usa, es
+  sólo recorrer o certificar un dominio previamente definido.} La
+dirección lógica es
+
+\[
+(E,C)\mapsto\Pi_{\mathrm{adm}}(E,C)
+\]
+
+y sólo después se pregunta si una construcción recorre adecuadamente ese
+dominio.
+
+El mismo criterio puede aplicarse prospectivamente a la herencia: fijados
+el dominio, la institución de financiación y la regla de frontera, puede
+preguntarse qué observable presente basta para determinar \(h_{t+1}\) o un
+estado futuro más rico.
+
+VI responde así al problema recurrente de I--V: una representación es
+suficiente para un observable exactamente cuando conserva todas las
+distinciones que éste requiere. Con esta cuestión resuelta, queda abierta
+otra de naturaleza económica: qué diferencias producidas dentro del
+período sobreviven a la frontera y modifican el estado reproductivo
+siguiente. Ése es el problema de VII.
+
+
+\cleardoublepage
+\setcounter{subsection}{0}
+\vspace*{6mm}\section*{VII}\label{vii.-reproducciuxf3n-traverse-y-secuenciaciuxf3n-monetaria}
+\thispagestyle{plain}\markright{VII · Reproducción, traverse y secuenciación}
+\phantomsection\addcontentsline{toc}{section}{VII · Reproducción, traverse y secuenciación monetaria}
+{\large\itshape Reproducción, traverse y secuenciación monetaria\par}\vspace{1.2ex}
+
+\subsection*{Planteamiento de una dinámica sensible a la ejecución intraperiódica}\label{planteamiento-de-una-dinuxe1mica-de-dos-tiempos}
+
+\subsection{Dónde termina la teoría cerrada}\label{duxf3nde-termina-la-teoruxeda-cerrada}
+
+La teoría cerrada en V alcanza un estado heredable \(h_{t+1}\), formado
+por depósitos, pasivos, liquidez y otras posiciones financieras. Una
+dinámica reproductiva conjunta requiere además stocks físicos, producción
+en proceso, capacidad productiva y composición sectorial. El criterio de VI permite evaluar qué descripciones conservan información
+suficiente una vez definido el objeto futuro. Antes hace falta construir esas
+dimensiones y relacionarlas con la regla monetario-financiera \(\Phi_M\).
+
+Passarella (2023) construye una representación stock-flow consistent que
+articula la secuencia del circuito dentro del periodo con la dinámica entre
+periodos y extiende esa articulación a una economía multisectorial mediante
+una estructura insumo-producto. El problema que queda abierto aquí es más
+estrecho: determinar cuándo diferencias entre ejecuciones admisibles dentro
+de un mismo periodo sobreviven a la frontera como diferencias del estado
+reproductivo siguiente.
+
+Para formular esa cuestión conviene distinguir dos escalas temporales:
+
+\[
+t=0,1,2,\ldots
+\]
+
+para el tiempo reproductivo/interperiódico, y
+
+\[
+k=0,\ldots,Q_t
+\]
+
+para la ejecución intraperiódica. La distinción mantiene separadas la
+secuencia interna de pagos y la transición reproductiva \(t\to t+1\): el
+tiempo de prefijos describe la primera, mientras la segunda exige una
+construcción interperiódica adicional.
+
+\subsection{Estado candidato y operadores abiertos}\label{estado-candidato-y-operadores-abiertos}
+
+A diferencia de los objetos cerrados de I--V, el estado que sigue es deliberadamente
+un objeto candidato: nombrarlo no sustituye la tarea económica de especificar qué
+dimensión material debe conservar y cómo se relaciona con la ejecución monetaria.
+Para articular ambas escalas basta, por ahora, con introducir un estado
+
+\[
+B_t(k).
+\]
+
+Una descomposición posible es
+
+\[
+B_t(k)
+=
+\bigl(
+B_t^R(k),
+B_t^M(k)
+\bigr),
+\]
+
+donde \(B_t^R\) recogería la dimensión real/material y \(B_t^M\) la
+monetario-financiera. Esta descomposición fija sólo el objeto que habrá que construir: quedan por
+determinar el tipo de cada componente, sus invariantes y la resolución
+mínima que debe conservar.
+
+Una dinámica conjunta requeriría, al menos, una actualización
+intraperiódica
+
+\[
+B_t(k)
+\xrightarrow{\mathcal T_e}
+B_t(k+1)
+\]
+
+y una frontera
+
+\[
+B_t(Q_t)
+\xrightarrow{\Phi}
+B_{t+1}(0).
+\]
+
+\(\mathcal T_e\) y \(\Phi\) nombran los operadores que una dinámica
+conjunta deberá definir. Su construcción debe especificar
+dominio, codominio, invariantes y condiciones de buena definición. Para recuperar la regla monetario-financiera \(\Phi_M\) de V como componente
+o proyección, primero debe establecerse una relación entre ambos espacios de
+estado; por ello, en la construcción abierta,
+
+\[
+\Phi\ne\Phi_M
+\]
+
+en general.
+
+\subsection{Antecedentes y articulación propia}\label{antecedentes-y-articulaciuxf3n-propia}
+
+Marx proporciona el problema de la reproducción social y la circulación
+del capital, además de categorías temporales de adelanto, retorno,
+liberación y atadura (Marx, 1976 {[}1885{]}, 1976 {[}1894{]}). Lowe
+formula el \emph{traverse} y el problema del capital circulante durante
+una transición (Lowe, 1976, caps. 12 y 17). Pasinetti desarrolla una
+teoría de cambio estructural en la que los estados heredados y la
+transformación interperiódica son centrales (Pasinetti, 1981). Las
+reconstrucciones temporales de Marx ayudan, por otra vía, a preservar la
+determinación secuencial frente a lecturas simultáneas (Freeman, 1995;
+Tombazos, 2014).\footnote{Estas líneas aportan antecedentes convergentes para problemas
+  distintos. Lowe aporta el traverse y el capital circulante; Pasinetti,
+  la transformación estructural interperiódica; Marx, la reproducción y
+  circulación del capital; las reconstrucciones temporales, la prioridad
+  de la determinación secuencial. En este volumen, la secuenciación de pagos \(k\), la implementación
+  monetaria intraperiódica y los operadores \(B_t(k)\), \(\mathcal T_e\)
+  y \(\Phi\) se integran en la construcción formal propuesta.}
+
+Estas líneas delimitan los problemas que debe reunir el sistema
+
+\[
+(B_t(k),\mathcal T_e,\Phi):
+\]
+
+reproducción y circulación, traverse y capital circulante, cambio
+estructural y determinación secuencial. La construcción deberá articular
+las dos escalas temporales, mantener la compatibilidad con I--VI y definir
+y probar sus operadores en el nuevo espacio de estado.
+
+\subsection{Conjetura de dependencia de trayectoria y consistencia}\label{conjetura-de-dependencia-de-trayectoria-y-consistencia}
+
+La cuestión fuerte puede formularse con precisión: \textbf{¿bajo
+qué condiciones una diferencia de ejecución dentro del periodo \(t\)
+sobrevive a la frontera como una diferencia reproductiva en \(t+1\)?}
+
+El caso que interesa exige una estructura inicial y dos ejecuciones
+admisibles \(\pi_t\ne\pi_t'\) cuya diferencia sobreviva a la frontera:
+
+\[
+B_{t+1}(0;\pi_t)
+\ne
+B_{t+1}(0;\pi_t').
+\]
+
+Queda por caracterizar cuándo esta desigualdad se conserva o desaparece en
+la frontera y qué resolución de la ejecución basta para decidirlo. T2-M
+exhibe una forma de memoria monetaria bajo las reglas de rollover
+especificadas; determinar si esa diferencia alcanza al estado
+real-monetario conjunto pertenece al problema todavía abierto.
+
+Una frontera conjunta también puede borrar las diferencias intraperiódicas
+y hacer converger ejecuciones distintas al mismo estado futuro; por ello, el
+resultado buscado debe establecer qué componentes de la ejecución sobreviven,
+bajo qué instituciones y para qué variables futuras.
+
+La cadena
+
+\[
+R_t
+\to
+E_t
+\to
+\Pi_{\mathrm{adm}}(E_t,C_t)
+\to
+\pi_t
+\to
+B_t(Q_t)
+\to
+R_{t+1}
+\]
+
+organiza las condiciones que una construcción dinámica deberá satisfacer.
+\(E_t\) requiere una mediación institucional; la admisibilidad debe fijarse
+antes de los resultados monetarios; \(B_t\) y sus transiciones, a su vez,
+deben construirse explícitamente. Una construcción conjunta deberá recuperar como proyecciones los resultados
+cerrados de I--V cuando sus objetos de entrada permanezcan fijos.
+
+\subsection{Pregunta informacional del estado futuro}\label{pregunta-informacional-del-estado-futuro}
+
+Sólo una vez definido \(B_{t+1}(0)\) puede aplicarse el criterio de VI y
+preguntar si un observable presente \(F\) basta para determinarlo:
+
+\[
+F\succeq_{\mathrm{info}}B_{t+1}(0)\ ?
+\]
+
+Entonces podrá preguntarse si basta \(D^\pi\), si hace falta \(U\), si debe
+conservarse la trayectoria completa \(c^\pi\), la implementación financiera
+o un descriptor más rico. Antes de fijar el estado futuro no hay todavía
+un resultado de suficiencia que demostrar.
+
+\subsection{Qué contaría como cierre}\label{quuxe9-contaruxeda-como-cierre}
+
+Cerrar la dinámica exige, como mínimo:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  definir el tipo y contenido mínimo de \(B_t(k)\);
+\item
+  construir una transición intraperiódica \(\mathcal T_e\) bien
+  definida;
+\item
+  construir la frontera conjunta \(\Phi\);
+\item
+  demostrar compatibilidad con las capas I--V;
+\item
+  obtener al menos un resultado de dependencia o independencia de
+  trayectoria bajo condiciones explícitas;
+\item
+  caracterizar mediante VI alguna resolución suficiente para el estado
+  futuro.
+\end{enumerate}
+
+Hasta aquí puede llegar la construcción sin especificar una dinámica que
+aún no ha sido demostrada; queda abierta la pregunta que deberá resolverla:
+\textbf{¿bajo qué instituciones una diferencia en la ejecución
+intraperiódica sobrevive a la frontera como una diferencia en las
+condiciones reproductivas del periodo siguiente?}
+
+
+\cleardoublepage\section*{Conclusión general}\label{conclusiuxf3n-general}\markright{Conclusión general}\RBfronttitle{Conclusión general}\thispagestyle{plain}
+
+El primer resultado es que el cierre terminal no agota la ejecución: una
+misma red puede conservar sus saldos finales y producir necesidades
+distributivas distintas cuando cambia el orden de los pagos. El segundo es
+que esas necesidades individuales tampoco determinan por sí solas la
+disponibilidad requerida, pues ésta depende de qué posiciones pueden
+consolidarse y de cómo se sincronizan sus mínimos. A escala local, el efecto de
+intercambiar dos obligaciones tampoco pertenece a la precedencia por sí sola:
+una modificación de la arquitectura puede crear, eliminar o incluso invertir
+la variación de \(M_0\) asociada al mismo intercambio. Este resultado ordena
+requerimientos de referencia, no bienestar ni costes financieros realizados.
+El tercero es que el requerimiento de referencia sólo se convierte en exposición efectiva después
+de incorporar los recursos heredados. A partir de allí, la exposición fija un
+piso operacional, pero el régimen contractual determina qué coberturas son
+admisibles y la implementación financiera, qué posiciones persisten al
+cierre; finalmente, una regla de frontera decide qué parte de ese estado
+terminal se convierte en herencia.
+
+La cadena I--V establece así relaciones de determinación condicionada, no una
+causalidad automática: cada objeto resuelve una pregunta y deja abierta la que
+exige la mediación siguiente. VI responde al problema general que aparece
+cuando se intenta resumir alguno de esos objetos. Sean \(F\) y \(G\) dos
+representaciones de una ejecución: \(F\) basta para determinar \(G\)
+exactamente cuando nunca identifica dos casos que \(G\) necesita distinguir;
+equivalentemente, \(G\) es constante sobre las fibras de \(F\) y factoriza a
+través de ella. Las no-identificaciones obtenidas en los artículos anteriores
+son instancias económicas de ese criterio.
+
+Hasta aquí llega el resultado cerrado: el volumen determina cómo diferencias
+de ejecución pueden producir diferencias de necesidad, exposición,
+financiación, estado terminal y herencia monetario-financiera, pero todavía no
+determina cuándo esas diferencias alteran el estado reproductivo real del
+período siguiente. VII fija precisamente esa frontera: una dinámica conjunta
+requiere construir el estado real-material y especificar su regla de
+transición; después, demostrar bajo qué instituciones una diferencia
+intraperiódica sobrevive al cierre como diferencia reproductiva en \(t+1\).
+
+La construcción deja además una regla metodológica para su continuación: ningún
+objeto económico nuevo debe introducirse antes de que una pregunta económica muestre
+la insuficiencia del objeto disponible; sólo entonces corresponde elegir la representación
+matemática que permita responderla.
+
+El problema abierto puede formularse sin atribuir al análisis una conclusión
+que todavía no establece: la secuenciación monetaria importa para la
+reproducción interperiódica sólo cuando alguna de las diferencias que produce
+atraviesa la frontera del período. Determinar las condiciones de esa
+persistencia es el siguiente problema del programa.
+
+\cleardoublepage
+\section*{Bibliografía}\label{bibliografia-general}\markright{Bibliografía}\RBfronttitle{Bibliografía}\thispagestyle{plain}
+
+\begin{refblock}
+\begin{itemize}
+\tightlist
+\item
+  Abdel-Wahab, H. M., y T. Kameda. ``Scheduling to Minimize Maximum
+  Cumulative Cost Subject to Series-Parallel Precedence Constraints.''
+  Operations Research 26(1) (1978): 141--158.
+  \url{https://doi.org/10.1287/opre.26.1.141}.
+\item
+  Alexandrova Kabadjova, Biliana, et al.~``Intraday Liquidity around the
+  World.'' BIS Working Papers No.~1089. Basel: Bank for International
+  Settlements, April 2023.
+\item
+  Astuti, Valerio, Adriano Baldeschi, Luca Bastianelli, Giuseppe Bruno,
+  Ajit Desai, Danica Marsden y Riccardo Russo. ``Liquidity Optimization
+  in Gross Settlement Systems with Quantum Reordering: Application to
+  TARGET2.'' Journal of Economic Dynamics and Control 190 (2026): 105385.
+  \url{https://doi.org/10.1016/j.jedc.2026.105385}.
+\item
+  Basel Committee on Banking Supervision (BCBS). Monitoring Tools for
+  Intraday Liquidity Management. Basel: Bank for International
+  Settlements, April 2013.
+\item
+  Bech, Morten L., y Rod Garratt. ``The Intraday Liquidity Management
+  Game.'' Journal of Economic Theory 109(2) (2003): 198--219.
+  \url{https://doi.org/10.1016/S0022-0531(03)00016-4}.
+\item
+  Becher, Christopher, Marco Galbiati, y Merxe Tudela. ``The Timing and
+  Funding of CHAPS Sterling Payments.'' Economic Policy Review 14(2)
+  (2008): 113--133.
+\item
+  Blackwell, David. ``Comparison of Experiments.'' Proceedings of the
+  Second Berkeley Symposium on Mathematical Statistics and Probability,
+  1951: 93--102.
+\item
+  Campbell, Martha. ``Money in the Circulation of Capital.'' En
+  Christopher J. Arthur y Geert Reuten (eds.), The Circulation of
+  Capital: Essays on Volume Two of Marx's Capital, 129--157. London:
+  Palgrave Macmillan, 1998.
+\item
+  Campbell, Martha. ``The Credit System.'' En Martha Campbell y Geert
+  Reuten (eds.), The Culmination of Capital: Essays on Volume III of
+  Marx's Capital, 212--227. Palgrave Macmillan, 2002.
+\item
+  Committee on Payment and Settlement Systems (CPSS). Real-Time Gross
+  Settlement Systems. CPMI Papers No.~22. Basel: Bank for International
+  Settlements, March 1997.
+\item
+  European Central Bank (ECB). Guideline of the European Central Bank of
+  5 December 2012 on a Trans-European Automated Real-time Gross settlement
+  Express Transfer system (TARGET2) (ECB/2012/27), 2012.
+\item
+  Freeman, Alan. ``Marx without Equilibrium.'' Capital \& Class 19(2)
+  (1995): 49--89. \url{https://doi.org/10.1177/030981689505600103}.
+\item
+  Galbiati, Marco, y Kimmo Soramäki. ``Liquidity-saving mechanisms and
+  bank behaviour.'' Bank of England Working Paper No.~400, 2010.
+\item
+  Gehrke, Christian. ``Marx's Reproduction Schemes and Multi-Sector
+  Growth Models.'' European Journal of the History of Economic Thought
+  25(5) (2018): 859--892. \url{https://doi.org/10.1080/09672567.2018.1475500}.
+\item
+  Godley, Wynne and Marc Lavoie. Monetary Economics: An Integrated
+  Approach to Credit, Money, Income, Production and Wealth. Palgrave
+  Macmillan, 2007.
+\item
+  Graziani, Augusto. The Monetary Theory of Production. Cambridge
+  University Press, 2003.
+\item
+  Hayakawa, Hitoshi. ``Does a Central Clearing Counterparty Reduce
+  Liquidity Needs?'' Journal of Economic Interaction and Coordination
+  13(1) (2018): 9--50.
+  \url{https://doi.org/10.1007/s11403-017-0208-1}.
+\item
+  Hayakawa, Hitoshi. ``Liquidity in Financial Networks.'' Computational
+  Economics 55(1) (2020): 253--301.
+  \url{https://doi.org/10.1007/s10614-019-09895-x}.
+\item
+  Hayakawa, Hitoshi, Toshimasa Ishii, Hirotaka Ono y Yushi Uno.
+  ``Settlement Fund Circulation Problem.'' Discrete Applied Mathematics
+  265 (2019): 86--103; versión de conferencia: ISAAC 2017, LIPIcs 92,
+  46:1--46:13. \url{https://doi.org/10.1016/j.dam.2019.03.017}.
+\item
+  Houston, Robin. ``Tackling the Minimal Superpermutation Problem.''
+  arXiv:1408.5108, 2014.
+\item
+  Johnston, Nathaniel. ``Non-uniqueness of minimal superpermutations.''
+  Discrete Mathematics 313(14) (2013): 1553--1557.
+  \url{https://doi.org/10.1016/j.disc.2013.03.024}.
+\item
+  Kahn, Charles M., James McAndrews, y William Roberds. ``Settlement
+  Risk under Gross and Net Settlement.'' Journal of Money, Credit and
+  Banking 35(4) (2003): 591--608.
+  \url{https://doi.org/10.1353/mcb.2003.0030}.
+\item
+  Kellerer, Hans, Vladimir Kotov, Franz Rendl y Gerhard J. Woeginger.
+  ``The Stock Size Problem.'' Operations Research 46(3-supplement-3)
+  (1998): S1--S12. \url{https://doi.org/10.1287/opre.46.3.S1}.
+\item
+  Kliman, Andrew, y Ted McGlone. ``A Temporal Single-System
+  Interpretation of Marx's Value Theory.'' Review of Political Economy
+  11(1) (1999): 33--59. \url{https://doi.org/10.1080/095382599107165}.
+\item
+  Lavoie, Marc. Post-Keynesian Economics: New Foundations. Edward Elgar,
+  2014.
+\item
+  Leinster, Tom. Basic Category Theory. Cambridge: Cambridge University
+  Press, 2014, cap. 3 ``Interlude on sets'', 65--82.
+  \url{https://doi.org/10.1017/CBO9781107360068.005}.
+\item
+  Leontief, Wassily, y András Bródy. ``Money-flow Computations.''
+  Economic Systems Research 5(3) (1993): 225--233.
+  \url{https://doi.org/10.1080/09535319300000019}.
+\item
+  Lowe, Adolph. ``A Bird's-Eye View of an Expanding Traverse.'' Cap. 12
+  de The Path of Economic Growth, 109--114. Cambridge: Cambridge
+  University Press, 1976.
+  \url{https://doi.org/10.1017/CBO9780511898327.013}.
+\item
+  Lowe, Adolph. ``Some Comments on the Role of Working Capital in the
+  Traverse.'' Cap. 17 de The Path of Economic Growth, 176--181.
+  Cambridge: Cambridge University Press, 1976.
+  \url{https://doi.org/10.1017/CBO9780511898327.018}.
+\item
+  Maldonado-Filho, Eduardo. ``Release and Tying up of Productive Capital
+  and the `Transformation Problem'.'' Conference paper; versión
+  presentada en la ASSA Conference, Washington, D.C., January 1995.
+\item
+  Marx, Karl. El capital. Crítica de la economía política. Libro
+  primero: El proceso de producción del capital. Trad. Pedro Scaron.
+  Siglo XXI, 1975 {[}1867{]}, cap. III, sec.~3(b), ``Medio de pago''.
+\item
+  Marx, Karl. El capital. Crítica de la economía política. Libro
+  segundo: El proceso de circulación del capital. Trad. Pedro Scaron.
+  Siglo XXI, 1976 {[}1885{]}, esp.~Parte III, caps. 18--21.
+\item
+  Marx, Karl. El capital. Crítica de la economía política. Libro
+  tercero: El proceso global de la producción capitalista. Trad. León
+  Mames; revisión y notas de Pedro Scaron. Siglo XXI, 1976 {[}1894{]},
+  cap. 6, sec.~II, ``Apreciación, depreciación, liberación y vinculación
+  de capital''.
+\item
+  Marx, Karl. Teorías sobre la plusvalía. Trad. Wenceslao Roces. México:
+  Fondo de Cultura Económica, 1980 {[}manuscritos 1861--1863{]}, cap.
+  XVII.
+\item
+  McAndrews, James J., y Samira Rajan. ``The Timing and Funding of
+  Fedwire Funds Transfers.'' Economic Policy Review 6(2) (2000): 17--32.
+\item
+  McMahon, Christopher, Donald McGillivray, Ajit Desai, Francisco
+  Rivadeneyra, Jean-Paul Lam, Thomas Lo, Danica Marsden y Vladimir
+  Skavysh. ``Improving the Efficiency of Payments Systems Using Quantum
+  Computing.'' Management Science 70(10) (2024): 7325--7341; versión de
+  trabajo: Bank of Canada Staff Working Paper 2022-53, 2022.
+\item
+  Minsky, Hyman P. ``The Financial Instability Hypothesis.'' Levy
+  Economics Institute Working Paper No.~74, 1992.
+\item
+  Minsky, Hyman P. Stabilizing an Unstable Economy. Yale University
+  Press, 1986.
+\item
+  Mitchell, William, L. Randall Wray and Martin Watts. Macroeconomics.
+  Red Globe Press, 2019.
+\item
+  Monma, Clyde L. ``Sequencing to Minimize the Maximum Job Cost.''
+  Operations Research 28(4) (1980): 942--951.
+  \url{https://doi.org/10.1287/opre.28.4.942}.
+\item
+  Monma, Clyde L., y Jeffrey B. Sidney. ``Sequencing with Series-Parallel
+  Precedence Constraints.'' Mathematics of Operations Research 4(3)
+  (1979): 215--224. \url{https://doi.org/10.1287/moor.4.3.215}.
+\item
+  Pasinetti, Luigi L. Structural Change and Economic Growth: A
+  Theoretical Essay on the Dynamics of the Wealth of Nations. Cambridge:
+  Cambridge University Press, 1981.
+\item
+  Postnikov, Alexander. ``Permutohedra, Associahedra, and Beyond.''
+  International Mathematics Research Notices 2009(6) (2009): 1026--1106.
+  \url{https://doi.org/10.1093/imrn/rnn153}.
+\item
+  Räihä, Kari-Jouko and Esko Ukkonen. ``The shortest common
+  supersequence problem over binary alphabet is NP-complete.''
+  Theoretical Computer Science 16(2), 1981: 187--198.
+\item
+  Rotemberg, Julio J. ``Minimal Settlement Assets in Economies with
+  Interconnected Financial Obligations.'' Journal of Money, Credit and
+  Banking 43(1) (2011): 81--108; versión de trabajo: NBER Working Paper
+  14222, 2008. \url{https://doi.org/10.1111/j.1538-4616.2010.00366.x}.
+\item
+  Stanley, Richard P. ``Acyclic Orientations of Graphs.'' Discrete
+  Mathematics 5(2) (1973): 171--178.
+  \url{https://doi.org/10.1016/0012-365X(73)90108-8}.
+\item
+  Tombazos, Stavros. Time in Marx: The Categories of Time in Marx's
+  Capital. Brill, 2014 {[}orig. French 1994{]}.
+\item
+  Trigg, Andrew B. ``Reconstructing Marx's Theory of Credit and Payment
+  Crises under Simple Circulation.'' Review of Political Economy 33(4)
+  (2021): 746--768. \url{https://doi.org/10.1080/09538259.2021.1897751}.
+\item
+  Trigg, Andrew B. Marxian Reproduction Schema: Money and Aggregate
+  Demand in a Capitalist Economy. Routledge, 2006.
+\item
+  Veronese Passarella, Marco. ``It Is Not la Vie en Rose: New Insights from
+  Graziani's Theory of the Monetary Circuit.'' European Journal of Economics
+  and Economic Policies: Intervention 21(3) (2024): 461--485.
+  \url{https://doi.org/10.4337/ejeep.2022.0084}.
+\item
+  Veronese Passarella, Marco. ``Technical Change and the Monetary Circuit:
+  An Input-Output Stock-Flow Consistent Dynamic Model.'' Department of
+  Economics, University of Siena, Working Paper 903, 2023.
+\item
+  Wray, L. Randall. Modern Money Theory, 2nd ed.~Palgrave Macmillan,
+  2015.
+\item
+  Ziegler, Günter M. Lectures on Polytopes. Graduate Texts in
+  Mathematics 152. New York: Springer, 1995, esp.~``Fans, Arrangements,
+  Zonotopes, and Tilings'', 191--230.
+  \url{https://doi.org/10.1007/978-1-4613-8431-1}.
+\end{itemize}
+\end{refblock}
+
+\cleardoublepage
+\thispagestyle{empty}
+\vspace*{\fill}
+\begin{center}
+{\small\scshape RB · Ensayos 2026 · 02\par}
+\vspace{4mm}
+{\footnotesize v1.02 · edición revisada · 31 de octubre de 2026\par}
+{\footnotesize Compuesto en formato A5 con EB Garamond y Latin Modern Math.\par}
+{\footnotesize Ciudad de México.\par}
+\end{center}
+\vspace*{\fill}
+\clearpage
+\thispagestyle{empty}\null\clearpage
+\end{document}

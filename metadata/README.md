@@ -25,3 +25,7 @@ SITEPE v14 y Ensayo 02 v1.01 quedan cerrados en esta intervención. Ensayo 02 in
 ## Exportación bibliográfica sin DOI
 
 `python scripts/sync_metadata.py` también genera BibTeX, RIS y CSL-JSON para las fichas con `citation_exports: true`, mediante `scripts/export_citations.py`. `--check` detecta archivos o enlaces desactualizados. Los seis archivos públicos se encuentran en `dist/citations/`; las fichas ofrecen enlaces de descarga y descubrimiento. Cada registro conserva nombre normalizado, título, mes de publicación, versión, URL canónica, resumen y palabras clave. RIS añade la URL del PDF. La afiliación no se convierte en editorial; no se inventan DOI, revista, actas ni fechas de presentación. Las fechas sólo precisas al mes se exportan sin añadir un día. BibTeX utiliza `@misc` y conserva serie y versión en `note`; CSL-JSON utiliza `report` y `paper-conference`; RIS utiliza `RPRT` y `CPAPER`. La versión queda en las notas para mantener su lectura entre gestores. Los datos de contribución, correspondencia, derechos y declaraciones editoriales completos siguen disponibles en la ficha y el registro maestro; no todos los formatos bibliográficos tienen campos interoperables para ellos.
+
+## Revisión v1.02 · 31 de octubre de 2026
+
+El registro vigente del Ensayo 02 corresponde a v1.02, edición revisada, con 64 páginas físicas. Las menciones anteriores a v1.01 documentan el cierre del 30 de octubre. Véase `release-rb-ensayos-2026-02-v1.02.md` para historia, fuentes y verificaciones.
