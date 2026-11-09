@@ -1,0 +1,554 @@
+\documentclass[10pt,twoside]{article}
+\usepackage[a5paper,inner=18mm,outer=15mm,top=18mm,bottom=20mm,headheight=12pt]{geometry}
+\usepackage{fontspec}
+\usepackage{mathtools}
+\usepackage{unicode-math}
+% The installed EB Garamond Bold file is Latin-1 truncated. Use the complete
+% regular/italic glyph sets with modest synthetic bold to preserve accented
+% Spanish headings and PDF text extraction.
+\setmainfont[Path=/usr/share/fonts/truetype/ebgaramond/,
+ UprightFont=EBGaramond12-Regular.ttf,
+ ItalicFont=EBGaramond12-Italic.ttf,
+ BoldFont=EBGaramond12-Regular.ttf,
+ BoldItalicFont=EBGaramond12-Italic.ttf,
+ BoldFeatures={FakeBold=1.6},
+ BoldItalicFeatures={FakeBold=1.6}]{EBGaramond12-Regular.ttf}
+\setmathfont[Path=/usr/share/texmf/fonts/opentype/public/lm-math/]{latinmodern-math.otf}
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage{microtype,booktabs,array,tabularx,enumitem}
+\usepackage{float,needspace,xurl}
+\usepackage{fancyhdr,hyperref,graphicx}
+\hypersetup{hidelinks,pdfencoding=auto,unicode=true,pdfauthor={Raúl Alberto Rivera Boullosa},pdftitle={Valle Baeza (1978) y las dos tasas de ganancia: consistencia algebraica y límites de una interpretación de Marx}}
+\usepackage{titlesec}
+\titleformat{\section}{\normalfont\large\bfseries}{\Roman{section}.}{.65em}{}
+\titleformat{\subsection}{\normalfont\normalsize\itshape}{\alph{subsection}.}{.55em}{}
+\titlespacing*{\section}{0pt}{1.5em}{.65em}
+\titlespacing*{\subsection}{0pt}{1.05em}{.3em}
+\setlength{\parindent}{1.15em}
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{2em}
+\clubpenalty=10000
+\widowpenalty=10000
+\linespread{1.065}
+% Ajustes microtipográficos para la edición de lectura A5.
+\raggedbottom
+\setlength{\abovedisplayskip}{9pt plus 2pt minus 2pt}
+\setlength{\belowdisplayskip}{9pt plus 2pt minus 2pt}
+\setlength{\abovedisplayshortskip}{5pt plus 2pt minus 1pt}
+\setlength{\belowdisplayshortskip}{7pt plus 2pt minus 2pt}
+\setlength{\textfloatsep}{11pt plus 3pt minus 2pt}
+\setlength{\intextsep}{9pt plus 3pt minus 2pt}
+\setcounter{secnumdepth}{2}
+\renewcommand{\arraystretch}{1.14}
+\setlength{\tabcolsep}{3.5pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE]{\footnotesize RB · Investigación}
+\fancyhead[RO]{\footnotesize Valle y la TSSI}
+\fancyfoot[LE,RO]{\footnotesize\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\newcommand{\pct}{\ifmmode\text{\char37}\else\char37\fi}
+\newcommand{\val}{\mathrm{V}}
+\newcommand{\mon}{\mathrm{P}}
+\begin{document}
+\thispagestyle{empty}
+\vspace*{17mm}
+\begin{center}
+{\small\scshape RB · Investigación\par}
+\vspace{3mm}
+{\footnotesize Artículo de investigación · 2026\par}
+\vspace{20mm}
+{\Large\bfseries Valle Baeza (1978) y las dos tasas de ganancia\par}
+\vspace{5mm}
+{\normalsize\itshape Consistencia algebraica y límites de una interpretación de Marx\par}
+\vspace{10mm}
+\rule{32mm}{0.35pt}\par
+\vspace{10mm}
+{\small Simultaneidad, dualismo y determinación fisicalista de la tasa de ganancia\par}
+\vspace{19mm}
+{\normalsize Raúl Alberto Rivera Boullosa\par}
+\vfill
+{\footnotesize Ciudad de México · 2026\par}
+\vspace{2mm}
+{\footnotesize Versión 2.2 · 9 de noviembre de 2026\par}
+\end{center}
+\clearpage
+\thispagestyle{plain}
+\begin{center}
+{\large\bfseries Resumen\par}
+\end{center}
+\vspace{3mm}
+\noindent Sostenemos que Valle Baeza (1978) construye un modelo simultáneo, dualista en sentido operacional y de determinación fisicalista condicionada de la tasa uniforme de ganancia. Sus resultados son algebraicamente consistentes, pero dependen de las condiciones técnicas, salariales y de valoración adoptadas. La reconstrucción del ejemplo de tres ramas confirma una tasa monetaria del $25\,\pct$ y una razón laboral entre plusvalor y capital adelantado de $200/675\simeq29.63\,\pct$. La divergencia no procede de una diferencia agregada entre plusvalor producido y ganancia apropiada, pues las transferencias sectoriales se compensan: procede de valorar de manera diferente el capital adelantado ($675$ frente a $800$ jornadas comparables). Nuestra objeción central se dirige al tránsito desde esta propiedad del modelo hacia su presentación como determinación necesaria de la teoría de Marx. La distinción marxiana entre plusvalor, ganancia, costo y formas de aparición no demuestra por sí sola la necesidad de dos tasas agregadas construidas con denominadores distintos. El contraste con el manuscrito de 1864--1865 y con la interpretación temporal de sistema único delimita esa insuficiencia de justificación sin negar la consistencia de Valle ni convertir la TSSI en premisa de la crítica.\par
+\vspace{5mm}
+\noindent{\bfseries Palabras clave:} Valle Baeza; precios de producción; tasas de ganancia; TSSI; capital adelantado; dinero mercancía.\par
+\vspace{3mm}
+\noindent{\bfseries Clasificación JEL:} B14, B24, B51.\par
+\clearpage
+
+\section{El problema de las dos tasas}
+Valle Baeza (1978) obtiene dos tasas de ganancia distintas y no comete un error algebraico al hacerlo. Precisamente ahí comienza el problema de este artículo: ¿qué autoriza a convertir una diferencia producida por determinadas reglas de valoración en una separación necesaria de la teoría de Marx? Nuestra tesis es que el ejemplo de Valle es simultáneo, dualista en sentido operacional y de determinación fisicalista condicionada. Sus dos tasas son consistentes con esa construcción; su necesidad marxiana, en cambio, no se sigue de ella.
+
+La clave está en una diferencia que puede pasar inadvertida. Las ramas redistribuyen plusvalor, pero las transferencias se cancelan al sumar la economía. Las dos tasas agregadas, sin embargo, siguen siendo distintas. No es la masa total de plusvalor la que cambia: cambia la valoración del capital adelantado. Una vez localizado ese resultado, la pregunta deja de ser cómo obtiene Valle sus cifras y pasa a ser qué demuestran acerca de Marx.
+
+Valle parte de un dinero mercancía y sostiene que la transformación debe explicar tanto las proporciones relativas como la expresión monetaria de las mercancías (1978, pp.~188--191). Reconstruiremos primero sus ecuaciones y las tres propiedades mencionadas; después localizaremos la divergencia en los denominadores y confrontaremos la interpretación con el manuscrito económico de Marx de 1864--1865. Los ejercicios auxiliares y el contraste con la TSSI permiten mostrar la dependencia de las reglas de valoración, pero no son necesarios para probar la consistencia interna del modelo ni bastan para refutar una interpretación rival.
+
+La diferencia entre demostrar un resultado y atribuirle necesidad teórica guiará toda la lectura. No negaremos la distinción marxiana entre una relación social y sus formas de aparición; examinaremos si esa distinción exige los dos denominadores que utiliza Valle.
+
+\section{El sistema de Valle y sus resultados}
+Para saber qué explican las dos tasas debemos empezar donde empieza Valle: por las cantidades producidas, el trabajo empleado y el salario real. De esos datos saldrán los valores laborales; de un segundo sistema, los precios y la tasa uniforme. Al reconstruir ambos aparecerán, sin imponerles categorías ajenas, la simultaneidad, el dualismo operacional y la determinación fisicalista condicionada.
+
+La rama I produce máquinas, la II maíz y la III plata, que desempeña la función de dinero mercancía. En las tres se utilizan máquinas y trabajo vivo. Conservaremos las cantidades y la técnica del periodo, sin introducir acumulación, para establecer primero las relaciones que se siguen de esta construcción.
+
+\begin{table}[htbp]\centering\footnotesize
+\caption{Datos físicos del ejemplo de Valle}
+\begin{tabular}{@{}lrrr@{}}\toprule
+Rama & Máquinas usadas & Jornadas & Producto\\\midrule
+I. Máquinas & 225 & 150 & 375 máquinas\\
+II. Maíz & 100 & 200 & 3\,000 kg\\
+III. Plata & 50 & 150 & 100 pesos\\\midrule
+Total & 375 & 500 & ---\\\bottomrule
+\end{tabular}
+\end{table}
+Cada jornada se remunera con seis kilogramos de maíz. Los trabajadores de las ramas I, II y III reciben, respectivamente, 900, 1\,200 y 900 kilogramos. En conjunto consumen 3\,000 kilogramos, cantidad igual al producto de la rama II. La reproducción del consumo obrero queda así cerrada en las cantidades del ejemplo.
+
+Los valores unitarios utilizados por Valle se deducen, en el orden de producción indicado, de las ecuaciones de trabajo incorporado (con jornadas como unidad):
+\[
+\begin{aligned}375m_K&=225m_K+150,\\3000m_W&=100m_K+200,\\100m_D&=50m_K+150.\end{aligned}
+\]
+Por consiguiente $m_K=1$ jornada por máquina, $m_W=1/10$ jornada por kilogramo de maíz y $m_D=2$ jornadas por peso de plata. Las ecuaciones dan los valores laborales sin recurrir todavía a precios monetarios. El salario físico de $500\cdot6=3000$ kilogramos equivale, con estos valores, a 300 jornadas. Como el trabajo vivo asciende a 500 jornadas, el trabajo necesario representa aquí $e=300/500=3/5$ y el plusvalor total es 200 jornadas. Esta correspondencia entre cesta salarial y proporción de trabajo necesario pertenece al ejemplo; no la supondremos para cualquier sistema.
+
+\begin{table}[htbp]\centering\footnotesize
+\caption{Composición del producto en jornadas}
+\begin{tabular}{@{}lrrrr@{}}\toprule
+Rama & $C_i$ & $V_i$ & $Pl_i$ & $M_i$\\\midrule
+I & 225 & 90 & 60 & 375\\
+II & 100 & 120 & 80 & 300\\
+III & 50 & 90 & 60 & 200\\\midrule
+Total & 375 & 300 & 200 & 875\\\bottomrule
+\end{tabular}
+\end{table}
+Aquí $C_i$ designa valor transferido por las máquinas, $V_i$ el equivalente laboral del salario, $Pl_i$ el plusvalor producido y $M_i=C_i+V_i+Pl_i$ el valor bruto del producto. Esta descomposición no presupone todavía un precio de producción.
+
+La rama III produce cien pesos de plata, cuyo valor laboral es de dos jornadas por peso. De ahí se obtiene $1/m=0.5$ pesos por jornada. Utilizaremos esta equivalencia para expresar las ganancias monetarias en jornadas. Su función es la que le asigna el ejemplo y no presupone una definición temporal general de la expresión monetaria del trabajo.
+
+Denotemos por $K_i$ el costo monetario de las máquinas, por $S_i$ el salario monetario y por $G_i$ la ganancia de la rama. Su adelanto es $K_i+S_i$, y $G_i=r(K_i+S_i)$. La distinción entre estas magnitudes y $C_i,V_i,Pl_i$ será central al comparar las tasas.
+
+Valle construye un sistema de un periodo en el cual todas las máquinas indicadas se consumen como insumos y los salarios se adelantan para esa producción. Por esa condición específica, el costo $K_i+S_i$ de sus ecuaciones coincide con el adelanto sobre el que aplica $r$. Esta identificación está permitida \emph{en el ejemplo}; no se extiende automáticamente a capital fijo con depreciación parcial, rotaciones desiguales o anticipos de distinta duración. 
+
+Sean $a$ el precio en pesos de una máquina, $b$ el precio en pesos de un kilogramo de maíz y $r$ la tasa uniforme de ganancia. Con estos datos, Valle plantea las siguientes ecuaciones de precios de producción:
+\begin{align}
+375a&=(1+r)(225a+900b),\label{eq:valle1}\\
+3000b&=(1+r)(100a+1200b),\label{eq:valle2}\\
+100&=(1+r)(50a+900b).\label{eq:valle3}
+\end{align}
+La tercera ecuación expresa el producto de plata directamente en pesos: la mercancía dineraria fija la escala monetaria, sin introducir otro precio para la unidad de cuenta. El orden de resolución importa. Las ecuaciones de máquinas y maíz determinan la tasa y la proporción entre precios básicos; la de plata fija después su escala. Ésta es una propiedad algebraica del cierre elegido por Valle (1978, pp.~188--190), no una afirmación de que el dinero sea económicamente irrelevante. El apéndice demuestra el resultado y precisa sus condiciones.
+
+Observemos una condición de estas ecuaciones: cada máquina y cada kilogramo de maíz tienen el mismo precio cuando entran como costo y cuando aparecen como producto. Los tres precios de producción se determinan, por tanto, mediante una valoración simultánea, con una tasa uniforme aplicada a los adelantos monetarios.
+
+Valle Baeza (1978, p.~196) deja para un tratamiento ulterior la reproducción ampliada, las diferencias de composición entre sectores, los distintos periodos de rotación y la conversión inversa de ganancias monetarias a plusvalor apropiado. Éstas son reservas expresas del autor, distintas de las restricciones que introducimos en nuestros ejercicios auxiliares. La presente crítica no atribuye a su artículo una solución general de esos problemas; tampoco deduce de tales reservas un defecto de las ecuaciones del ejemplo.
+
+
+
+Resolviendo \eqref{eq:valle1}--\eqref{eq:valle3} y exigiendo precios positivos, obtenemos
+\[
+a=\frac{16}{25}=0.64,\qquad b=\frac4{75},\qquad r=\frac14.
+\]
+Los precios de los productos de I, II y III son 240, 160 y 100 pesos.\footnote{En el cuadro 7 del original (Valle Baeza, 1978, p.~190), los renglones de precio del producto suman 500 pesos, aunque el renglón total está impreso como 150. La suma 500 se sigue de los datos del mismo cuadro y de las tres ecuaciones; no es una hipótesis añadida.}
+
+\Needspace{13\baselineskip}
+
+\begin{table}[H]\centering\footnotesize
+\caption{Adelantos y ganancias en pesos}
+\begin{tabular}{@{}lrrrr@{}}\toprule
+Rama & $K_i$ & $S_i$ & $K_i+S_i$ & $G_i$\\\midrule
+I & 144 & 48 & 192 & 48\\
+II & 64 & 64 & 128 & 32\\
+III & 32 & 48 & 80 & 20\\\midrule
+Total & 240 & 160 & 400 & 100\\\bottomrule
+\end{tabular}
+\end{table}
+La ganancia de cada rama es una cuarta parte de su adelanto. La uniformidad ha sido impuesta en las ecuaciones de precios: el ejemplo no demuestra mediante un proceso de competencia que las tasas efectivas converjan a ese valor. Sumadas las tres ramas, el capital adelantado es de 400 pesos y la ganancia de 100 pesos; el producto bruto alcanza 500 pesos. Podemos comparar ahora estas ganancias con el plusvalor calculado en jornadas.
+
+Valle introduce el valor del producto apropiado por cada rama, $Ma_i$, y el plusvalor apropiado, $Pa_i$. Definamos $y_1=16/25$ y $y_2=8/15$ como los coeficientes de transformación de los valores unitarios de máquinas y maíz a sus respectivos precios unitarios. Sus unidades son pesos por jornada; por ello pueden convertir adelantos monetarios en magnitudes laborales. La conversión de $K_i$ mediante $y_1$ y la de $S_i$ mediante $y_2$ reconstruyen, respectivamente, los valores laborales de las máquinas y de los bienes salariales adelantados; la conversión de $G_i$ mediante $1/m$ expresa la ganancia monetaria en jornadas según el valor de la plata. Estas tres reglas tienen objetos diferentes: sustituirlas por una única expresión monetaria del trabajo no es una mera simplificación de notación, sino una modificación de las condiciones de valoración del sistema. Entonces
+\begin{equation}
+Ma_i=\frac{K_i}{y_1}+\frac{S_i}{y_2}+\frac{G_i}{1/m},
+\qquad
+Pa_i=Pl_i+(Ma_i-M_i).\label{eq:aprop}
+\end{equation}
+Dado que $K_i/y_1=C_i$, $S_i/y_2=V_i$ y $M_i=C_i+V_i+Pl_i$, se obtiene, sustituyendo las definiciones,
+\begin{equation}
+Pa_i=\frac{G_i}{1/m}.\label{eq:pa}
+\end{equation}
+El plusvalor apropiado de cada rama se obtiene así convirtiendo su ganancia monetaria mediante el valor de la plata. Esta operación permite comparar la apropiación con el plusvalor producido. La reducción algebraica que sigue identifica las dependencias de las magnitudes; no sustituye la exposición de Valle Baeza (1978, pp.~191--195) acerca de la apropiación mediante circulación, ni demuestra por sí sola el mecanismo que esa exposición propone.
+
+La determinación de los precios de producción y de las ganancias precede lógicamente a su realización mediante la venta. La venta efectuada permite pasar de la ganancia determinada a la ganancia apropiada efectivamente; no constituye, por sí misma, una segunda ecuación independiente que determine los precios. Esta distinción conserva la función de la circulación en el argumento de Valle sin atribuirle una determinación algebraica adicional.
+
+\Needspace{15\baselineskip}
+
+Definimos la transferencia neta de cada rama como $Dp_i=Pa_i-Pl_i$. Las magnitudes en jornadas se presentan en el cuadro siguiente.
+\begin{table}[H]\centering\footnotesize
+\caption{Plusvalor producido, apropiado y transferido}
+\begin{tabular}{@{}lrrr@{}}\toprule
+Rama & $Pl_i$ & $Pa_i$ & $Dp_i$\\\midrule
+I & 60 & 96 & $+36$\\
+II & 80 & 64 & $-16$\\
+III & 60 & 40 & $-20$\\\midrule
+Total & 200 & 200 & $0$\\\bottomrule
+\end{tabular}
+\end{table}
+\footnote{En la narración de la rama I, Valle Baeza (1978, p.~192) atribuye 144 pesos a la venta de 150 máquinas y escribe «128\% por encima» de su valor. Con el precio de su propio sistema, esas 150 máquinas se venden por 96 pesos, equivalentes a 192 jornadas: el excedente es 28\% respecto de las 150 jornadas incorporadas. Los 144 pesos corresponden a las 225 máquinas utilizadas como capital constante. Se distingue así el texto impreso de la corrección aritmética inferida, sin alterar la solución del sistema.} La rama I se apropia de 36 jornadas más de las que produce; las ramas II y III se apropian de 16 y 20 jornadas menos, respectivamente. Las transferencias suman cero. 
+
+\noindent\textit{Prueba de dependencia.} Fijados los precios $a,b$, la tasa $r$, las ganancias $G_i$ y el factor de conversión monetaria $1/m$, las ecuaciones \eqref{eq:aprop}--\eqref{eq:pa} implican unívocamente
+\[
+Dp_i=\frac{G_i}{1/m}-Pl_i.
+\]
+Los precios y las ganancias ya están determinados por \eqref{eq:valle1}--\eqref{eq:valle3} antes de calcular $Dp_i$. En esta construcción, las transferencias representan la redistribución sectorial del plusvalor, pero no suministran una condición adicional para resolver aquellos precios.
+
+\noindent\textit{Condición agregada de conservación.} Sumando \eqref{eq:pa} y suponiendo $1/m>0$, se tiene
+\[
+\sum_i Pa_i=\frac{\sum_i G_i}{1/m}.
+\]
+Así, la igualdad $\sum_i Pa_i=\sum_i Pl_i$ se cumple si y sólo si $\sum_i G_i=(1/m)\sum_i Pl_i$. En el ejemplo, $100=(1/2)200$ y, por ello, $\sum_i Dp_i=0$. Esta equivalencia es una condición contable de las conversiones empleadas; no prueba por sí misma un mecanismo de realización o transferencia. La igualdad entre plusvalor total producido y apropiado vale bajo las conversiones originales.
+
+Esta comprobación responde a una prueba de suficiencia: los precios y las ganancias se obtienen sin introducir $Dp_i$ como incógnita independiente; las transferencias se calculan después. La condición $\sum_i Dp_i=0$ no determina por sí sola la secuencia efectiva de cobros y pagos; ésta requeriría declarar saldos iniciales y un orden de liquidación. 
+
+\noindent\textit{Límite de la comprobación empírica de Valle.} Valle Baeza (1978, pp.~198--199) reporta una correlación de $0.95$ para veinte empresas entre activos por trabajador y ganancias por trabajador. Si $A_i$ representa activos, $\Pi_i$ ganancias y $L_i$ empleo, las magnitudes correlacionadas tienen la forma $x_i=A_i/L_i$ y $z_i=\Pi_i/L_i$. Como $z_i=(\Pi_i/A_i)x_i$ para $A_i>0$, una asociación elevada puede resultar en parte de la relación entre ambas razones y del denominador compartido. Esta identidad no demuestra que la correlación sea espuria: harían falta las observaciones originales, la dispersión de las tasas $\Pi_i/A_i$ y contrastes alternativos. Pero el coeficiente reportado no identifica por sí mismo una causalidad ni valida la necesidad de dos tasas agregadas. No se ha reproducido aquí la estimación con los microdatos. 
+
+
+
+\section{La valoración del capital adelantado}
+Ya conocemos las ganancias y las transferencias. Ahora aparece la paradoja que organiza la crítica: si el plusvalor producido y el apropiado suman ambos 200 jornadas, ¿por qué la tasa laboral alcanza el 29.63\,\pct{} y la monetaria sólo el 25\,\pct{}? La respuesta no está en la redistribución, que se anula en el agregado. Está en los capitales con los que se divide ese mismo excedente: 675 y 800 jornadas comparables. Antes de efectuar la comparación debemos precisar qué significa capital adelantado.
+
+Las dos tasas agregadas de Valle requieren precisar primero qué magnitud figura en su denominador. El precio de costo $k$ recoge el capital consumido en la producción de las mercancías; el capital total adelantado $K_{\mathrm{ad}}$ puede ser mayor. En la exposición de Marx, la tasa de ganancia se refiere a este último:
+\begin{equation}
+p^{\mathrm{prod}}=k+\overline\pi,\qquad
+r=\frac{\overline\pi}{K_{\mathrm{ad}}},\qquad
+k\not\equiv K_{\mathrm{ad}}\quad\text{en general}.\label{eq:costK}
+\end{equation}
+El propio manuscrito ofrece un ejemplo explícito: para un capital adelantado de 500, con 400 de capital circulante consumido, 10 de desgaste y una ganancia media de 50, el precio de producción asciende a 460, no a 550 (Marx, 2016, pp.~275--276). El denominador de la tasa es 500, mientras el costo del producto contiene sólo 410.
+
+
+
+En el sistema de valores, el capital constante es $C=375$ jornadas y el variable $V=300$. El capital adelantado medido así asciende a 675 jornadas, con plusvalor agregado de 200. Su razón es
+\begin{equation}
+r_{\val}=\frac{200}{675}=\frac8{27}\approx29.63\,\pct.\label{eq:rv}
+\end{equation}
+
+El adelanto monetario del sistema de precios es $K+S=400$ pesos y la ganancia es 100 pesos. Por tanto,
+\begin{equation}
+r_{\mon}=\frac{100}{400}=\frac14=25\,\pct.\label{eq:rp}
+\end{equation}
+
+La expresión monetaria del trabajo adoptada en el ejemplo es $1/m=0.5$ pesos por jornada. Al dividir numerador y denominador de \eqref{eq:rp} por este factor, la tasa permanece inalterada:
+\[
+r_{\mon}=\frac{100/0.5}{400/0.5}
+=\frac{200}{800}.
+\]
+Las dos tasas tienen ahora numeradores comparables. La conversión no iguala los capitales adelantados: uno representa 675 jornadas y el otro, 800.
+
+Podemos expresar ahora la diferencia entre ambas tasas:
+\begin{equation}
+r_{\val}-r_{\mon}
+=\frac{200}{675}-\frac{200}{800}
+=\frac5{108}\approx4.63\text{ puntos porcentuales}.\label{eq:dif}
+\end{equation}
+Más generalmente, para un numerador agregado común $s>0$ y dos valoraciones positivas del capital adelantado $C_V,C_P$, vale la identidad
+\[
+\frac{s}{C_V}-\frac{s}{C_P}=\frac{s(C_P-C_V)}{C_VC_P},\qquad
+\operatorname{sgn}(r_V-r_P)=\operatorname{sgn}(C_P-C_V).
+\]
+En particular, la igualdad de tasas requiere $C_V=C_P$ bajo estas hipótesis. La identidad no implica que sus movimientos temporales tengan el mismo signo ni determina la evolución de los denominadores. En Valle, la divergencia no se origina en una diferencia agregada entre plusvalor producido y apropiado: ambas sumas son 200 jornadas bajo las reglas del ejemplo. Procede de las distintas valoraciones del capital en el denominador.
+
+Volvamos a la conclusión segunda de Valle Baeza (1978, p.~200). Allí distingue la tasa de ganancia expresada en precios de la relación entre plusvalía y capital invertido, porque «la primera considera la plusvalía apropiada». En las ramas existe efectivamente una diferencia entre plusvalor producido y apropiado. Veamos si esa diferencia explica también la divergencia de las dos tasas agregadas.
+
+Dentro de cada rama, el plusvalor producido puede diferir del apropiado. Las relaciones \eqref{eq:aprop}--\eqref{eq:pa} lo muestran. En el agregado se conserva
+\begin{equation}
+\sum_i Pa_i=\sum_i Pl_i=200\ \text{jornadas};\qquad
+\sum_i Dp_i=0.\label{eq:sumval}
+\end{equation}
+Las transferencias sectoriales se compensan; la diferencia agregada entre las tasas procede de la valoración del capital adelantado.
+
+La conclusión es inequívoca para el ejemplo: las dos tasas divergen porque difieren sus denominadores. De ahí no se sigue que sus trayectorias deban divergir también. La posibilidad de movimientos opuestos mencionada por Valle (1978, p.~200) exige especificar cómo evolucionan el excedente y los dos capitales valorados. Tampoco la compensación contable de transferencias describe por sí misma una secuencia efectiva de ventas y pagos. Son cuestiones distintas de la consistencia del cálculo estático.
+
+Sea $A$ la matriz de coeficientes de insumos producidos y $\boldsymbol\ell$ el vector fila de trabajo directo por unidad de producto. Bajo producción simple, tecnología lineal dada e invertibilidad de $I-A$, el sistema de valores laborales puede escribirse
+\begin{equation}
+\mathbf m=\mathbf m A+\boldsymbol\ell,
+\qquad
+\mathbf m=\boldsymbol\ell(I-A)^{-1}.
+\label{eq:separabilidad}
+\end{equation}
+Aquí $A$ contiene exclusivamente insumos producidos por unidad de producto, sin añadir la cesta salarial como si fuera insumo productivo; $\mathbf m$ y $\boldsymbol\ell$ son vectores fila. La expresión requiere que los valores se determinen en un sistema productivo con las condiciones declaradas, y que $I-A$ sea invertible. Esta determinación no requiere conocer previamente los precios de producción. En la construcción de Valle, las ecuaciones de precios se resuelven con los datos técnicos, la regla salarial y los coeficientes de conversión correspondientes, pero sus resultados no retroalimentan la ecuación de valores \eqref{eq:separabilidad}. La separabilidad se refiere a la \emph{estructura de resolución}, no a una ausencia absoluta de relaciones entre precios y valores: el cierre salarial y las conversiones conservan información laboral.
+
+\noindent\textit{Proposición (dualismo operacional de la construcción).} Bajo la tecnología y el cierre salarial indicados, se verifican dos propiedades: \emph{(D1) separabilidad}, pues los valores laborales se resuelven sin retroalimentación de los precios de producción; y \emph{(D2) doble valoración}, pues las ecuaciones monetarias asignan a las mismas cantidades físicas adelantadas una valoración distinta de la laboral. Denominamos \emph{dualista en sentido operacional} a una construcción que satisfaga conjuntamente D1 y D2. En ese sentido definido, el ejemplo de Valle es dualista. Esta clasificación se refiere a su estructura de resolución y valoración; no demuestra dos sistemas causalmente autónomos, no equivale a la teoría de Bortkiewicz o Moseley en todos sus aspectos y no constituye una refutación de Valle ni de la TSSI. La divergencia de tasas sigue siendo válida dentro de las reglas de Valle.
+
+Esta clasificación describe las ecuaciones de Valle; no traslada a su obra todas las tesis que otros autores agrupan bajo la palabra dualismo. Lo decisivo para nuestra crítica es más concreto: la separabilidad y la doble valoración permiten producir dos tasas sin demostrar todavía que Marx las requiera.
+
+
+
+\subsection*{Qué capital adelantado compara cada tasa}
+La divergencia de niveles suscita una cuestión distinta de su cálculo: si ambas valoraciones representan el mismo adelanto histórico. Conviene separar el desembolso monetario efectivamente realizado, el valor de los insumos al entrar en producción, el costo consumido que se transfiere al producto y el capital total adelantado sobre el que se mide la rentabilidad. Estas magnitudes pueden coincidir bajo condiciones particulares, pero ninguna identidad contable garantiza su coincidencia general. El ejemplo simultáneo de Valle determina dos denominadores según sus reglas; no reconstruye por sí solo la historia de desembolsos y revaluaciones de cada capital. Una crítica temporal debe declarar qué adelanto pretende representar, en qué momento se valora y cómo se relaciona con el costo consumido.
+
+La conclusión crítica ya puede formularse: la existencia de dos tasas en Valle es un resultado de la construcción, no una demostración de que Marx requiera dos tasas agregadas distintas. Examinaremos ahora qué ocurre al alterar condiciones de valoración; estos ejercicios ilustran la dependencia del resultado respecto de sus premisas, sin constituir pruebas independientes de una interpretación de Marx.
+
+\section{Modificaciones de las condiciones de valoración}
+La divergencia de Valle ya está explicada dentro de sus reglas. Queda una prueba de alcance: ¿qué permanece cuando se modifica la valoración de los insumos? Conservaremos las cantidades, el trabajo y el salario real, pero distinguiremos precios de entrada y salida. La tasa ya no se obtiene automáticamente de la ecuación característica anterior: cada ejercicio necesita declarar su nueva regla de ganancia y de cierre monetario. No buscamos reemplazar el modelo de Valle por otro, sino mostrar cuánto depende el resultado de sus condiciones.
+
+\subsection*{Precios de entrada dados y tasa monetaria}
+Conservemos, pues, las cantidades físicas, el trabajo y el salario real de Valle. Supongamos que las máquinas y el maíz adelantados se adquirieron a $a_0=1/2$ pesos por máquina y $b_0=1/20$ pesos por kilogramo. El capital monetario adelantado en cada rama resulta:
+\[
+\begin{aligned}A_I&=225(1/2)+900(1/20)=315/2,\\A_{II}&=100(1/2)+1200(1/20)=110,\\A_{III}&=50(1/2)+900(1/20)=70.\end{aligned}
+\]
+Supongamos, además, que las tres ramas obtienen una tasa uniforme sobre esos adelantos y que la venta de plata proporciona 100 pesos. Si $F_T=1+r^{(IV)}$, las ecuaciones de precios de salida son:
+\begin{align*}
+375a_1&=F_T(315/2),\\
+3000b_1&=F_T(110),\\
+100&=F_T(70).
+\end{align*}
+La ecuación de la plata determina directamente $F_T=100/70=10/7$. En este ejercicio, a diferencia de la resolución simultánea original, la tasa queda fijada por el ingreso monetario supuesto para la rama de plata y por su adelanto previamente dado. No procede de un nuevo autovalor del subsistema básico. Sustituyendo este resultado en las otras dos ecuaciones obtenemos $a_1=3/5$ y $b_1=11/210$. La tasa es, por tanto,
+\[
+r^{(IV)}=\frac37\approx42.86\,\pct.
+\]
+La comparación de condiciones puede resumirse así:
+\begin{center}
+\begin{tabular}{@{}p{0.37\linewidth}p{0.24\linewidth}p{0.24\linewidth}@{}}
+\toprule
+Condición & Valle & Modificación\\\midrule
+Cantidades físicas y trabajo vivo & Originales & Conservados\\
+Salario real & Original & Conservado\\
+Precios de entrada & Simultáneos & Históricos fijados\\
+Cierre de valoración y monetario & Original & Modificado\\
+Tasa resultante & $25\,\pct$ & $42.86\,\pct$\\\bottomrule
+\end{tabular}
+\end{center}
+Los adelantos suman $675/2=337.5$ pesos y los ingresos $3375/7$ pesos. La diferencia es una ganancia de $2025/14$ pesos, igual a $r^{(IV)}(675/2)$. La tasa difiere del 25\,\pct{} de Valle. La diferencia no mide el efecto aislado de introducir precios históricos: el cociente $100/70$ determina la tasa por la combinación de un adelanto monetario fijado y un producto monetario estipulado. No hemos cambiado una sola condición: junto con los precios de entrada fijamos una regla de ganancia uniforme sobre esos adelantos y conservamos el ingreso nominal de la plata. La comparación identifica el resultado de esta construcción modificada; no refuta las ecuaciones originales de Valle.
+
+\noindent\textit{Una razón monetaria auxiliar del primer ejercicio.} Con los ingresos monetarios $R=3375/7$ y el costo de las máquinas empleadas $C^{\$}=375(1/2)=187.5$, puede definirse, exclusivamente como identidad contable, el ingreso neto de ese costo y su razón respecto de las 500 jornadas de trabajo vivo:
+\begin{equation}
+N^{\$}=R-C^{\$}=\frac{8250}{28},\qquad
+\mu_{\mathrm{aux}}=\frac{N^{\$}}{500}=\frac{33}{56}\approx0.589286\ \text{pesos/jornada}.
+\label{eq:mu_aux_iv}
+\end{equation}
+Esta razón difiere de la conversión por plata de Valle, $1/m=0.5$ pesos por jornada. La resta de los costos de máquinas excluye aquí salarios pero no establece por sí misma una teoría del producto neto, de la explotación o de la formación de precios. La diferencia resulta de las definiciones y los datos del ejercicio modificado; no establece cuál es la MELT pertinente para una teoría temporal completa con dinero mercancía. En particular, $\mu_{\mathrm{aux}}$ tampoco debe confundirse con la MELT \emph{ex post} $25/49$ del segundo ejercicio, que responde a otra conciliación contable. No se impone identidad entre esas tres razones sin condiciones adicionales.
+
+La prueba anterior introdujo precios de entrada históricamente dados. Queda otra cuestión: si los valores laborales y los precios monetarios deben resolverse en dos sistemas separados. Kliman y McGlone (1999, pp.~34--35, nota~2) distinguen esta cuestión de la temporalidad y reconocen expresamente interpretaciones simultáneas de sistema único; por ello, la modificación temporal que acabamos de efectuar no demuestra por sí misma la tesis del sistema único. Esta última exige especificar cómo se relacionan los costos monetarios y el valor transferido.
+
+Freeman y Kliman (1998, pp.~34--35) precisan que el valor transferido de un insumo se determina por el valor que tiene \emph{al utilizarse}, no obligatoriamente por el precio al que fue comprado. La referencia remite a las pp.~34--35 de la versión consultada de esa ponencia, no al artículo posterior de Kliman y McGlone.
+
+La lectura de Kliman (2007, cap.~6, \S 6.4.1, pp.~95--97) añade una cautela: el desembolso histórico efectivo de una empresa no se identifica sin más con el valor socialmente necesario para adquirir sus medios de producción. La discusión incorpora la pertinencia del costo corriente y de condiciones socialmente medias. Por ello, convertir un desembolso histórico a jornadas no constituye una regla universal de valor transferido, ni la conversión de las máquinas efectuada por Valle equivale automáticamente a la regla defendida por Kliman. Para establecer tal equivalencia harían falta condiciones adicionales sobre el costo pertinente y la expresión monetaria del trabajo. Esta precisión se introduce como delimitación de nuestra comparación, no como una prueba nueva contra Valle.
+
+El cotejo íntegro de Kliman y McGlone (1999, pp.~36--38) permite precisar las dos condiciones. En su representación estándar, los valores de los insumos se determinan sin los precios; en su sistema temporal, el valor transferido depende de los precios vigentes al entrar los insumos en producción, anteriores a los precios de salida. Los autores distinguen además entre precio de compra anterior, valoración al entrar en producción y costo de reposición posterior (pp.~41--42). Por tanto, ``temporal'' no significa necesariamente conservar el precio original de adquisición. En las pp.~43--44 obtienen la igualdad de las tasas agregadas a partir de una valoración común del capital adelantado y de la condición de conservación agregada del valor en el intercambio; no es una propiedad de cualquier sistema temporal. Tampoco identificamos las dos tasas de Valle con las tasas comparadas por Freeman y Kliman (2000), pues las condiciones de construcción difieren.
+
+La comparación exige una cautela adicional: la posibilidad de variaciones de precios sin cambios de técnica no identifica por sí sola una valoración temporal; deben precisarse las condiciones monetarias y las demás magnitudes que cambian. La discusión de Kliman (2016) plantea precisamente problemas de variación de precios sin cambios técnicos, pero no hemos cotejado aquí todas sus réplicas ni la respuesta completa de Moseley; no usaremos esa referencia como prueba concluyente de exclusividad temporal o simultánea. Tenemos, por tanto, una alternativa teórica documentada. Su existencia permite distinguir dos preguntas que no deben confundirse: cómo se resuelve una construcción temporal y qué relaciones atribuye cada interpretación al texto de Marx. La segunda requiere un examen documental propio.
+
+\subsection*{Reconstrucción contable ex post}
+Podemos efectuar una segunda comparación \emph{ex post} conservando los precios monetarios y el trabajo vivo del ejemplo de Valle. No construiremos una trayectoria de periodos sucesivos ni resolveremos endógenamente precios de salida; por tanto, el ejercicio no es una solución TSSI completa del sistema de Valle. Introducimos una regla temporal de conversión del capital constante y variable mediante una expresión monetaria inicial dada, $\mu_0=1/2$ pesos por jornada. Posteriormente definiremos una MELT \emph{ex post} para conciliar los resultados laborales y monetarios. Para cada rama $i$ definimos
+\begin{equation}
+W_i^{T}=\frac{c_i^{\$}}{\mu_0}+L_i,\label{eq:valor_temporal_sector}
+\end{equation}
+donde $c_i^{\$}$ es el capital constante efectivamente desembolsado, $L_i$ el trabajo vivo realizado y $W_i^{T}$ el valor temporal del producto en jornadas. La regla es una convención de esta reconstrucción ex post; no proviene de resolver de nuevo los precios de salida. El superíndice $T$ identifica la valoración ensayada y no certifica, por sí mismo, que se haya demostrado la consistencia de un sistema temporal de reproducción. Se supone, para este ejercicio, que el desembolso utilizado como dato coincide con la valoración monetaria pertinente al entrar los insumos en producción; esa coincidencia no constituye una regla general de valoración temporal. Con los datos monetarios ya calculados, obtenemos:
+\begin{center}
+\small
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+Rama & $c_i^{\$}$ & $c_i^{\$}/\mu_0$ & $L_i$ & $W_i^T$\\\midrule
+I: máquinas & 144 & 288 & 150 & 438\\
+II: maíz & 64 & 128 & 200 & 328\\
+III: plata & 32 & 64 & 150 & 214\\\midrule
+Total & 240 & 480 & 500 & 980\\\bottomrule
+\end{tabular}
+\end{center}
+Los adelantos salariales monetarios son, respectivamente, 48, 64 y 48 pesos. Su suma es 160 pesos, equivalentes a $v=160/\mu_0=320$ jornadas. El capital constante transferido suma 480 jornadas y el capital total adelantado, bajo la condición de consumo íntegro de los insumos, es $C=(240+160)/\mu_0=800$ jornadas. El plusvalor temporal queda determinado en esta cuenta por $s=500-320=180$ jornadas. Así,
+\begin{equation}
+r_T=\frac{s}{C}=\frac{180}{800}=22.5\,\pct.\label{eq:rt}
+\end{equation}
+Tomemos ahora los ingresos por ventas de las tres ramas, que en Valle son 240, 160 y 100 pesos. El ingreso total es $Y=500$ pesos. Si definimos la expresión monetaria del trabajo \emph{ex post} como la razón entre ese ingreso y el valor temporal total recién calculado, obtenemos
+\begin{equation}
+\mu_1=\frac{Y}{\sum_iW_i^T}=\frac{500}{980}=\frac{25}{49}\quad\text{pesos por jornada}.
+\label{eq:melt_expost}
+\end{equation}
+Por construcción, $Y/\mu_1=980$ jornadas. La cuenta monetaria original arroja una ganancia de $100=500-400$ pesos, mientras que la masa temporal de plusvalor es de 180 jornadas. Las dos magnitudes pueden conciliarse expresando el capital históricamente adelantado a la nueva razón monetaria:
+\begin{equation}
+100=\underbrace{\mu_1(180)}_{4500/49}+\underbrace{400\left(\frac{\mu_1}{\mu_0}-1\right)}_{400/49}
+\qquad\text{(pesos)}.
+\label{eq:conciliacion}
+\end{equation}
+La igualdad verifica la cuenta; el segundo término es el residuo de expresar el adelanto inicial de 400 pesos mediante una razón monetaria posterior. No significa que haya ocurrido una revaluación histórica efectiva del capital, ni que ese término sea una ganancia adicional causada por el cambio de MELT. Tampoco determina por sí misma los precios de las mercancías. Además, la plata exige una distinción: el valor temporal de su producto es de 214 jornadas y su ingreso monetario es de 100 pesos. La razón implícita de esta rama no coincide con la agregada:
+\begin{equation}
+\frac{100}{214}\ne\frac{25}{49}.
+\label{eq:plataMELT}
+\end{equation}
+La desigualdad de \eqref{eq:plataMELT} no es una contradicción de la identidad agregada: señala que el dinero mercancía no queda cerrado mediante la misma razón en todas las ramas. Una teoría monetaria adicional tendría que especificar cómo se relacionan la valoración de la plata, la unidad de cuenta y la expresión monetaria agregada. La conciliación no debe confundirse con la regla temporal de valoración defendida por Kliman y McGlone (1999, p.~45, nota~10), quienes objetan determinadas conversiones retrospectivas del capital variable. Aquí los salarios se convierten mediante $\mu_0$ y $\mu_1$ interviene sólo en la conciliación posterior; esta distinción no demuestra equivalencia con su interpretación. En consecuencia, la tasa del 22.5\,\pct{} se obtiene antes de definir $\mu_1$ y no es producida por la conciliación posterior. La cuenta es reproducible como reconstrucción ex post de tres ramas, pero no proporciona un cierre completo de dinero mercancía ni una teoría causal de la MELT. Kliman y McGlone (1999, pp.~44--45) también distinguen las igualdades internas de su sistema de la posible divergencia entre medidas monetarias y laborales cuando cambia la relación dinero--trabajo; esa discusión no valida por sí sola el cierre adoptado aquí. Potts (2016) discute cálculos alternativos de la expresión monetaria temporal del trabajo; la regla \eqref{eq:valor_temporal_sector} y su aplicación a Valle se declaran aquí expresamente, sin atribuir a Potts la demostración de todo este cierre.
+
+\subsection*{Dos tasas y dos leyes de movimiento: un contraste delimitado}
+Freeman y Kliman (2000) distinguen una tasa material y una tasa calculada sobre capital-valor temporalmente adelantado, y estudian sus leyes de movimiento. Esta pareja conceptual no es la de Valle: las tasas de este último comparan dos valoraciones agregadas dentro de su construcción simultánea. En un ejemplo puramente ilustrativo, una sucesión de capitales-valor de $500$, $600$ y $700$, con excedente de $100$ en cada caso, arroja tasas de $20\,\pct$, aproximadamente $16.67\,\pct$ y $14.29\,\pct$; la trayectoria material comparada es $20\,\pct$, $25\,\pct$ y $30\,\pct$. El ejemplo ilustra la posibilidad lógica de direcciones opuestas bajo las reglas que lo construyen; no es una serie empírica ni una ley universal, y no trasladamos sin cotejo sus números al sistema de Valle. Su función aquí es precisar la diferencia entre una divergencia estática de niveles y una divergencia dinámica de trayectorias.
+
+La distinción temporal tampoco equivale simplemente a sustituir $675$ por $800$ en el denominador de Valle. Exige especificar el capital adelantado, su momento de valoración y la regla que conecta costos monetarios y valor transferido. La identidad del precio de costo no asegura por sí sola la identidad del capital total adelantado cuando intervienen rotación y capital fijo. Para aislar el efecto de abandonar la simultaneidad sería necesario mantener constantes las demás condiciones de cierre; los dos ejercicios anteriores no constituyen esa prueba controlada.
+
+Podemos reunir ahora los tres resultados. Valle obtiene 25\,\pct{} con precios simultáneos y conversión por plata. La modificación de precios de entrada y cierre monetario produce 42.86\,\pct. La valoración contable ex post, que estipula una regla de conversión inicial, produce 22.5\,\pct; la MELT ex post permite después conciliar esa cuenta con los ingresos monetarios, sin cerrar completamente el dinero mercancía ni determinar una trayectoria temporal de precios. Las cifras no son tres estimaciones de una misma magnitud bajo condiciones idénticas. Cada una responde a reglas de valoración y cierre especificadas. Freeman y Kliman (2016) distinguen igualmente entre implicación algebraica y causalidad; ninguno de nuestros ejercicios determina por sí mismo un proceso causal de formación de precios o de la MELT. Falta, además, establecer cuál de las relaciones examinadas corresponde a la exposición de Marx. Para ello debemos pasar de las soluciones numéricas a sus formulaciones sobre plusvalor social, capital adelantado y tasa general.
+
+
+
+\section{La interpretación de Marx}
+Hemos seguido a Valle hasta obtener sus dos tasas, identificado la diferencia entre sus denominadores y comprobado que otras reglas producen otras magnitudes. Falta la pregunta que motivó el recorrido: ¿la distinción entre plusvalor producido, ganancia apropiada y forma de aparición exige en Marx dos tasas agregadas distintas? Valle publicó su artículo en 1978, antes de los desarrollos de la TSSI aquí examinados; no reconstruimos una polémica directa entre ellos. Examinamos una atribución a Marx que debe sostenerse por sus propios argumentos.
+
+El manuscrito de Marx de 1864--1865, en el desarrollo que dará lugar al capítulo 9 del libro III, parte del plusvalor generado por el capital social y lo distribuye como ganancia media según la magnitud relativa de los capitales adelantados (Marx, 2016, pp.~268--276). Más adelante identifica la variación de la tasa general con modificaciones del plusvalor o del valor del capital, y explica por qué la ganancia media apropiada por cada esfera puede diferir del plusvalor que allí se produce (pp.~279--280). La distinción entre valor producido y ganancia apropiada tiene, por tanto, un antecedente directo; la atribución de dos denominadores agregados sigue siendo una cuestión adicional.
+
+La misma relación aparece de nuevo cuando Marx examina el capital a interés. Allí escribe: «The general rate of profit is determined in fact by the surplus-value that the total capital produces» (Marx, 2016, p.~470). El pasaje continúa relacionando ese plusvalor con el valor del capital productivo y con la competencia como proceso de igualación. El punto documental es doble: Marx llama \emph{tasa general de ganancia} a esa relación y reserva a la competencia una función distributiva, no la producción autónoma de la masa total de plusvalor.
+
+En su conclusión segunda, Valle Baeza (1978, p.~200) distingue la tasa expresada en precios de una relación que considera más fundamental en Marx, y plantea la posibilidad de movimientos divergentes. Nuestra objeción se dirige a la justificación del paso entre ambas valoraciones agregadas, no a la totalidad de su explicación de la transformación ni a la legitimidad de distinguir formas de aparición. Es ésta, y no el empleo legítimo de precios de producción, la tensión exegética central: en los pasajes citados Marx designa mediante la tasa general la relación social que Valle propone separar cuantitativamente de su tasa monetaria. El paso interpretativo decisivo consiste en precisar el objeto de ambas determinaciones. Que Marx denomine \emph{tasa general} a una relación entre plusvalor social y capital adelantado no excluye que distinga entre una relación social fundamental y sus formas de aparición. La cuestión es más estrecha: ¿autoriza esa distinción a asignar dos magnitudes agregadas diferentes a la tasa general y a su fundamento para el \emph{mismo capital adelantado}? Los pasajes examinados no proporcionan por sí solos esa autorización. Tampoco la excluyen mediante una prohibición explícita: obligan a Valle, o a quien defienda su lectura, a justificar el cambio de regla de valoración que hace divergir ambas tasas.
+
+La operación puede reconstruirse directamente. Marx escribe el valor de la mercancía y su precio de producción con un término de costo común: 
+\begin{equation}
+V=K+s,\qquad P=K+p',\label{eq:marx_costo_comun}
+\end{equation}
+y, por tanto, $P-V=p'-s$ (Marx, 2016, pp.~275--276). La ganancia media $p'$ puede diferir del plusvalor $s$ de la rama sin que por ello se duplique $K$ dentro de esas dos expresiones. La distinción entre costo consumido y capital total adelantado, presentada antes, sigue siendo indispensable para interpretar esta igualdad.
+
+En las pp.~277--278 Marx modifica además un supuesto anterior: el costo de los insumos puede incorporar precios de producción distintos de sus valores. Así, el término $K$ no se identifica sin más con el valor laboral de los medios de producción consumidos. La formulación de un costo común en \eqref{eq:marx_costo_comun} y la modificación posterior de su significado constituyen evidencia textual positiva para nuestra pregunta, aunque no fijan por sí solas una regla completa de actualización temporal de los adelantos.
+
+El texto cuestiona la pretensión de tratar sin prueba adicional un costo laboral separado como el costo \emph{efectivo} que ha debido adelantarse. Deben distinguirse, sin identificarlos automáticamente: (i) precio monetario de adquisición; (ii) valoración del insumo al momento de utilización; (iii) precio de costo que entra en el producto; y (iv) capital total adelantado que constituye el denominador de la tasa. Estas magnitudes pueden coincidir en el ejemplo simplificado y diferir bajo otras cronologías, revaluaciones o rotaciones. El pasaje tampoco proporciona por sí mismo todo el procedimiento de la TSSI: deja abiertas la distinción entre precio de compra y valor en el momento de utilización, la revaluación antes del consumo productivo y la cronología monetaria. Del pasaje se sigue que Marx modifica el supuesto de identidad costo--valor; no se sigue que toda solución simultánea sea textualmente inadmisible.
+
+Valle Baeza (1978, pp.~200--201) vincula las modificaciones de la tasa general con cambios en la explotación o en la composición del capital social, y niega que la competencia cree arbitrariamente una ganancia media adicional. El manuscrito de Marx examina dos vías de cambio del precio de producción: la variación de la tasa media y la variación del valor de la mercancía con tasa media dada (Marx, 2016, pp.~316--317). En el suplemento siguiente distingue además cambios técnicos de variaciones del valor de los componentes del capital sin cambio técnico (p.~318). Estos pasajes permiten reconocer antecedentes conceptuales de Valle; no prueban que su conclusión tercera se siga, con alcance general, de las ecuaciones del apéndice. Tampoco implica que cada modificación de aquellas condiciones cambie necesariamente la tasa: una condición necesaria no es suficiente.
+
+Antes de inferir una discrepancia doctrinal debemos distinguir qué se está comparando: el precio monetario efectivamente adelantado, el valor laboral de los medios y salarios, el costo incorporado al producto y el capital total sobre el que se calcula la tasa. Que un pasaje de Marx emplee un mismo término de costo en dos expresiones no determina por sí solo que toda comparación analítica entre valor y precio deba utilizar idéntico denominador. La comparación filológica es importante porque Engels publicó el libro III en 1894 a partir de manuscritos anteriores. La edición electrónica de Fowkes y Moseley (copyright 2016; catálogo del volumen impreso: 2015) permite localizar un pasaje algebraico del manuscrito, no reproducido por Engels, sobre el precio de costo común al valor y al precio de producción (Marx, 2016, pp.~275--276), y un suplemento omitido sobre variaciones de la composición del capital sin cambios técnicos (pp.~317--318). La interpretación de estos pasajes debe distinguir las formulaciones de Marx de las observaciones editoriales de Moseley. Heinrich (1996) analiza problemas de esa mediación editorial. Para las proposiciones aquí examinadas, el manuscrito anterior ofrece un control positivo y no una razón para descartar el libro III publicado.
+
+Volvamos a las dos tasas calculadas anteriormente. La redistribución del plusvalor entre ramas es compatible con la exposición de Marx, como también lo es la distinción entre relaciones sociales y formas de aparición. El paso adicional de Valle consiste en asignar dos valoraciones agregadas al capital adelantado y hacer corresponder a ellas dos tasas diferentes. Es ese paso, y no la existencia de transferencias sectoriales, el que requiere una justificación textual independiente. La posibilidad de movimientos opuestos de las tasas, la objeción concreta a Bortkiewicz y la tesis de que la forma de aparición oculta movimientos de una relación más fundamental exigen pruebas diferentes de la comparación estática de denominadores. El antecedente marxiano de la distinción entre apariencia y fundamento no demuestra la trayectoria dinámica específica que Valle sugiere. La conclusión crítica es delimitada pero afirmativa: las ecuaciones de Valle no demuestran que Marx exija dos tasas agregadas con diferentes valoraciones del mismo capital adelantado. Los pasajes cotejados tampoco proporcionan esa demostración. Ello cuestiona la pretensión de necesidad, sin declarar ilegítima toda distinción marxiana entre fundamento y apariencia ni establecer una incompatibilidad textual universal.
+
+\section*{Conclusiones}
+\addcontentsline{toc}{section}{Conclusiones}
+Valle Baeza (1978) construye un sistema simultáneo de precios de producción, dualista en sentido operacional por la separabilidad de las ecuaciones de valores y la doble valoración del capital adelantado, y de determinación fisicalista condicionada de la tasa uniforme de ganancia. Estas propiedades se siguen de sus ecuaciones y de las condiciones técnicas y salariales adoptadas. No constituyen, por sí solas, determinaciones necesarias de la teoría de Marx.
+
+La construcción es algebraicamente consistente. Bajo su cierre monetario, la tasa uniforme es del $25\,\pct$. Las ganancias de 48, 32 y 20 pesos equivalen a 96, 64 y 40 jornadas, frente a plusvalores sectoriales de 60, 80 y 60 jornadas. Las transferencias de $36$, $-16$ y $-20$ jornadas suman cero. La divergencia agregada entre $200/675\simeq29.63\,\pct$ y $200/800=25\,\pct$ procede de los denominadores: Valle valora de dos maneras el capital adelantado. No surge de una diferencia agregada entre plusvalor producido y apropiado.
+
+Nuestra crítica se dirige al paso desde esa diferencia formal a una interpretación necesaria de Marx. La redistribución sectorial del plusvalor y la distinción entre relación fundamental y forma de aparición encuentran antecedentes en el manuscrito económico de 1864--1865. Pero esas distinciones no establecen por sí mismas que la tasa general y su fundamento deban calcularse con dos denominadores agregados diferentes para el mismo capital social. Las ecuaciones de Valle tampoco demuestran esa necesidad. Su segunda conclusión combina, por tanto, resultados probados dentro del ejemplo con una atribución interpretativa que requiere justificación independiente.
+
+Los ejercicios auxiliares confirman que las magnitudes cambian cuando cambian las reglas de valoración y cierre: el resultado de $42.86\,\pct$ no aísla la temporalidad, y la cuenta \emph{ex post} de $22.5\,\pct$ no constituye un sistema temporal completo. La comparación con la TSSI delimita alternativas, pero nuestra objeción a Valle no depende de aceptar la TSSI. La conclusión tercera de Valle tampoco queda demostrada con alcance general por la reducción espectral condicionada del apéndice.
+
+El desacuerdo, por tanto, no está en la aritmética. Valle obtiene las dos tasas que sus premisas permiten obtener. Está en el alcance de la conclusión: la diferencia entre dos valoraciones del capital adelantado no demuestra que Marx postulara dos tasas generales necesarias. Precisamente porque la construcción funciona, podemos localizar con exactitud el punto en que termina la deducción y comienza la atribución interpretativa.
+
+\appendix
+\titleformat{\section}{\normalfont\large\bfseries}{Apéndice \Alph{section}.}{.65em}{}
+\section{Determinación simultánea y subsistema básico}
+El orden del apéndice distingue primero la prueba del ejemplo y después su generalización condicionada. La reducción espectral que sigue es una reconstrucción analítica nuestra de las ecuaciones generales del apéndice de Valle Baeza (1978, pp.~201--203), no un teorema formulado por él en términos de Perron--Frobenius. Conserva el cierre salarial, la positividad y las condiciones de productividad que se indican; no constituye una demostración incondicional de la conclusión tercera de Valle. La solución del ejemplo plantea una cuestión distinta de la distribución del plusvalor: ¿qué condiciones determinan la tasa uniforme? Empecemos por la valoración de los insumos. En \eqref{eq:valle1}--\eqref{eq:valle3}, una misma mercancía entra y sale al mismo precio; el sistema es simultáneo en ese sentido preciso. La uniformidad de la tasa es otra condición, que examinaremos a continuación.
+
+La cuestión es qué datos determinan la magnitud de la tasa bajo este cierre, y no simplemente en qué unidad se expresa. Llamaremos \emph{determinación física condicionada} al resultado de que la tasa se obtiene de los coeficientes de requerimientos y del salario real incorporado en ellos, antes de fijar la escala de precios en plata. La caracterización no niega la función monetaria del tercer sector ni atribuye a Valle esa denominación. Que la tasa del ejemplo esté físicamente determinada bajo estas condiciones no permite caracterizar incondicionalmente toda la teoría de Valle como fisicalista ni demuestra una contradicción interna de su argumento.
+
+La tasa $r$ iguala la razón entre ganancia y adelanto monetario de las tres ramas. Para determinar su nivel, basta comenzar por las ecuaciones de máquinas y maíz, dejando provisionalmente aparte la ecuación de la plata.
+
+Las primeras dos ecuaciones pueden reescribirse con $F=1+r$ y los factores de conversión $y_1=a/(1\,\text{jornada/máquina})$ y $y_2=b/(0.1\,\text{jornada/kg})$. Numéricamente, $y_1=a$ y $y_2=10b$ cuando se expresan en pesos por jornada:
+\[
+\begin{pmatrix}
+375-225F&-90F\\
+-100F&300-120F
+\end{pmatrix}
+\begin{pmatrix}y_1\\y_2\end{pmatrix}=0.
+\]
+Una solución no trivial exige
+\begin{equation}
+(4F-5)(F-5)=0.\label{eq:det}
+\end{equation}
+En efecto, la primera ecuación da $y_1/y_2=90F/(375-225F)$: para $F=5$ esta razón es negativa, mientras que para $F=5/4$ es $6/5$. Por ello, la raíz $F=5$ implica una razón negativa entre precios; bajo positividad se selecciona $F=5/4$, de donde $r=1/4$ y $y_1/y_2=6/5$.
+
+La ecuación \eqref{eq:det} equivale a $\frac{4}{25}F^2-F+1=0$. Su estructura es homóloga a la ecuación (1'') de Kliman (2016, pp.~3--5), obtenida en su discusión con Moseley al examinar las consecuencias de igualar precios unitarios de entrada y salida. La homología consiste en que, bajo las condiciones simultáneas especificadas, los precios dejan de figurar en la ecuación que determina la tasa; no implica que Kliman haya estudiado a Valle ni que las posiciones interpretativas de Valle y Moseley sean equivalentes. La identidad formal entre estructuras polinómicas no determina por sí sola el orden causal de las variables. Nuestra solución de Valle parte de coeficientes físicos y un salario real explícitos; no necesita adoptar como premisa la reconstrucción de los determinantes que Kliman atribuye a Moseley. La controversia Kliman--Moseley no queda resuelta aquí, y la referencia a su primera entrega no sustituye un cotejo documental completo de las réplicas posteriores.
+
+El apéndice de Valle Baeza (1978, pp.~201--203, ecs.~5.1--5.5) distingue tres conjuntos de mercancías: medios de producción ($K$), bienes salario ($W$) y bienes de lujo ($L$); incorpora además una rama que produce dinero. Por tanto, el sector III del apéndice no equivale sencillamente a la rama productora de plata del ejemplo inicial. Para examinar la tasa general, conservemos su cierre salarial y definamos $B=K\cup W$, el conjunto de ramas básicas en el sentido restringido utilizado aquí: producen los medios de producción y los bienes salariales que entran, directa o indirectamente, en sus propios costos.
+
+En la notación del apéndice, $M_i>0$ es el valor laboral del producto de la rama $i$, $T_i\geq0$ el trabajo vivo y $a_{ji}\geq0$ el valor del medio de producción $j\in K$ consumido por la rama $i$ (y, por convención, $a_{ji}=0$ si $j\notin K$). Suponemos $W\neq\varnothing$. Sea $\gamma_i>0$ el coeficiente monetario de transformación y $F=1+g$. Valle fija la proporción de trabajo necesario $e=1/(1+p')$ y determina el salario mediante
+\begin{equation}
+S_i=eT_i\gamma_0,\qquad
+\gamma_0=\sum_{j\in W}\frac{M_j}{\sum_{h\in W}M_h}\,\gamma_j.
+\label{eq:salario_general}
+\end{equation}
+Esta regla fija una \emph{proporción de trabajo necesario} $e$ y obtiene el salario monetario $S_i$ mediante el coeficiente medio de transformación de los bienes salariales. No equivale, sin hipótesis adicionales, a fijar una cesta física de salario real; tampoco equivale a mantener exógeno un salario monetario. En el ejemplo numérico existe una correspondencia entre el salario físico de seis kilogramos de maíz por jornada y la participación laboral que permite obtener $e=3/5$, pero esa correspondencia no se postula para cualquier sistema. Se conserva el cierre del apéndice de Valle, no se lo reemplaza por el de la Nueva Interpretación.
+
+\noindent\textit{Proposición (determinación condicionada de la tasa).} Supóngase que (i) las ramas de $B$ no utilizan bienes de lujo ni dinero mercancía como insumos productivos; (ii) la tecnología, los trabajos directos y el cierre salarial mediante $e$ están dados, y los valores laborales $M_i,a_{ji},T_i$ se han determinado previamente conforme al sistema de valores; (iii) la matriz no negativa $H_B$ que se define abajo es irreducible; y (iv) $0<\rho(H_B)<1$. Entonces las ecuaciones de precios de las ramas de $B$ admiten, salvo escala, un vector estrictamente positivo de coeficientes de transformación y determinan la tasa uniforme positiva
+\begin{equation}
+g=\frac{1}{\rho(H_B)}-1,\label{eq:generalPF}
+\end{equation}
+antes de utilizar la ecuación de la rama monetaria. Aquí $\rho$ es el radio espectral. Las condiciones son suficientes para esta reducción, no necesarias para toda determinación de la tasa en sistemas reducibles. Las magnitudes $M_i$ y $a_{ji}$ están medidas en trabajo incorporado y \emph{no son datos físicos primitivos}: su determinación antecede a la construcción de $H_B$ y, bajo el cierre considerado, no requiere conocer los precios monetarios. La secuencia lógica es tecnología y trabajo directo $\rightarrow$ valores laborales $\rightarrow H_B\rightarrow g$.
+
+\noindent\textit{Demostración.} Para $i,j\in B$, definamos la matriz
+\begin{equation}
+(H_B)_{ij}=\frac{1}{M_i}\left[
+\mathbf{1}_{\{j\in K\}}a_{ji}+
+\mathbf{1}_{\{j\in W\}}\,eT_i
+\frac{M_j}{\sum_{h\in W}M_h}\right].\label{eq:Hgeneral}
+\end{equation}
+La ecuación de precios de cada rama básica es
+\[
+M_i\gamma_i=F\left(\sum_{j\in K}a_{ji}\gamma_j+eT_i\gamma_0\right).
+\]
+Sustituyendo \eqref{eq:salario_general} y dividiendo entre $M_i$, el subsistema queda
+\begin{equation}
+\vec{\gamma}_B=F H_B\vec{\gamma}_B.\label{eq:PF}
+\end{equation}
+Por Perron--Frobenius, la irreducibilidad y la positividad seleccionan $1/F=\rho(H_B)$. De ahí se obtiene \eqref{eq:generalPF}. Ninguna ecuación del sector de lujo ni la de producción de dinero intervino en la determinación del autovalor. La determinación de la tasa queda así demostrada \emph{sin} resolver el cierre monetario. Distinta es la existencia de una escala monetaria admisible: la ecuación monetaria sólo fija una normalización finita y estrictamente positiva si sus coeficientes y su término de cierre permiten esa solución. No se afirma que tal condición se satisfaga automáticamente por Perron--Frobenius. \hfill\textit{c.q.d.}
+
+En el ejemplo original, con $B=\{I,II\}$, $e=3/5$ y un único bien salario, la matriz toma la forma
+\begin{equation}
+H_B=\begin{pmatrix}
+\frac35 & \frac6{25}\\[2pt]
+\frac13 & \frac25
+\end{pmatrix},\qquad
+\rho(H_B)=\frac45,\qquad g=\frac14.
+\label{eq:PF_num}
+\end{equation}
+\noindent\textit{Representación física equivalente en el ejemplo.} Si se incorpora el salario real de seis kilogramos por jornada como requerimiento físico por unidad de producto, los insumos por unidad de producto son $225/375=3/5$ máquinas y $900/375=12/5$ kilogramos para la rama I; $100/3000=1/30$ máquinas y $1200/3000=2/5$ kilogramos para la rama II. Con el vector fila de precios unitarios $\mathbf p=(a,b)$ y la matriz
+\[
+A^{(w)}=\begin{pmatrix}3/5&1/30\\[2pt]12/5&2/5\end{pmatrix},
+\qquad \mathbf p=F\mathbf p A^{(w)},
+\]
+se obtiene $\det(I-FA^{(w)})=(4/25)F^2-F+1=0$, equivalente a \eqref{eq:det}. La matriz $A^{(w)}$ incluye \emph{consumo salarial como requerimiento} y no debe confundirse con la matriz de insumos producidos de \eqref{eq:separabilidad}. En este ejemplo, la matriz $H_B$ y $A^{(w)}$ tienen los mismos autovalores $4/5$ y $1/5$; más precisamente, con $D_m=\operatorname{diag}(1,1/10)$,
+\[
+H_B=D_m^{-1}(A^{(w)})^{\mathsf T}D_m.
+\]
+La igualdad espectral procede aquí de esa semejanza y de la correspondencia específica entre salario físico y $e$. No se extiende sin prueba a cualquier cierre salarial de Valle.
+
+La matriz del ejemplo reproduce la tasa obtenida directamente. La generalización anterior requiere, sin embargo, las condiciones de la proposición: en sistemas reducibles debe examinarse la estructura por bloques; con otros insumos o reglas salariales, el subsistema básico puede cambiar. Hemos establecido la determinación condicionada de la tasa antes del cierre monetario, no la irrelevancia económica del dinero. El resultado tampoco identifica de manera exhaustiva los determinantes de la razón agregada plusvalor/capital que Valle considera fundamental: calcular esa razón con valores laborales previamente obtenidos no demuestra que sea causalmente independiente de las demás condiciones económicas.
+
+Determinadas la tasa y la razón entre los dos precios básicos, volvamos a la plata. Su ecuación fija la escala monetaria: $y_2=8/15$ y $y_1=16/25$. Podemos comprobar qué ocurre si modificamos únicamente la constante de esta última ecuación.
+
+\noindent\textit{Prueba localizada de invariancia de escala.} Como operación puramente algebraica, sustitúyase únicamente el miembro izquierdo de la ecuación monetaria por $D>0$, manteniendo intactas las ecuaciones de las ramas I y II:
+\[
+D=F(50y_1+90y_2).
+\]
+El subsistema básico sigue dando $F=5/4$ y $y_1/y_2=6/5$, mientras que $y_2=D/187.5$ y $y_1=(6/5)(D/187.5)$. La tasa es invariante ante esta \emph{modificación algebraica de la constante del cierre monetario}, no ante cualquier modificación físicamente realizable de la producción de plata. Cambiar su producción podría alterar los datos técnicos que aquí se han mantenido fijos.
+ No se sigue de esta propiedad que el dinero sea irrelevante para la realización de la ganancia o para una explicación causal de los precios.
+
+
+
+\section*{Referencias}
+\begingroup\small
+\setlength{\parindent}{0pt}\setlength{\parskip}{.65em}
+\newcommand{\bibentry}[1]{\par\hangindent=1.4em\hangafter=1 #1\par}
+\bibentry{Freeman, A., \& Kliman, A. (1998). \emph{Simultaneous and temporal valuation contrasted} (MPRA Paper No. 52805). Munich Personal RePEc Archive. \url{https://mpra.ub.uni-muenchen.de/52805/}}
+\bibentry{Freeman, A., \& Kliman, A. (2000). Two concepts of value, two rates of profit, two laws of motion. \emph{Research in Political Economy}, \emph{18}, 243--267. \url{https://doi.org/10.1016/S0161-7230(00)18008-3}}
+\bibentry{Freeman, A., \& Kliman, A. (2016). A note on causation, logical implication, and the ordering of variables in equations. \emph{Marxism 21}, \emph{13}(4), 104--133. \url{https://doi.org/10.26587/marx.13.4.201611.004}}
+\bibentry{Heinrich, M. (1996). Engels' edition of the third volume of \emph{Capital} and Marx's original manuscript. \emph{Science \& Society}, \emph{60}(4), 452--466. \url{https://doi.org/10.1177/003682379606000404}}
+\bibentry{Kliman, A. (2007). \emph{Reclaiming Marx's ``Capital'': A refutation of the myth of inconsistency}. Lexington Books.}
+\bibentry{Kliman, A. (2016, 11 de mayo). \emph{Todo es forma-valor y no substancia valor: Comentarios sobre el nuevo libro de Moseley, parte 1} [Traducción al español]. \url{https://tiemposcriticos.wordpress.com/wp-content/uploads/2017/10/todo-es-forma-valor-y-no-sustancia-valor_parte-1.pdf}}
+\bibentry{Kliman, A. J., \& McGlone, T. (1999). A temporal single-system interpretation of Marx's value theory. \emph{Review of Political Economy}, \emph{11}(1), 33--59. \url{https://doi.org/10.1080/095382599107165}}
+\bibentry{Marx, K. (2016). \emph{Marx's economic manuscript of 1864--1865} (B. Fowkes, trad.; F. Moseley, ed.). Brill.}
+\bibentry{Potts, N. (2016). Two temporal single system interpretation of Marx calculations of the MELT. \emph{Marxism 21}, \emph{13}(2), 94--122. \url{https://doi.org/10.26587/marx.13.2.201605.004}}
+\bibentry{Valle Baeza, A. (1978). Valor y precios de producción. \emph{Investigación Económica}, \emph{37}(146), 169--203. \url{https://biblat.unam.mx/hevila/Investigacioneconomica/1978/vol37/no146/9.pdf}}
+\endgroup
+\clearpage
+\thispagestyle{empty}
+\vspace*{25mm}
+\begin{center}
+{\small\scshape RB · Investigación\par}
+\vspace{8mm}
+{\large\itshape Información editorial y contacto\par}
+\vspace{10mm}
+{\small Raúl Alberto Rivera Boullosa\par}
+\vspace{3mm}
+{\small\href{mailto:boullosaraul@gmail.com}{boullosaraul@gmail.com}\par}
+{\small\href{https://raulboullosa.com}{raulboullosa.com}\par}
+\vspace{10mm}
+\includegraphics[width=32mm]{valle_tssi_qr_ensayos.png}\par
+\vspace{3mm}
+{\footnotesize\url{https://raulboullosa.com/ensayos}\par}
+\vfill
+{\footnotesize Artículo de investigación independiente · Versión 2.2\par}
+{\footnotesize Composición A5 · EB Garamond · Latin Modern Math\par}
+\end{center}
+\end{document}

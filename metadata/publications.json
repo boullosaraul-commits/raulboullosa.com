@@ -424,17 +424,17 @@
       "citation_exports": true
     },
     {
-      "id": "valle-marx-tssi-beta-1-0",
+      "id": "valle-marx-tssi-v2-2",
       "path": "dist/publicaciones/valle-marx-tssi/index.html",
       "publication_type": "research_manuscript",
-      "title": "Valle Baeza (1978): valoración del capital adelantado y dos tasas de ganancia",
-      "subtitle": "Reconstrucción formal, condiciones de valoración y lectura de Marx desde la controversia TSSI",
-      "description": "Reconstrucción del sistema de Valle Baeza, análisis de dos tasas agregadas de ganancia y alcance de su comparación con Marx y la TSSI.",
-      "abstract": "El artículo reconstruye el sistema de tres ramas de Valle Baeza (1978) y explica por qué, en ese ejemplo, la tasa agregada valorada en trabajo (29,63 %) difiere de la tasa monetaria expresada en unidades comparables (25 %). La diferencia se localiza en la valoración del capital adelantado. El contraste con el manuscrito de Marx de 1864–1865 y la interpretación temporal de sistema único (TSSI) delimita el alcance de la divergencia y deja abierta la cuestión de la compatibilidad de la lectura de Valle con Marx.",
-      "datePublished": "2026-11-08",
+      "title": "Valle Baeza (1978) y las dos tasas de ganancia: consistencia algebraica y límites de una interpretación de Marx",
+      "subtitle": "Simultaneidad, dualismo y determinación fisicalista de la tasa de ganancia",
+      "description": "El modelo de Valle es algebraicamente consistente. La divergencia entre sus tasas agregadas depende de cómo se valora el capital adelantado. El artículo cuestiona que esa divergencia se siga de la teoría de Marx.",
+      "abstract": "Valle Baeza (1978) construye un modelo simultáneo, dualista en sentido operacional y con determinación fisicalista condicionada de la tasa uniforme de ganancia. Sus resultados son algebraicamente consistentes. En el ejemplo de tres ramas, la divergencia entre la tasa monetaria del 25 % y la razón laboral del 29,63 % surge de valorar de manera diferente el capital adelantado. La crítica se dirige a que Valle presenta como necesaria en la teoría de Marx una separación entre tasas que depende de las reglas de su modelo. El contraste con el manuscrito de Marx de 1864–1865 y con la interpretación temporal de sistema único (TSSI) examina el fundamento de esa atribución.",
+      "datePublished": "2026-11-09",
       "inLanguage": "es-MX",
       "url": "https://raulboullosa.com/publicaciones/valle-marx-tssi/",
-      "pdf": "https://raulboullosa.com/pdf/valle-marx-tssi-beta-1-0.pdf",
+      "pdf": "https://raulboullosa.com/pdf/valle-marx-tssi-v2-2.pdf",
       "keywords": [
         "Valle Baeza",
         "precios de producción",
@@ -448,9 +448,9 @@
         "B24",
         "B51"
       ],
-      "version": "2.0 / beta 1.0",
-      "edition_label": "Versión 2.0 / beta 1.0",
-      "editorial_status": "Manuscrito de investigación, apto para evaluación académica externa tras auditoría interna.",
+      "version": "2.2",
+      "edition_label": "Versión 2.2",
+      "editorial_status": "Artículo de investigación independiente.",
       "navigation_label": "Valle–Marx–TSSI",
       "contributors": [
         {
@@ -461,7 +461,7 @@
           "corresponding": false
         }
       ],
-      "numberOfPages": 25,
+      "numberOfPages": 26,
       "license": null,
       "funding": null,
       "relations": []
