@@ -53,8 +53,10 @@ def sync(check=False):
             crumbs = '<li><a href="/">Inicio</a></li>'
             if is_work:
                 crumbs += '<li><a href="/ensayos/">Publicaciones</a></li>'
-                current = 'SITEPE v14' if relative.startswith('publicaciones/') else (
-                    'Ensayo ' + re.search(r'Archivo / Ensayo (\d+)|Texto seleccionado / Ensayo (\d+)', updated).group(0).split('Ensayo ')[-1])
+                current = records[relative].get('navigation_label')
+                if not current:
+                    current = 'SITEPE v14' if relative.startswith('publicaciones/') else (
+                        'Ensayo ' + re.search(r'Archivo / Ensayo (\d+)|Texto seleccionado / Ensayo (\d+)', updated).group(0).split('Ensayo ')[-1])
             else:
                 current = label
             crumbs += '<li><span aria-current="page">' + html.escape(current) + '</span></li>'
@@ -98,7 +100,8 @@ def sync(check=False):
                 return match[0]
             attributes = attrs + ' href="' + url + '"' + tail
             attributes = re.sub(r'\s+aria-label="[^"]*"', '', attributes)
-            return '<a' + attributes + ' aria-label="Abrir PDF: ' + html.escape(pdf['title'], quote=True) + '">'
+            action = 'Descargar PDF' if re.search(r'\sdownload(?:\s|=|$)', tail) else 'Abrir PDF'
+            return '<a' + attributes + ' aria-label="' + action + ': ' + html.escape(pdf['title'], quote=True) + '">'
         updated = re.sub(r'<a([^>]*?)\s+href="(/pdf/[^"]+)"([^>]*)>', label_pdf, updated)
         # Shared return action at the bottom of every content page.
         updated = re.sub(r'\s*<!-- page-return:start -->.*?<!-- page-return:end -->\s*', '', updated, flags=re.S)
