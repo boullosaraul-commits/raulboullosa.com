@@ -424,17 +424,17 @@
       "citation_exports": true
     },
     {
-      "id": "valle-marx-tssi-v2-2",
+      "id": "valle-marx-tssi-v2-5",
       "path": "dist/publicaciones/valle-marx-tssi/index.html",
       "publication_type": "research_manuscript",
       "title": "Valle Baeza (1978) y las dos tasas de ganancia: consistencia algebraica y límites de una interpretación de Marx",
       "subtitle": "Simultaneidad, dualismo y determinación fisicalista de la tasa de ganancia",
-      "description": "El modelo de Valle es algebraicamente consistente. La divergencia entre sus tasas agregadas depende de cómo se valora el capital adelantado. El artículo cuestiona que esa divergencia se siga de la teoría de Marx.",
-      "abstract": "Valle Baeza (1978) construye un modelo simultáneo, dualista en sentido operacional y con determinación fisicalista condicionada de la tasa uniforme de ganancia. Sus resultados son algebraicamente consistentes. En el ejemplo de tres ramas, la divergencia entre la tasa monetaria del 25 % y la razón laboral del 29,63 % surge de valorar de manera diferente el capital adelantado. La crítica se dirige a que Valle presenta como necesaria en la teoría de Marx una separación entre tasas que depende de las reglas de su modelo. El contraste con el manuscrito de Marx de 1864–1865 y con la interpretación temporal de sistema único (TSSI) examina el fundamento de esa atribución.",
+      "description": "El artículo explica por qué divergen las dos tasas agregadas de Valle Baeza (1978) y examina qué respaldo tiene esa diferencia en la teoría de Marx.",
+      "abstract": "Valle Baeza (1978) construye un modelo simultáneo, dualista en sentido operacional y de determinación fisicalista condicionada de la tasa uniforme de ganancia. Su ejemplo de tres ramas arroja una tasa monetaria del 25 % y una razón laboral de 200/675 ≃ 29,63 %. Los dos resultados son consistentes con sus condiciones técnicas, salariales y de valoración. En el agregado, las transferencias sectoriales se compensan. La divergencia resulta de aplicar el mismo excedente a dos valoraciones del capital adelantado, de 675 y 800 jornadas comparables. La distinción que Marx establece entre plusvalor, ganancia, costo y formas de aparición deja abierta la cuestión de si la tasa general y su fundamento requieren denominadores distintos. El contraste con el libro III publicado y el manuscrito de 1864–1865 precisa qué parte de la conclusión de Valle requiere justificación documental. La interpretación temporal de sistema único ofrece una alternativa de valoración. La objeción a la necesidad de dos tasas puede formularse con independencia de adoptarla.",
       "datePublished": "2026-11-09",
       "inLanguage": "es-MX",
       "url": "https://raulboullosa.com/publicaciones/valle-marx-tssi/",
-      "pdf": "https://raulboullosa.com/pdf/valle-marx-tssi-v2-2.pdf",
+      "pdf": "https://raulboullosa.com/pdf/valle-marx-tssi-v2-5.pdf",
       "keywords": [
         "Valle Baeza",
         "precios de producción",
@@ -448,9 +448,9 @@
         "B24",
         "B51"
       ],
-      "version": "2.2",
-      "edition_label": "Versión 2.2",
-      "editorial_status": "Artículo de investigación independiente.",
+      "version": "2.5",
+      "edition_label": "Versión 2.5",
+      "editorial_status": "Artículo académico disponible para circulación y evaluación externa.",
       "navigation_label": "Valle–Marx–TSSI",
       "contributors": [
         {
@@ -461,7 +461,7 @@
           "corresponding": false
         }
       ],
-      "numberOfPages": 26,
+      "numberOfPages": 25,
       "license": null,
       "funding": null,
       "relations": []
