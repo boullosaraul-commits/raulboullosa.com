@@ -302,26 +302,27 @@
       "publication_type": "essay",
       "title": "Un mecanismo monetario del ciclo económico",
       "description": "Construcción de un mecanismo monetario mínimo del ciclo económico a partir de inversión, ahorro, demanda de dinero y tasa de interés.",
-      "abstract": "Consideraremos una economía en la que la inversión planeada depende del nivel de actividad y de la tasa de interés, mientras que esta última varía de acuerdo con la situación del mercado monetario. Si la inversión planeada excede al ahorro correspondiente al ingreso corriente, el producto aumenta; si queda por debajo, disminuye. La expansión eleva la demanda de dinero y, una vez sobrepasado cierto nivel de actividad, provoca un aumento de la tasa de interés. Ese aumento reduce inequívocamente la inversión por unidad de producto y termina llevando la propensión a invertir hasta la propensión al ahorro, momento en que el producto alcanza su máximo. Durante la contracción ocurre el proceso inverso. Bajo las hipótesis adoptadas, el sistema resultante es del tipo Lotka-Volterra y sus trayectorias positivas, salvo el punto estacionario, son periódicas. La construcción demuestra una propiedad del cierre adoptado; no identifica por sí sola un mecanismo causal de los ciclos observados.",
+      "abstract": "Este ensayo construye un mecanismo monetario del ciclo económico a partir de dos desequilibrios: la diferencia entre inversión y ahorro, que modifica el producto, y la diferencia entre demanda y oferta de dinero, que modifica la tasa de interés. Con reglas de ajuste sencillas, el sistema adopta la forma Lotka–Volterra y genera órbitas periódicas alrededor de un punto estacionario positivo. Una vez establecido ese resultado, examinamos sus límites. No todas las órbitas son compatibles con inversión bruta no negativa; tampoco se necesita mantener fija la cantidad de dinero para conservar una integral primera. Otras reglas de ajuste conservan la integral, mientras que determinadas retroalimentaciones pueden hacer estable o inestable el punto estacionario. Finalmente, mostramos por qué dinámicas reducidas semejantes no permiten identificar sin más el cierre económico que las produjo. En cada paso distinguimos las consecuencias matemáticas de los supuestos adoptados y las afirmaciones sobre economías observadas, que requerirían evidencia adicional.",
       "datePublished": "2026-09",
       "inLanguage": "es-MX",
       "url": "https://raulboullosa.com/ensayos/un-mecanismo-monetario-del-ciclo-economico/",
       "pdf": "https://raulboullosa.com/pdf/rb-ensayos-2026-07.pdf",
       "keywords": [
         "ciclo económico",
-        "inversión",
-        "ahorro",
-        "dinero",
-        "tasa de interés",
-        "Lotka-Volterra"
+        "IS–LM",
+        "Lotka–Volterra",
+        "admisibilidad",
+        "conservación",
+        "estabilidad",
+        "identificación"
       ],
       "series": {
         "@type": "CreativeWorkSeries",
         "name": "RB · Ensayos 2026",
         "position": 7
       },
-      "version": null,
-      "edition_label": "Versión de circulación, septiembre de 2026",
+      "version": "2.6",
+      "edition_label": "Versión 2.6, noviembre de 2026",
       "contributors": [
         {
           "person": "raul-rivera-boullosa",

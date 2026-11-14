@@ -1,0 +1,662 @@
+
+\documentclass[10.5pt,twoside]{article}
+\usepackage[a5paper,inner=18.5mm,outer=18.5mm,top=18.5mm,bottom=19.5mm,footskip=9mm]{geometry}
+\usepackage{fontspec}
+\usepackage{ebgaramond}
+\usepackage{unicode-math}
+\setmathfont{Garamond-Math.otf}
+\usepackage[spanish,mexico]{babel}
+\usepackage{microtype}
+\usepackage{amsmath,mathtools}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage[hidelinks]{hyperref}
+\Urlmuskip=0mu plus 3mu
+
+\setlength{\parindent}{1.15em}
+\setlength{\parskip}{0pt}
+\linespread{1.055}
+\frenchspacing
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[LE]{\small\thepage}
+\fancyfoot[RO]{\small\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\newcounter{rsec}
+\newcommand{\rsection}{%
+  \refstepcounter{rsec}%
+  \par\vspace{1.35em}%
+  \begin{center}\fontsize{14}{16}\selectfont\Roman{rsec}\end{center}%
+  \vspace{0.35em}%
+}
+
+\newcommand{\seriesmark}{RB $\cdot$ Ensayos 2026 $\cdot$ 07}
+\newcommand{\booktitle}{Un mecanismo monetario del ciclo económico}
+\newcommand{\authorname}{Raúl Alberto Rivera Boullosa}
+
+\begin{document}
+\fontsize{10.5}{13.1}\selectfont
+\setlength{\abovedisplayskip}{7pt plus 2pt minus 2pt}
+\setlength{\belowdisplayskip}{7pt plus 2pt minus 2pt}
+\setlength{\abovedisplayshortskip}{4pt plus 2pt minus 1pt}
+\setlength{\belowdisplayshortskip}{5pt plus 2pt minus 1pt}
+
+\begin{titlepage}
+\thispagestyle{empty}
+\begin{center}
+{\small \seriesmark}\par
+\vspace*{30mm}
+{\fontsize{23}{27}\selectfont\bfseries \booktitle\par}
+\vfill
+{\fontsize{14}{17}\selectfont \authorname\par}
+\vspace{8mm}
+{\fontsize{10.5}{12.5}\selectfont Versión 2.6, revisión compositiva, noviembre de 2026\par}
+\vspace*{20mm}
+\end{center}
+\end{titlepage}
+
+\thispagestyle{empty}
+\begin{center}
+\vspace*{8mm}
+{\fontsize{14}{16}\selectfont\bfseries Resumen}
+\end{center}
+\vspace{10mm}
+
+Este ensayo construye un mecanismo monetario del ciclo económico a partir de dos desequilibrios: la diferencia entre inversión y ahorro, que modifica el producto, y la diferencia entre demanda y oferta de dinero, que modifica la tasa de interés. Con reglas de ajuste sencillas, el sistema adopta la forma Lotka--Volterra y genera órbitas periódicas alrededor de un punto estacionario positivo. Una vez establecido ese resultado, examinamos sus límites. No todas las órbitas son compatibles con inversión bruta no negativa; tampoco se necesita mantener fija la cantidad de dinero para conservar una integral primera. Otras reglas de ajuste conservan la integral, mientras que determinadas retroalimentaciones pueden hacer estable o inestable el punto estacionario. Finalmente, mostramos por qué dinámicas reducidas semejantes no permiten identificar sin más el cierre económico que las produjo. En cada paso distinguimos las consecuencias matemáticas de los supuestos adoptados y las afirmaciones sobre economías observadas, que requerirían evidencia adicional.\vfill
+\noindent\textbf{Palabras clave:} ciclo económico; IS--LM; Lotka--Volterra; admisibilidad; conservación; estabilidad; identificación.
+\vspace*{16mm}
+\clearpage
+
+\setcounter{page}{3}
+
+\rsection
+El punto de partida pertenece a una tradición reconocible de la macroeconomía: representar conjuntamente el mercado de bienes y el de dinero mediante las relaciones que suelen asociarse al esquema IS--LM. En su presentación estática, estas relaciones permiten localizar combinaciones de producto y tasa de interés compatibles con determinadas condiciones de equilibrio. No dicen, por sí mismas, cómo se pasa de una combinación a otra ni si ese movimiento converge, oscila o se aleja del equilibrio.
+
+La cuestión del movimiento abrió un problema distinto. En la discusión sobre la estabilidad del IS--LM, Chang y Smyth (1972) examinaron condiciones de estabilidad e inestabilidad. Los estudios de sistemas keynesianos dinámicos de Torre (1977) y Schinasi (1982) dieron un lugar explícito a las reglas de ajuste y a las oscilaciones. Más tarde, Bella, Mattana y Venturi (2013) revisaron las fluctuaciones endógenas bajo supuestos kaldorianos; Veronese Passarella (2026) volvió sobre los alcances y límites del propio IS--LM. Herbert y Bell (1997) ofrecieron una construcción particularmente sencilla para explorar ese problema mediante simulación. La forma Lotka--Volterra que examinaremos se obtiene de su ejemplo no lineal al suprimir términos exógenos aditivos; por tanto, no representa la totalidad de su modelo. En esta construcción, el producto y la tasa de interés responden a desequilibrios diferentes. Su interés no reside en reproducir toda la complejidad de una economía monetaria, sino en permitirnos seguir, paso a paso, cómo las reglas elegidas generan un movimiento recurrente.
+
+El sistema resultante tiene la forma matemática de Lotka--Volterra. Esa semejanza identifica una estructura de ecuaciones, no una identidad entre los procesos económicos y los fenómenos para los que se empleó originalmente ese sistema. Aquí las variables son el producto y el interés; sus relaciones se fijan mediante funciones de ahorro, inversión y demanda de dinero. Conviene, por ello, reconstruir primero el mecanismo económico y sólo después examinar qué resultados se siguen de su forma matemática.
+
+Consideremos una economía en la que el ahorro es proporcional al ingreso:
+\[
+S=sY.
+\]
+
+La inversión viene dada por
+\[
+I=qY+Y(a-bi)=Y(q+a-bi),
+\]
+donde \(i\) es la tasa de interés y \(b>0\). A tasa de interés dada, la inversión aumenta con el nivel de actividad sólo cuando \(q+a-bi>0\); disminuye con la tasa de interés para todo \(Y>0\).
+
+Supondremos que el producto no se encuentra continuamente en el nivel que iguala inversión y ahorro. Una diferencia entre ambas magnitudes provoca una variación del producto:
+\[
+\dot Y=\eta(I-S)=\eta Y(q+a-s-bi),\qquad \eta>0.
+\]
+
+Existe, por consiguiente, una tasa de interés
+\[
+i^*=\frac{q+a-s}{b}
+\]
+para la cual inversión y ahorro son iguales. Si \(i<i^*\), entonces \(I>S\) y el producto aumenta; si \(i>i^*\), entonces \(I<S\) y el producto disminuye.
+
+La igualdad \(I=S\) no constituye aquí una condición que deba satisfacerse en todo momento. Es la condición para que el producto deje momentáneamente de variar.
+
+En lo que sigue trabajaremos con parámetros de ajuste positivos y condiciones iniciales $Y(0)>0$, $i(0)>0$. Para que exista un punto estacionario positivo, supondremos además $s>0$, $q+a-s>0$, $\bar M-\lambda>0$, $k>0$ y $b>0$. Las condiciones particulares de los sistemas modificados se indicarán cuando aparezcan.
+
+\rsection
+La demanda de dinero viene dada por
+\[
+L=\lambda+kY,\qquad k>0,
+\]
+mientras que la cantidad de dinero es
+\[
+M=\bar M.
+\]
+
+La tasa de interés se ajusta proporcionalmente al exceso de demanda monetaria:
+\[
+\frac{\dot i}{i}=\phi(L-M),\qquad \phi>0.
+\]
+
+Equivalentemente,
+\[
+\dot i=\phi i(\lambda+kY-\bar M).
+\]
+
+Existe un nivel de producto
+\[
+Y^*=\frac{\bar M-\lambda}{k}
+\]
+para el cual demanda y oferta monetarias son iguales. Si \(Y>Y^*\), entonces \(L>M\) y la tasa de interés aumenta; si \(Y<Y^*\), entonces \(L<M\) y disminuye.
+
+La igualdad \(L=M\) no es una condición satisfecha continuamente. Es la condición bajo la cual la tasa de interés deja momentáneamente de variar.
+
+\rsection
+Para describir el ciclo desde una fase determinada, supongamos que la economía se encuentra inicialmente con
+\[
+0<Y<Y^*,\qquad 0<i<i^*.
+\]
+Esta elección sólo fija dónde comenzamos a contar el movimiento. No impone que todos los ciclos empiecen ahí: podemos recorrer la misma órbita desde cualquier otra fase.
+
+Entonces
+\[
+I>S,\qquad \dot Y>0,
+\]
+y el producto comienza a aumentar.
+
+El aumento del producto incrementa la demanda monetaria, pues
+\[
+\frac{\partial L}{\partial Y}=k>0.
+\]
+Mientras \(Y<Y^*\), la demanda de dinero permanece por debajo de la cantidad disponible y la tasa de interés continúa disminuyendo. La expansión puede, por tanto, coexistir inicialmente con una tasa de interés decreciente.
+
+Finalmente el producto alcanza
+\[
+Y=Y^*.
+\]
+En ese instante,
+\[
+L=M,\qquad \dot i=0,
+\]
+y la tasa de interés alcanza su mínimo.
+
+Esto no detiene la expansión. Si todavía \(i<i^*\), continúa verificándose \(I>S\), de modo que \(\dot Y>0\). El producto sigue aumentando y pasa por encima de \(Y^*\). Como consecuencia,
+\[
+L>M,
+\]
+y la tasa de interés comienza a subir.
+
+La primera parte del mecanismo puede resumirse como
+\[
+\mathord{
+I>S\longrightarrow Y\uparrow\longrightarrow L\uparrow
+\longrightarrow L>M\longrightarrow i\uparrow.
+}
+\]
+
+\rsection
+El aumento de la tasa de interés reduce la inversión:
+\[
+\frac{\partial I}{\partial i}=-bY<0.
+\]
+
+Mientras \(i<i^*\), la inversión sigue siendo superior al ahorro y el producto continúa aumentando. Pero el aumento de \(i\) reduce progresivamente el exceso \(I-S\).
+
+Finalmente,
+\[
+i=i^*,
+\]
+y, por tanto,
+\[
+I=S,\qquad \dot Y=0.
+\]
+El producto alcanza su máximo.
+
+Sin embargo, la tasa de interés no deja de aumentar en ese punto. Como el producto se encuentra todavía por encima de \(Y^*\),
+\[
+L>M,\qquad \dot i>0.
+\]
+Así, \(i\) pasa por encima de \(i^*\), haciendo que
+\[
+I<S.
+\]
+Comienza la contracción.
+
+La expansión genera, por tanto, las condiciones monetarias que terminan por interrumpirla:
+\[
+\mathord{
+Y\uparrow\longrightarrow L-M\uparrow\longrightarrow i\uparrow
+\longrightarrow I-S\downarrow\longrightarrow \dot Y\downarrow.
+}
+\]
+
+No hemos supuesto externamente un techo para el producto. El límite de la expansión aparece dentro del circuito definido por las dos reglas de ajuste.
+
+\rsection
+Una vez que
+\[
+i>i^*,
+\]
+tenemos
+\[
+I<S,\qquad \dot Y<0,
+\]
+y el producto disminuye.
+
+La caída del producto reduce la demanda monetaria. Al principio, mientras \(Y>Y^*\), la demanda monetaria continúa excediendo la oferta y la tasa de interés todavía aumenta. Finalmente,
+\[
+Y=Y^*,
+\]
+de modo que
+\[
+L=M,\qquad \dot i=0.
+\]
+La tasa de interés alcanza entonces su máximo.
+
+Pero tampoco aquí termina la contracción. Como todavía \(i>i^*\), continúa verificándose \(I<S\), y el producto sigue disminuyendo.
+
+Cuando
+\[
+Y<Y^*,
+\]
+aparece
+\[
+L<M,
+\]
+y la tasa de interés comienza a caer. La disminución de \(i\) eleva la inversión hasta que finalmente
+\[
+i=i^*.
+\]
+En ese momento,
+\[
+I=S,\qquad \dot Y=0,
+\]
+y el producto alcanza su mínimo.
+
+Como \(Y\) todavía se encuentra por debajo de \(Y^*\), tenemos \(L<M\) y la tasa de interés continúa disminuyendo. En consecuencia, \(i<i^*\), reaparece \(I>S\) y comienza una nueva expansión:
+\[
+\mathord{
+Y\downarrow\longrightarrow L-M\downarrow\longrightarrow i\downarrow
+\longrightarrow I-S\uparrow\longrightarrow \dot Y\uparrow.
+}
+\]
+
+\rsection
+El mecanismo completo puede resumirse mediante
+\[
+\mathord{
+I-S\xrightarrow{\eta}\dot Y
+\xrightarrow{k}L-M
+\xrightarrow{\phi}\dot i
+\xrightarrow{-b}I-S.
+}
+\]
+
+La secuencia de puntos de giro es
+\[
+\mathord{
+Y_{\min}\longrightarrow i_{\min}\longrightarrow
+Y_{\max}\longrightarrow i_{\max}\longrightarrow Y_{\min}.
+}
+\]
+
+La igualdad inversión--ahorro determina los puntos de giro del producto; la igualdad entre oferta y demanda de dinero determina los puntos de giro de la tasa de interés. Como ambas condiciones se alcanzan en momentos distintos, ninguna variable alcanza su extremo simultáneamente con la otra.
+
+\rsection
+Definamos
+\[
+A=\eta(q+a-s),\qquad
+B=\eta b,\qquad
+C=\phi(\bar M-\lambda),\qquad
+D=\phi k.
+\]
+
+Las ecuaciones pueden escribirse
+\[
+\boxed{
+\dot Y=Y(A-Bi),\qquad
+\dot i=i(-C+DY).
+}
+\]
+
+El sistema posee un único punto estacionario positivo:
+\[
+\mathord{
+Y^*=\frac{C}{D}=\frac{\bar M-\lambda}{k},
+\qquad
+i^*=\frac{A}{B}=\frac{q+a-s}{b}.
+}
+\]
+
+Pero el punto estacionario no atrae las trayectorias. El sistema posee la integral primera
+\[
+\boxed{
+H(Y,i)=DY-C\ln Y+Bi-A\ln i,
+}
+\]
+para la cual
+\[
+\dot H=0.
+\]
+
+Bajo
+\[
+A>0,\qquad B>0,\qquad C>0,\qquad D>0,
+\]
+cada condición inicial positiva distinta del punto estacionario permanece sobre una curva cerrada de \(H\). El mecanismo descrito anteriormente se repite periódicamente.
+
+
+\rsection
+Hasta aquí sabemos cómo se suceden las fases del ciclo y por qué el movimiento se repite. Quedan dos preguntas: ¿qué reglas hacen posible ese resultado y qué ocurriría si cambiáramos alguna de ellas? Para responderlas, conservaremos las relaciones ya construidas y modificaremos una condición por vez. Distinguiremos tres operaciones: una \emph{modificación económica} reemplaza una condición del cierre por otra interpretable económicamente; un \emph{control analítico} modifica una regla para aislar qué propiedad depende de ella; una \emph{ampliación del espacio de estados} reconoce que un mecanismo requiere una variable dinámica adicional. Ninguna operación implica por sí misma mayor realismo.
+
+Conviene comenzar por distinguir las igualdades de equilibrio de las reglas que determinan el movimiento. Las igualdades $I=S$ y $L=M$ identifican los lugares en que desaparecen los desequilibrios correspondientes; no prescriben una trayectoria. Ni siquiera las condiciones de signo, $\operatorname{sgn}\dot Y=\operatorname{sgn}(I-S)$ y $\operatorname{sgn}\dot i=\operatorname{sgn}(L-M)$, determinan las velocidades de ajuste. Para obtener el sistema anterior hemos añadido dos reglas cardinales, $\dot Y=\eta(I-S)$ y $\dot i/i=\phi(L-M)$. Esta distinción entre compatibilidad y ajuste es central en la reconstrucción de Herbert y Bell (1997). En términos conceptuales, las primeras igualdades delimitan situaciones de equilibrio parcial; las segundas especifican un proceso temporal. Que ambas formen parte de un mismo modelo no autoriza a tratar las igualdades como si explicaran por sí solas el movimiento.
+
+El cierre estudiado supone una economía cerrada, sin gobierno, con nivel general de precios fijo y normalizado. No aparecen como estados independientes el capital heredado, las existencias, los balances financieros ni las expectativas. Tales ausencias delimitan el objeto; no implican que esos procesos carezcan de importancia. Llamaremos \emph{cierre parcial} al conjunto de relaciones económicas y reglas de ajuste que determina el movimiento de $(Y,i)$ bajo esas restricciones. En el sentido metodológico de Chick (2023), Jespersen (2009) y Mäki (2009), aislar una interacción no equivale a afirmar que agota las causas del fenómeno.
+
+Para no repetir continuamente las mismas sumas y diferencias de parámetros, introduciremos tres abreviaturas: $\alpha=q+a$, $a_0=\alpha-s=q+a-s>0$ y $m=\bar M-\lambda>0$. No son variables nuevas ni hipótesis adicionales. Con esta notación,
+\[
+ S=sY,\qquad I=Y(\alpha-bi),\qquad L=\lambda+kY,\qquad M=\bar M,
+\]
+\[
+ \dot Y=\eta Y(a_0-bi),\qquad \dot i=\phi i(-m+kY).
+\]
+La sustitución de $q+a-s$ por $a_0$ es solamente una reparametrización. No introduce una nueva hipótesis ni modifica las ecuaciones originales. En lo que sigue se emplearán $a_0$ y $m$ para distinguir los efectos de las modificaciones posteriores.
+
+Podemos comprobar primero qué indica el sistema cerca del punto estacionario. Para ello calculamos su matriz jacobiana:
+\[
+ J(Y,i)=\begin{pmatrix}
+ \eta(a_0-bi)&-\eta bY\\
+ \phi ki&\phi(-m+kY)
+ \end{pmatrix}.
+\]
+En el punto estacionario $(Y^*,i^*)=(m/k,a_0/b)$ se reduce a
+\[
+ J^*=\begin{pmatrix}0&-\eta bY^*\\ \phi ki^*&0\end{pmatrix},
+ \qquad \lambda_{\pm}=\pm\mathrm{i}\sqrt{\eta\phi a_0m}.
+\]
+La linealización es un centro. Pero ese resultado local no basta para establecer la periodicidad global de las soluciones no lineales. Esta última se sigue de la integral primera, de la geometría de sus niveles y de la ausencia de puntos estacionarios sobre los niveles regulares.
+
+La sección VII presentó la integral primera y sus consecuencias para el ciclo. Ahora comprobaremos su conservación de manera explícita, para distinguir el resultado local de la periodicidad de las trayectorias no estacionarias. Escribamos la misma integral, sin cambiar su contenido, en la forma
+\[
+ \mathcal H(Y,i)=kY-m\ln Y+\frac{\eta}{\phi}(bi-a_0\ln i),
+\]
+que se obtiene dividiendo la integral $H$ ya presentada entre $\phi$. Su derivada es
+\[
+ \begin{aligned}
+ \dot{\mathcal H}&=\left(k-\frac mY\right)\eta Y(a_0-bi)
+ +\frac\eta\phi\left(b-\frac{a_0}i\right)\phi i(-m+kY)\\
+ &=\eta(kY-m)(a_0-bi)+\eta(bi-a_0)(-m+kY)=0.
+ \end{aligned}
+\]
+Además, $\mathcal H_{YY}=m/Y^2>0$ y $\mathcal H_{ii}=\eta a_0/(\phi i^2)>0$, sin derivadas cruzadas. Por ello $\mathcal H$ es estrictamente convexa y tiene un mínimo único en $(Y^*,i^*)$. Tiende a infinito al aproximarse a las fronteras del cuadrante positivo y cuando alguna variable crece sin límite. Los niveles regulares superiores al mínimo son, por consiguiente, curvas compactas y cerradas; como el campo no se anula sobre ellas, constituyen órbitas periódicas.
+
+La palabra «conservación» exige una precisión: que $\mathcal H$ permanezca constante no significa que se conserve una cantidad de mercancías, dinero o activos. Es una propiedad matemática del campo vectorial. Tampoco debe confundirse con dependencia de trayectoria: las condiciones iniciales seleccionan órbita y fase, pero los promedios temporales de cada órbita satisfacen
+\[
+ \mathord{\langle Y\rangle=\frac mk=Y^*,\qquad
+ \langle i\rangle=\frac{a_0}b=i^*.}
+\]
+En efecto, al integrar $\dot Y/Y=\eta(a_0-bi)$ y $\dot i/i=\phi(-m+kY)$ sobre un periodo, ambos incrementos logarítmicos se anulan. La identidad de los promedios es una consecuencia de este cierre, no evidencia de histéresis (Setterfield, 2023).
+
+\rsection
+Hemos demostrado que las trayectorias positivas son periódicas. Pero una solución de las ecuaciones no es necesariamente aceptable bajo cualquier interpretación económica. Si $I$ representa inversión bruta planeada, su admisibilidad exige $I(t)\geq0$ durante todo el ciclo. Dado que $Y>0$,
+\[
+ I=Y(\alpha-bi)\geq0\quad\Longleftrightarrow\quad
+ i\leq i_E:=\frac\alpha b.
+\]
+Como $a_0=\alpha-s$ y $s>0$, se cumple $i^*=a_0/b<i_E$. Las órbitas suficientemente próximas al punto estacionario respetan esa condición; las suficientemente amplias no lo hacen. La frontera $i=i_E$ no surge de la ecuación diferencial, sino de la interpretación económica de $I$.
+
+La pregunta es ahora cuáles de las órbitas alcanzan la frontera $i=i_E$. Como cada órbita corresponde a un nivel de la integral primera, podemos responder mediante un único valor crítico. Definamos
+\[
+ \mathord{\mathcal H_E:=\mathcal H(Y^*,i_E),\qquad
+ \mathcal H_0:=\mathcal H(Y(0),i(0)).}
+\]
+Entonces, para toda condición inicial positiva,
+\[
+ \boxed{\mathcal H_0\leq\mathcal H_E
+ \quad\Longleftrightarrow\quad I(t)\geq0\ \text{para todo }t.}
+\]
+Para demostrarlo, fijemos $i=i_E$. La convexidad estricta de $\mathcal H$ respecto de $Y$ implica que el mínimo sobre esa recta se alcanza en $Y=Y^*=m/k$ y vale $\mathcal H_E$. Un nivel inferior no puede tocar la recta y, como rodea un centro con $i^*<i_E$, permanece enteramente debajo. El nivel crítico es tangente a la recta en $(Y^*,i_E)$. Todo nivel regular superior la cruza y contiene un arco con $i>i_E$, donde la inversión definida resulta negativa. Queda probada la equivalencia.
+
+Se han distinguido, por tanto, tres propiedades: la conservación de una integral, la periodicidad de una solución positiva y su admisibilidad bajo la condición de inversión bruta no negativa. La recta $i=i_E$ no depende de $\eta$ ni de $\phi$, aunque la forma de las órbitas y la localización de los niveles respecto de ella sí dependen de las reglas de ajuste. La condición de admisibilidad es específica de esta definición de inversión; no pretende ser un criterio universal de viabilidad económica.
+
+\rsection
+Ya sabemos qué órbitas admite la interpretación económica de la inversión. Preguntemos ahora si la oferta monetaria fija es necesaria para conservar la integral primera. Para comprobarlo, mantendremos el ajuste real y permitiremos que la cantidad de dinero responda al producto:
+\[
+ M=\bar M+\mu_Y Y,\qquad \widetilde k=k-\mu_Y>0.
+\]
+La demanda excedente pasa a ser $L-M=-m+\widetilde kY$, y el sistema es
+\[
+ \mathord{\dot Y=\eta Y(a_0-bi),\qquad
+ \dot i=\phi i(-m+\widetilde kY).}
+\]
+Su posición estacionaria es $(Y_M^*,i_M^*)=(m/\widetilde k,a_0/b)$. Admite la integral
+\[
+ \mathord{\mathcal H_M(Y,i)=\widetilde kY-m\ln Y
+ +\frac\eta\phi(bi-a_0\ln i),\qquad \dot{\mathcal H}_M=0.}
+\]
+La demostración repite el cálculo anterior con $k$ sustituido por $\widetilde k$. La oferta fija de dinero no es, por tanto, necesaria para la conservación dentro de esta comparación. No se sigue que toda teoría del dinero endógeno preserve ciclos: la regla $M(Y)$ es una relación contemporánea deliberadamente estrecha, no una teoría del crédito, de la acomodación bancaria o de la preferencia por la liquidez (Lavoie, 1996; Palley, 2002).
+
+El cambio también permite comparar los movimientos sin confundirlos con las diferencias de nivel. Para ello medimos cada variable respecto de su propio valor estacionario. Normalizando cada sistema por su propio punto estacionario, $x=Y/Y^*$, $y=i/i^*$, se obtiene tanto en el cierre original como en el modificado
+\[
+ \mathord{\dot x=\eta a_0x(1-y),\qquad
+ \dot y=\phi my(x-1).}
+\]
+La oferta monetaria y el nivel estacionario del producto son distintos, pero el campo normalizado coincide. La coincidencia de forma no implica identidad entre los cierres económicos.
+
+La oferta monetaria fija no era indispensable. Probemos una segunda condición: la forma en que responde la tasa de interés. ¿Debe ser proporcional su variación al nivel de la propia tasa? Mantengamos el mercado de bienes y la demanda excedente de dinero, pero sustituyamos $\dot i=\phi i(L-M)$ por $\dot i=\phi(L-M)$. Obtenemos
+\[
+ \mathord{\dot Y=\eta Y(a_0-bi),\qquad
+ \dot i=\phi(-m+kY).}
+\]
+La posición estacionaria permanece en $(m/k,a_0/b)$ y existe otra integral primera:
+\[
+ \mathord{\mathcal H_A(Y,i)=\phi(kY-m\ln Y)
+ +\eta\left(\frac b2 i^2-a_0i\right).}
+\]
+En efecto,
+\[
+ \dot{\mathcal H}_A=\eta\phi(kY-m)(a_0-bi)
+ +\eta\phi(bi-a_0)(-m+kY)=0.
+\]
+La proporcionalidad tampoco es necesaria para conservar una integral. Sin embargo, sí resulta decisiva para otra propiedad: en el cierre original, $i=0$ implica $\dot i=0$ y esa frontera es invariante; bajo ajuste absoluto, $\dot i=\phi(-m+kY)$ puede ser distinto de cero en $i=0$. Por ello la integral conservada del control absoluto no garantiza que todas sus soluciones permanezcan en el semiplano $i>0$; la conservación y la invariancia del dominio son cuestiones diferentes.
+
+Tampoco sería legítimo comparar las frecuencias de ambos sistemas manteniendo sin más el mismo valor numérico de $\phi$: el parámetro tiene dimensiones distintas en una regla proporcional y en una absoluta. El control identifica el papel de la forma funcional, no iguala velocidades calibradas.
+
+Las comparaciones anteriores comparten un rasgo matemático: cada ecuación reúne un factor de su propia variable y otro de la variable restante. Esa estructura permite formular un resultado más general. Si
+\[
+ \dot Y=A(Y)F(i),\qquad \dot i=B(i)G(Y),
+\]
+con $A$ y $B$ no nulas en el dominio interior, entonces
+\[
+ \mathcal J(Y,i)=\int^Y\frac{G(u)}{A(u)}\,du
+ -\int^i\frac{F(v)}{B(v)}\,dv
+\]
+es una integral primera local, porque su derivada es $GF-FG=0$. Se trata de una clase matemática suficiente, no de una explicación económica general de la conservación.
+
+\rsection
+Hasta aquí cambiamos condiciones sin perder la integral primera. Ahora examinaremos una modificación que puede alterar la estabilidad: que el ajuste del producto responda también al propio nivel del producto. Escribamos
+\[
+ \mathord{\dot Y=\eta Y[a_0-bi+h(Y)],\qquad
+ \dot i=\phi i(-m+kY).}
+\]
+La ecuación monetaria mantiene $Y^*=m/k$, mientras que la tasa estacionaria pasa a ser $i_R^*=[a_0+h(Y^*)]/b$, siempre que el numerador sea positivo. El jacobiano evaluado allí satisface
+\[
+ \mathord{\operatorname{tr}J_R^*=\eta Y^*h'(Y^*),\qquad
+ \det J_R^*=\eta\phi bkY^*i_R^*>0.}
+\]
+Por el criterio de traza y determinante, $h'(Y^*)<0$ implica estabilidad asintótica local y $h'(Y^*)>0$ implica inestabilidad. La igualdad $h'(Y^*)=0$ no permite deducir conservación: la traza nula de la linealización no demuestra la existencia de una integral primera.
+
+La función $h(Y)$ permite comparar signos de retroalimentación, pero todavía no representa un comportamiento económico identificado. Para estudiar el caso en que la retroalimentación reduce las desviaciones, tomemos $h(Y)=-cY$ con $c>0$ y $a_0>cm/k$. La posición estacionaria es $Y_R^*=m/k$, $i_R^*=(a_0-cY_R^*)/b>0$. Para comprobar si el movimiento se acerca al punto estacionario, construiremos una función no negativa que disminuya a lo largo de las trayectorias. Utilizaremos primero la expresión
+\[
+ \Psi(z;z^*)=z-z^*-z^*\ln(z/z^*)
+\]
+y la función
+\[
+ V_R=\phi k\Psi(Y;Y_R^*)+\eta b\Psi(i;i_R^*).
+\]
+Esta función es no negativa, se anula sólo en el punto estacionario y tiene niveles compactos en el cuadrante positivo. La sustitución directa da
+\[
+ \mathord{\dot V_R=-\eta\phi kc(Y-Y_R^*)^2\leq0.}
+\]
+El mayor conjunto invariante contenido en $\dot V_R=0$ es el punto estacionario: sobre $Y=Y_R^*$, una tasa distinta de $i_R^*$ hace que $\dot Y\ne0$. Por el principio de invariancia de LaSalle, el equilibrio es globalmente asintóticamente estable dentro del cuadrante positivo. El resultado no asegura, sin una prueba adicional, que toda trayectoria respete en cada instante la restricción de inversión bruta no negativa.
+
+La elección $-cY$ no debe presentarse como una función estructural de inversión. Una modificación económicamente interpretable puede producir el signo opuesto. Si $u=Y/\bar K$ es la utilización de un capital fijo en el corto plazo, una relación
+\[
+ I=Y\bigl[\alpha-bi+\gamma(u-\bar u)\bigr],\qquad\gamma>0,
+\]
+introduce una retroalimentación positiva de derivada $\gamma/\bar K$. La utilización no garantiza por sí misma disipación; su signo y contenido deben justificarse independientemente del resultado de estabilidad (Skott, 2012; Nikiforos, 2013).
+
+Podemos realizar una comparación análoga en el lado monetario. Esta vez distinguiremos dos respuestas al interés: la de la demanda de dinero y la de su oferta. Escribamos
+\[
+ L=\lambda+kY-\ell i,\qquad
+ M=\bar M+\mu_Y Y+\mu_i i,
+\]
+\[
+ \widetilde k=k-\mu_Y>0,\qquad \chi=\ell+\mu_i>0.
+\]
+El sistema se transforma en
+\[
+ \mathord{\dot Y=\eta Y(a_0-bi),\qquad
+ \dot i=\phi i(-m+\widetilde kY-\chi i).}
+\]
+La posición estacionaria es $i_I^*=a_0/b$ y $Y_I^*=(m+\chi a_0/b)/\widetilde k$. Definamos
+\[
+ V_I=\phi\widetilde k\Psi(Y;Y_I^*)
+ +\eta b\Psi(i;i_I^*).
+\]
+Entonces
+\[
+ \mathord{\dot V_I=-\eta\phi b\chi(i-i_I^*)^2\leq0.}
+\]
+Los niveles son compactos en el cuadrante positivo, que permanece invariante; el mayor conjunto invariante de $\dot V_I=0$ es el punto estacionario. En consecuencia, el equilibrio es globalmente asintóticamente estable. La afirmación concierne a este cierre, no a cualquier régimen institucional de determinación del interés. Esta convergencia se demuestra en el cuadrante matemático positivo; no implica que el conjunto definido por inversión bruta no negativa sea invariante para todas las condiciones iniciales.
+
+Obsérvese que las ecuaciones reducidas contienen $\ell$ y $\mu_i$ únicamente mediante su suma $\chi$. Esa pérdida de información institucional será relevante cuando invirtamos el sentido de la inferencia.
+
+\rsection
+Las modificaciones anteriores alteraron la estabilidad, pero algunas también desplazaron el punto estacionario. Si ambas cosas cambian a la vez, resulta difícil atribuir la diferencia dinámica a una sola condición. Podemos separar los efectos manteniendo fijo el punto estacionario y cambiando sólo la retroalimentación. Denotemos $Y^*=m/k$ e $i^*=a_0/b$.
+
+En el lado real, centremos la retroalimentación negativa en $Y^*$:
+\[
+ \mathord{\dot Y=\eta Y[a_0-bi-c(Y-Y^*)],\qquad
+ \dot i=\phi i(-m+kY),\qquad c>0.}
+\]
+En el lado monetario, centremos la retroalimentación en $i^*$:
+\[
+ \mathord{\dot Y=\eta Y(a_0-bi),\qquad
+ \dot i=\phi i[-m+kY-\chi(i-i^*)],\qquad\chi>0.}
+\]
+En ambos casos el término añadido se anula en $(Y^*,i^*)$; por ello el punto estacionario coincide exactamente con el del cierre original. No obstante, las trazas de los jacobianos respectivos son $-\eta cY^*<0$ y $-\phi\chi i^*<0$, con determinantes positivos. Los argumentos de Lyapunov anteriores, centrados ahora en las coordenadas comunes, establecen además convergencia global en el cuadrante positivo.
+
+Así,
+\[
+ \mathord{\text{misma posición estacionaria}\;\not\Rightarrow\;
+ \text{misma estabilidad}.}
+\]
+\par\medskip
+\noindent\textit{Síntesis de las comparaciones.} El siguiente cuadro distingue la condición modificada del resultado obtenido.\par\smallskip
+{\fontsize{8.2}{10.3}\selectfont\setlength{\tabcolsep}{3pt}\renewcommand{\arraystretch}{1.25}
+\noindent\begin{tabular}{@{}p{0.24\linewidth}p{0.32\linewidth}p{0.36\linewidth}@{}}
+\hline
+\textbf{Cierre} & \textbf{Cambio} & \textbf{Resultado}\\ \hline
+Original & Ninguno & Órbitas conservativas\\
+Dinero variable & $M=\bar M+\mu_Y Y$ & Conservación; cambia $Y^*$\\
+Ajuste absoluto & $\dot i=\phi(L-M)$ & Conservación; frontera no invariante\\
+Respuesta real & $h(Y)$ & Estabilidad local según $h'$\\
+Respuesta real negativa & $h(Y)=-cY$ & Atracción global bajo hipótesis\\
+Respuesta monetaria & Retroalimentación propia & Atracción global bajo hipótesis\\
+Controles centrados & Equilibrio fijo & Cambia estabilidad, no equilibrio\\ \hline
+\end{tabular}}
+\par\medskip
+Al conservar las coordenadas estacionarias, la comparación muestra que la estabilidad puede cambiar sin que se desplace el equilibrio. No demuestra que alguna de estas reglas opere efectivamente en una economía observada. La distinción entre posición y proceso de ajuste debe mantenerse incluso cuando ambos se representan mediante las mismas variables (Tieben, 2023).
+
+\rsection
+Hasta aquí partimos de relaciones económicas explícitas y dedujimos sus movimientos. Invirtamos ahora la pregunta: si conociéramos el movimiento, ¿podríamos recuperar las relaciones económicas que lo generaron? Veremos tres dificultades distintas.
+
+La primera dificultad aparece cuando las dos variables del modelo dejan de describir por completo el estado de la economía. Si la utilización se define mediante $u=Y/K$ y el capital evoluciona según
+\[
+ \dot K=I-\delta K,
+\]
+el capital heredado puede importar para la trayectoria futura, pero sólo si la utilización o el propio capital intervienen efectivamente en alguna relación que determina $\dot Y$ o $\dot i$. Bajo esa condición, dos economías con el mismo par actual $(Y,i)$ y distinto $K$ pueden tener movimientos posteriores diferentes: el par $(Y,i)$ deja de ser un estado suficiente. En cambio, añadir únicamente una ecuación para $\dot K$, sin retroacción sobre las otras dos, no modifica la dinámica bidimensional original. Lo mismo sucede cuando inventarios, expectativas o balances poseen leyes de movimiento propias. La ampliación del espacio de estados no equivale a introducir otro coeficiente en un sistema bidimensional (Josephsen, 2023; Veronese Passarella, 2026).
+
+La segunda dificultad aparece incluso cuando conservamos las dos variables. El cierre con $M=\bar M$ y el cierre con $M=\bar M+\mu_YY$ son económicamente distintos; sin embargo, sus campos normalizados respecto de sus respectivos puntos estacionarios coinciden:
+\[
+ \dot x=\eta a_0x(1-y),\qquad
+ \dot y=\phi my(x-1).
+\]
+Por tanto, la observación de ese campo normalizado no permite decidir cuál de las dos reglas monetarias fue utilizada. La normalización conserva la forma del movimiento, pero puede ocultar diferencias de nivel económicamente relevantes.
+
+La tercera dificultad consiste en que un mismo coeficiente puede reunir respuestas institucionales diferentes. En el cierre monetario ampliado, toda pareja $(\ell,\mu_i)$ con la misma suma $\chi=\ell+\mu_i$ genera el mismo campo reducido, manteniendo constantes los demás parámetros. La dinámica contiene el coeficiente compuesto, no sus dos componentes. Información adicional sobre demanda de dinero, oferta, balances o instituciones podría distinguirlos; las dos ecuaciones por sí solas no lo hacen.
+
+Conviene separar tres operaciones. La transformación invertible $(\eta,\phi)\leftrightarrow(\sqrt{\eta\phi},\sqrt{\eta/\phi})$ no pierde información. La normalización por valores estacionarios cambia la representación y puede borrar diferencias de nivel. Al reunir $\ell$ y $\mu_i$ en $\chi$, distintas parejas de parámetros producen el mismo coeficiente y ya no podemos distinguirlas mediante el sistema reducido. Ninguna de esas operaciones equivale, sin supuestos y observaciones adicionales, a identificación estructural.
+
+No se concluye que la identificación causal sea imposible. Se establece un resultado más acotado: \emph{en las clases de cierres examinadas, la construcción hacia adelante permite discriminar propiedades que no siempre pueden recuperarse unívocamente desde la dinámica reducida}. La inferencia sobre un mecanismo real exige restricciones teóricas y evidencia empírica adicionales (Vercelli, 2023).
+
+\rsection
+El punto de partida fueron las igualdades $I=S$ y $L=M$. Ninguna impone por sí misma una dinámica. El ciclo aparece cuando los desequilibrios se combinan con reglas de ajuste que trasladan la expansión real a presión monetaria y esta presión a una modificación de la inversión. En el cierre original, la interacción posee una integral primera, un centro positivo y una familia de órbitas periódicas. La integral es una propiedad matemática; no representa un stock económico conservado.
+
+La ampliación permite precisar el alcance del ciclo. Primero, la interpretación de $I$ como inversión bruta planeada restringe las órbitas admisibles mediante un nivel crítico exacto de la integral. Segundo, la conservación no requiere, en las comparaciones construidas, ni dinero estrictamente fijo ni ajuste proporcional de la tasa de interés; pero el ajuste proporcional sí conserva la invariancia de la frontera de interés nulo. La retroalimentación propia, bajo signos y condiciones especificados, puede sustituir las órbitas neutrales por convergencia o producir inestabilidad. Los controles con posición estacionaria fija muestran que esas diferencias no se reducen a un desplazamiento del equilibrio.
+
+Tercero, distintos cierres monetarios pueden generar un mismo campo normalizado y diferentes respuestas institucionales pueden aparecer sólo como un parámetro compuesto. El movimiento reducido no identifica necesariamente el mecanismo que lo genera. En otros casos, como cuando el capital heredado o los inventarios afectan la trayectoria, la propia representación bidimensional deja de ser suficiente.
+
+Se conserva, así, el sentido original del ensayo: la expansión puede producir dentro de la construcción las condiciones de su reversión y la contracción las de la recuperación. Pero ahora sabemos con mayor precisión qué restricciones producen esa propiedad, cuáles pueden modificarse sin perder conservación, cuáles alteran la estabilidad y dónde termina el alcance de la inferencia. Que una economía observada opere de ese modo sigue siendo una pregunta empírica distinta de la deducción.
+
+\clearpage
+\rsection
+\noindent\textbf{Referencias bibliográficas}
+\par\medskip
+\begingroup\sloppy\small
+\begin{list}{}{
+\setlength{\leftmargin}{1.5em}
+\setlength{\itemindent}{-1.5em}
+\setlength{\itemsep}{0.55em}
+\setlength{\parsep}{0pt}}
+
+\item Bella, G., Mattana, P., \& Venturi, B. (2013). Kaldorian assumptions and endogenous fluctuations: A note on Schinasi's IS--LM model. \textit{International Review of Economics, 60}(1), 71--81. \url{https://doi.org/10.1007/s12232-013-0176-2}
+
+\item Chang, W. W., \& Smyth, D. J. (1972). Stability and instability of IS--LM equilibrium. \textit{Oxford Economic Papers, 24}(3), 372--384. \url{https://doi.org/10.1093/oxfordjournals.oep.a041228}
+
+\item Chick, V. (2023). Open and closed systems. In J. Jespersen, V. Chick, \& B. Tieben (Eds.), \textit{Routledge handbook of macroeconomic methodology} (pp. 144--153). Routledge.
+
+
+\item Herbert, R. D., \& Bell, R. D. (1997). Visual simulation of dynamic economic models. In \textit{MODSIM97 International Congress on Modelling and Simulation} (Vol. 3, pp. 1259--1264). Modelling and Simulation Society of Australia and New Zealand. \url{https://mssanz.org.au/MODSIM97/Vol%203/Herbert.pdf}
+
+\item Jespersen, J. (2009). \textit{Macroeconomic methodology: A post-Keynesian perspective}. Edward Elgar Publishing.
+
+\item Jespersen, J., Chick, V., \& Tieben, B. (Eds.). (2023). \textit{Routledge handbook of macroeconomic methodology}. Routledge.
+
+\item Josephsen, L. W. (2023). Use of mathematics in macroeconomic analysis. In J. Jespersen, V. Chick, \& B. Tieben (Eds.), \textit{Routledge handbook of macroeconomic methodology} (pp. 251--265). Routledge.
+
+\item Lavoie, M. (1996). Horizontalism, structuralism, liquidity preference and the principle of increasing risk. \textit{Scottish Journal of Political Economy, 43}(3), 275--300. \url{https://doi.org/10.1111/j.1467-9485.1996.tb00846.x}
+
+\item Mäki, U. (2009). MISSing the world: Models as isolations and credible surrogate systems. \textit{Erkenntnis, 70}(1), 29--43. \url{https://doi.org/10.1007/s10670-008-9135-9}
+
+\item Morgan, M. S. (2001). Models, stories and the economic world. \textit{Journal of Economic Methodology, 8}(3), 361--384. \url{https://doi.org/10.1080/13501780110078972}
+
+\item Nikiforos, M. (2013). The (normal) rate of capacity utilization at the firm level. \textit{Metroeconomica, 64}(3), 513--538. \url{https://doi.org/10.1111/meca.12016}
+
+\item Palley, T. I. (2002). Endogenous money: What it is and why it matters. \textit{Metroeconomica, 53}(2), 152--180. \url{https://doi.org/10.1111/1467-999X.00138}
+
+\item Schinasi, G. J. (1982). Fluctuations in a dynamic, intermediate-run IS--LM model: Applications of the Poincaré--Bendixson theorem. \textit{Journal of Economic Theory, 28}(2), 369--375. \url{https://doi.org/10.1016/0022-0531(82)90068-0}
+
+\item Setterfield, M. (2023). Path dependency. In J. Jespersen, V. Chick, \& B. Tieben (Eds.), \textit{Routledge handbook of macroeconomic methodology} (pp. 100--107). Routledge.
+
+\item Skott, P. (2012). Theoretical and empirical shortcomings of the Kaleckian investment function. \textit{Metroeconomica, 63}(1), 109--138. \url{https://doi.org/10.1111/j.1467-999X.2010.04111.x}
+
+\item Tieben, B. (2023). Equilibrium. In J. Jespersen, V. Chick, \& B. Tieben (Eds.), \textit{Routledge handbook of macroeconomic methodology} (pp. 108--120). Routledge.
+
+\item Torre, V. (1977). Existence of limit cycles and control in complete Keynesian system by theory of bifurcations. \textit{Econometrica, 45}(6), 1457--1466. \url{https://doi.org/10.2307/1912311}
+
+\item Vercelli, A. (2023). Causality and macroeconomics. In J. Jespersen, V. Chick, \& B. Tieben (Eds.), \textit{Routledge handbook of macroeconomic methodology} (pp. 121--136). Routledge.
+
+\item Veronese Passarella, M. (2026). Mr. Keynes and the `Classics' (almost) a century later: Reviewing the IS--LM model. \textit{Journal of Post Keynesian Economics}. Advance online publication. \url{https://doi.org/10.1080/01603477.2026.2734483}
+
+\end{list}
+\endgroup
+
+\clearpage
+\thispagestyle{empty}
+\begin{center}
+\vspace*{8mm}
+{\small\bfseries RB $\cdot$ ENSAYOS 2026 $\cdot$ 07}\par
+\vspace*{33mm}
+{\fontsize{14}{17}\selectfont \authorname\par}
+\vspace{14mm}
+{\fontsize{10.5}{12.5}\selectfont Facultad de Economía\\Universidad Nacional Autónoma de México\par}
+\vfill
+{\fontsize{10.5}{12.5}\selectfont Segunda versión ampliada $\cdot$ noviembre de 2026\\Se agradecen comentarios.\par}
+\vfill
+\includegraphics[width=24mm]{rb_ensayos_qr.png}\par
+\vspace{5mm}
+{\bfseries raulboullosa.com\par}
+\vspace{4mm}
+{\small boullosaraul@gmail.com\par}
+\vspace*{12mm}
+\end{center}
+
+\end{document}
