@@ -129,6 +129,18 @@ def sync(data, check=False):
         original = path.read_text()
         updated = re.sub(re.escape(HEAD_START) + '.*?' + re.escape(HEAD_END),
                          lambda _: head, original, flags=re.S) if HEAD_START in original else original.replace('</head>', head + '\n</head>')
+        # One citation per work, derived from the same registry as the exports.
+        author = next(data['people'][c['person']] for c in record['contributors'] if c['author'])
+        initials = ' '.join(part[0] + '.' for part in author['given_names'].split())
+        citation_title = html.escape(title)
+        version = ' (versión ' + html.escape(str(record['version'])) + ')' if record.get('version') else ''
+        kind = 'Ponencia' if record['publication_type'] == 'conference_paper' else ('Manuscrito de investigación' if record['publication_type'] == 'research_manuscript' else 'Ensayo')
+        citation = ('<p class="citation">' + html.escape(author['family_name']) + ', ' + initials +
+                    ' (' + record['datePublished'][:4] + '). <em>' + citation_title + '</em>' + version +
+                    ' [' + kind + ']. <a href="' + html.escape(record['url'], quote=True) + '">' +
+                    html.escape(record['url']) + '</a></p>')
+        updated, count = re.subn(r'<p class="citation">.*?</p>', lambda _: citation, updated, count=1, flags=re.S)
+        assert count == 1, record['id']
         if START in updated:
             updated = re.sub(re.escape(START) + '.*?' + re.escape(END), lambda _: visible, updated, flags=re.S)
         else:

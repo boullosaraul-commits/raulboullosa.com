@@ -1,0 +1,28 @@
+[
+  {
+    "id": "rb-ensayos-2026-04",
+    "type": "report",
+    "title": "La expansión financiera y la dinámica estructural",
+    "author": [
+      {
+        "family": "Rivera Boullosa",
+        "given": "Raúl Alberto"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026,
+          9
+        ]
+      ]
+    },
+    "URL": "https://raulboullosa.com/ensayos/expansion-financiera-dinamica-estructural/",
+    "language": "es-MX",
+    "note": "RB · Ensayos 2026, 04. Versión de circulación, septiembre de 2026",
+    "collection-title": "RB · Ensayos 2026",
+    "number": "04",
+    "abstract": "El ensayo examina la expansión financiera distinguiendo entre la producción corriente de servicios financieros y la transformación de las posiciones patrimoniales. A partir de una tasa de interés de corto plazo administrada, separa la capacidad institucional de fijarla de la explicación histórica de su selección y distingue la formación, persistencia y transformación de una configuración financiera. Sobre esa base, introduce la memoria patrimonial de los balances y la memoria estructural asociada a cambios persistentes en la composición productiva. El argumento sostiene que estructura productiva y estructura financiera no pueden reducirse una a otra, aunque interactúan a través del tiempo, y que esa interacción puede alcanzar también a las instituciones que inicialmente se toman como dadas. El cierre delimita una frontera analítica: explicar trayectorias dentro de un régimen no equivale a explicar la transformación del régimen mismo.",
+    "keyword": "finanzas; cambio estructural; balances; instituciones; distribución"
+  }
+]
