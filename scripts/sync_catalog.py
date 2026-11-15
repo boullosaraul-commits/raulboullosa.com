@@ -21,9 +21,11 @@ start = s.index('<header class="page-hero">', s.index('<main '))
 end = s.index('<!-- page-return:start -->', start)
 ordered = sorted(records, key=lambda r: (r.get('datePublished') or '', r['id']), reverse=True)
 body = ('<header class="page-hero"><div class="container"><p class="eyebrow">Archivo académico</p><h1>Documentos de trabajo</h1>'
-        '<p>Ensayos, ponencias y manuscritos de investigación. La identificación conserva las series existentes; no indica arbitraje ni afiliación institucional. '
-        'Cada ficha identifica la edición disponible, cómo citarla y, cuando se conservan, sus versiones anteriores.</p></div></header>'
-        '<section class="section" id="archivo"><div class="container"><h2 id="archivo-titulo">Catálogo completo</h2><div class="essay-list">' + ''.join(map(row, ordered)) + '</div></div></section>\n')
+        '<p>Archivo de ensayos y manuscritos de investigación, con una sección separada para ponencias. Se conservan las denominaciones y los números originales; la inclusión no implica arbitraje. '
+        'Cada ficha identifica la edición disponible, cómo citarla y, cuando se conservan, sus versiones anteriores.</p>'
+        '<p><a href="#archivo">Ensayos y manuscritos</a> · <a href="#ponencias">Ponencias y presentaciones</a> · <a href="/investigacion/">Proyectos de investigación</a></p></div></header>'
+        '<section class="section" id="archivo"><div class="container"><h2 id="archivo-titulo">Ensayos y manuscritos</h2><p>La serie RB · Ensayos conserva su numeración original. Las versiones en circulación y el manuscrito de investigación mantienen sus clasificaciones propias.</p><div class="essay-list">' + ''.join(map(row, (r for r in ordered if r['publication_type'] != 'conference_paper'))) + '</div></div></section>'
+        '<section class="section" id="ponencias"><div class="container"><h2>Ponencias y presentaciones</h2><p>Trabajos vinculados con encuentros académicos; la ficha precisa la versión disponible.</p><div class="essay-list">' + ''.join(map(row, (r for r in ordered if r['publication_type'] == 'conference_paper'))) + '</div></div></section>\n')
 s = s[:start] + body + s[end:]
 s = s.replace('<title>Publicaciones — Raúl Boullosa</title>', '<title>Documentos de trabajo — Raúl Boullosa</title>')
 updates = {catalog:s}
@@ -35,7 +37,7 @@ selected = [next(r for r in records if r['id'] == i) for i in ('valle-marx-tssi-
 body = ('<section class="home-hero"><div class="container home-hero__grid"><div><p class="eyebrow">Economía política</p><h1>Raúl Alberto Rivera Boullosa</h1></div>'
         '<div class="home-hero__aside"><p>Estudiante de Economía, Facultad de Economía, Universidad Nacional Autónoma de México.</p>'
         '<p>Intereses: teoría del valor y precios, reproducción social, circulación monetaria, inversión e historia del pensamiento económico.</p>'
-        '<a class="action-link" href="/ensayos/">Explorar documentos de trabajo</a></div></div></section>'
+        '<a class="action-link" href="/ensayos/">Explorar documentos de trabajo</a><p><a href="/ensayos/#ponencias">Ponencias</a> · <a href="/investigacion/">Proyectos</a> · <a href="mailto:boullosaraul@gmail.com">Contacto</a></p></div></div></section>'
         '<section class="section" aria-labelledby="seleccion"><div class="container"><h2 id="seleccion">Documentos destacados</h2><div class="essay-list">' + ''.join(map(row, selected)) + '</div><a class="text-link" href="/ensayos/">Ver catálogo completo</a></div></section>\n')
 s = s[:start] + body + s[end:]
 updates[home] = s
