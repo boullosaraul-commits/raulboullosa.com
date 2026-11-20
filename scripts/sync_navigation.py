@@ -7,9 +7,9 @@ import re
 ROOT = Path(__file__).resolve().parents[1]
 START = '<!-- page-navigation:start -->'
 END = '<!-- page-navigation:end -->'
-LINKS = [('/', 'Inicio'), ('/ensayos/', 'Publicaciones'),
-         ('/investigacion/', 'Investigación'), ('/sobre-mi/', 'Sobre mí'),
-         ('https://open.substack.com/pub/raulboullosa', 'Substack ↗')]
+LINKS = [('/', 'Inicio'), ('/ensayos/', 'Documentos de trabajo'),
+         ('/investigacion/', 'Investigación'), ('/sobre-mi/', 'Autor'),
+         ]
 
 
 def menu(active, current='page'):
@@ -31,11 +31,11 @@ def sync(check=False):
         if relative == 'index.html':
             active, label = '/', 'Inicio'
         elif relative == 'ensayos/index.html' or is_work:
-            active, label = '/ensayos/', 'Publicaciones'
+            active, label = '/ensayos/', 'Documentos de trabajo'
         elif relative == 'investigacion/index.html':
             active, label = '/investigacion/', 'Investigación'
         elif relative == 'sobre-mi/index.html':
-            active, label = '/sobre-mi/', 'Sobre mí'
+            active, label = '/sobre-mi/', 'Autor'
         else:
             active, label = None, 'Página no encontrada'
         header = ('<header class="masthead"><div class="container masthead__inner">'
@@ -52,7 +52,7 @@ def sync(check=False):
         if active != '/':
             crumbs = '<li><a href="/">Inicio</a></li>'
             if is_work:
-                crumbs += '<li><a href="/ensayos/">Publicaciones</a></li>'
+                crumbs += '<li><a href="/ensayos/">Documentos de trabajo</a></li>'
                 current = records[relative].get('navigation_label')
                 if not current:
                     current = 'SITEPE v14' if relative.startswith('publicaciones/') else (

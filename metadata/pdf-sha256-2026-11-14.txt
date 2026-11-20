@@ -1,0 +1,14 @@
+576b613d399f0baf3cb4cd0fc27adcfd82f03940c5a479f564bd343ef3efa6b3  ./dist/pdf/rb-ensayos-2026-01.pdf
+c3eebcccb9d8aa0f7781d6fb380ebc1a52e4e8e828eb3ff6269ff3dadc68fb49  ./dist/pdf/rb-ensayos-2026-02.pdf
+6f6476d1245c7825bc6b89084cf5fbd3a2988b078c67cfde97c54d37b781f170  ./dist/pdf/rb-ensayos-2026-03.pdf
+370d8a343222c966a143a74565ad85760f66c74897ea9337ff6402bfd6248886  ./dist/pdf/rb-ensayos-2026-04.pdf
+bacc52a473f2e06408df369525340e98322111249190f8254c946093c0c390ca  ./dist/pdf/rb-ensayos-2026-05.pdf
+c92b11c9da04ea7a4e4a7dee91cc51ebfdd7d24aa65489002f11c95a4dcdbc2a  ./dist/pdf/rb-ensayos-2026-06.pdf
+59a1b481e22e29ed9152297d89598f85ca5278bf922afbb419371b2f2ebff0b0  ./dist/pdf/rb-ensayos-2026-07-v2-6-cuadernillo-a4.pdf
+4e9225dae68a5966a6a34c1c9946b8f1d5848d6148a98659000957fe9f836177  ./dist/pdf/rb-ensayos-2026-07-v2-6-impresion-a5.pdf
+ff913dffe8942490af02e913c99fec1ce1fa2ddc8e1085103fb9a3db46465a4b  ./dist/pdf/rb-ensayos-2026-07-v2-7.pdf
+f49fffece440e002d8d57214c447383315a4bb9d3bf94291c4ea1793c8ddf8c3  ./dist/pdf/rb-ensayos-2026-07.pdf
+e22985a88044694459bea59b8d740685135ec612b5520d4c8bf7d2e2cecdff0c  ./dist/pdf/sitepe-pleno-empleo-mexico.pdf
+8f4f578386ec72df980fe3df3b80549cc406b754f1cf8cfd1e11b6a24c69583d  ./dist/pdf/valle-marx-tssi-beta-1-0.pdf
+39776bb86e1adfc8686ff2acb879ef1dbedc57e1ac8400fef6b9b53554a29b3b  ./dist/pdf/valle-marx-tssi-v2-2.pdf
+e25433ceed26ad72081b61ebd9a31b5673c1110d4520056a24844092950272b9  ./dist/pdf/valle-marx-tssi-v2-5.pdf
