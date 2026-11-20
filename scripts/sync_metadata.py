@@ -122,13 +122,29 @@ def sync(check=False):
             updated = re.sub(pattern, lambda _: script, original, count=1, flags=re.S)
         else:
             updated = original.replace('</head>', '  ' + script + '\n</head>')
-        if record.get('abstract_paragraphs'):
-            paragraphs = ''.join('<p>' + html.escape(p) + '</p>'
-                                 for p in record['abstract_paragraphs'])
-            updated, count = re.subn(
-                r'(<h2 id="resumen">Resumen</h2>\s*<div class="article-summary__copy">)\s*.*?(?=<p class="keywords">)',
-                lambda m: m[1] + '\n' + paragraphs, updated, count=1, flags=re.S)
-            assert count == 1, record['path']
+        escape = html.escape
+        kind = {'essay': 'Ensayo', 'conference_paper': 'Ponencia SITEPE', 'research_manuscript': 'Manuscrito de investigación'}[record['publication_type']]
+        label = record['catalog_number'] + ' · ' + kind
+        version = 'Versión ' + record['version'] if record.get('version') else 'Versión de circulación'
+        title = escape(record['title'])
+        subtitle = escape(record.get('subtitle') or '')
+        names = ', '.join(DATA['people'][c['person']]['name'] for c in record['contributors'] if c['author'])
+        for css, value in [('article-code', label), ('article-byline__name', names),
+                           ('article-byline__version', version + ' · ' + record['datePublished'])]:
+            updated = re.sub(f'(<p class="{css}">).*?</p>', lambda m: m[1] + escape(value) + '</p>', updated, count=1, flags=re.S)
+        heading = '<h1>' + title + '</h1>' + ('<p class="article-subtitle">' + subtitle + '</p>' if subtitle else '')
+        updated = re.sub(r'<h1>.*?</h1>(?:\s*<p class="article-subtitle">.*?</p>)?', lambda _: heading, updated, count=1, flags=re.S)
+        updated = re.sub(r'<title>.*?</title>', lambda _: '<title>' + title + ' — Raúl Boullosa</title>', updated, count=1)
+        for key, value in [('name="description"',record['description']), ('property="og:description"',record['description']), ('property="og:title"',record['title'])]:
+            updated = re.sub('(<meta ' + key + ' content=")[^"]*', lambda m: m[1] + escape(value), updated)
+        summary = ('<section class="article-summary" aria-labelledby="resumen"><div class="container article-summary__grid">'
+                   '<h2 id="resumen">Resumen</h2><div class="article-summary__copy">' +
+                   ''.join('<p>' + escape(t) + '</p>' for t in record.get('abstract_paragraphs') or [record['abstract']]) +
+                   '<p class="keywords"><strong>Palabras clave</strong><br>' + escape('; '.join(record['keywords'])) + '.</p></div></div></section>')
+        if '<section class="article-summary"' in updated:
+            updated = re.sub(r'<section class="article-summary".*?</section>', lambda _: summary, updated, count=1, flags=re.S)
+        else:
+            updated = updated.replace('<section class="article-reading"', summary + '\n<section class="article-reading"', 1)
         updated = re.sub(r'\s*' + re.escape(START) + '.*?' + re.escape(END) + r'\s*',
                          '', updated, flags=re.S)
         updated, count = re.subn(

@@ -84,7 +84,12 @@ def formats(record, people):
         ris.append(('AB', record['abstract']))
     ris += [('KW', key) for key in record.get('keywords', [])]
     ris.append(('ER', ''))
+    initials = ' '.join(part[0] + '.' for part in names[0]['given'].split())
+    kind = {'essay':'Ensayo', 'conference_paper':'Ponencia', 'research_manuscript':'Manuscrito de investigación'}[record['publication_type']]
+    edition = ' (versión ' + record['version'] + ')' if record.get('version') else ''
+    apa = f"{names[0]['family']}, {initials} ({date[0]}). {title}{edition} [{kind}]. {record['url']}"
     return {
+        'apa.txt': apa + '\n',
         'bib': '\n'.join(lines) + '\n',
         'ris': '\n'.join(key + '  - ' + one_line(value) for key, value in ris) + '\n',
         'csl.json': json.dumps([csl], ensure_ascii=False, indent=2) + '\n',
@@ -99,7 +104,7 @@ def sync(data, check=False):
         downloads = formats(record, data['people'])
         links = []
         discoveries = []
-        types = {'bib': ('BibTeX', 'application/x-bibtex'),
+        types = {'apa.txt': ('APA', 'text/plain'), 'bib': ('BibTeX', 'application/x-bibtex'),
                  'ris': ('RIS', 'application/x-research-info-systems'),
                  'csl.json': ('CSL-JSON', 'application/vnd.citationstyles.csl+json')}
         for ext, contents in downloads.items():

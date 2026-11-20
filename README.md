@@ -30,4 +30,4 @@ El registro de hashes comprueba que los PDF coinciden con el inventario del 14 d
 
 ## Despliegue
 
-GitHub registra una integración con Cloudflare Workers. El despliegue del PR #6 informó un fallo; hay que consultar los registros y la configuración del servicio para determinar su causa y confirmar la rama y el directorio efectivamente publicados. No debe suponerse que una fusión equivale a un despliegue exitoso.
+Cloudflare Workers publica los archivos de `dist/`. El estado de compilación se consulta por SHA. La comprobación del dominio público debe contrastar su contenido con el commit de producción.

@@ -1458,3 +1458,11 @@ h1, h2, h3, .equation, .citation { overflow-wrap: anywhere; }
 .research-section--ink :focus-visible,
 .footer :focus-visible { outline-color: var(--warm-white); }
 .action-link--red:focus-visible { outline-color: var(--ink); }
+
+.essay-row > div { min-width: 0; }
+.essay-row p { max-width: 66ch; line-height: 1.55; }
+.essay-row__code { font-variant-numeric: tabular-nums; }
+@media (max-width: 40rem) {
+  .essay-row { grid-template-columns: minmax(0, 1fr); gap: .65rem; }
+  .essay-row__actions { grid-column: 1; }
+}
